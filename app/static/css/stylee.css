@@ -1,0 +1,264 @@
+/* ---------------------- Body ----------------------*/
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-family: sans-serif;
+    color: white;
+}
+
+/* ---------------------- Sidebar(Barra Lateral) ----------------------*/
+
+.barra_lateral {
+    background: linear-gradient(#58009A, #0F0D12);
+    padding: 5px;
+    width: 230px;
+    height: 100vh;
+    position: fixed;
+    /*mantener fija la barra*/
+}
+
+nav li {
+    list-style: none;
+    margin: 9px 0;
+}
+
+nav i {
+    padding: 8px;
+}
+
+.enlace_barra_lateral {
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 10px;
+    transition: 0.3s;
+}
+
+.enlace_barra_lateral:hover {
+    background-color: rgb(137, 43, 137);
+    filter: drop-shadow(1px 1px 3px rgb(137, 43, 137));
+}
+
+/* ---------------------- Logo ----------------------*/
+
+.logo {
+    width: 100px;
+    height: auto;
+    filter: saturate(180%);
+    justify-content: center;
+    display: block;
+    margin: 10px 50px;
+}
+
+/* ---------------------- Principal ----------------------*/
+
+main {
+    background-color: #2d2d2d;
+    margin-left: 230px;
+    /*espacio de la barra lateral*/
+}
+
+/* ---------------------- Barra Superior ----------------------*/
+
+header {
+    background: linear-gradient(#3a3a3a, #2d2d2d);
+    /*background-color: #3a3a3a;*/
+    /* Separa buscador e iconos */
+    justify-content: space-between;
+    width: 900px;
+    /*Responsivo */
+    display: flex;
+    padding: 20px;
+}
+
+/* ---------------------- Buscador ----------------------*/
+
+.buscador {
+    padding-left: 20px;
+    display: inline-flex;
+}
+
+.buscador input {
+    border-radius: 15px;
+    padding: 10px;
+    width: 300px;
+    background-color: #6e6d6d;
+    border: none;
+
+}
+
+.buscador input::placeholder {
+    color: white;
+
+}
+
+/* ---------------------- Botones Barra Superior----------------------*/
+
+.btn_notificaciones,
+.btn_buscar {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: white;
+}
+
+.btn_notificaciones:hover,
+.btn_buscar:hover {
+    filter: drop-shadow(1px 10px 15px white);
+}
+
+/* ---------------------- Iconos ----------------------*/
+
+i {
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.iconos {
+    justify-content: flex-end;
+    padding-right: 30px;
+}
+
+.icon:hover {
+    filter: drop-shadow(10px 10px 15px white);
+
+}
+
+/* ---------------------- Principal ----------------------*/
+
+.principal {
+    padding: 10px 30px;
+}
+
+/* ---------------------- Carrito ----------------------*/
+
+.enlace_barra_lateral_fijo {
+    background-color: rgb(137, 43, 137);
+    filter: drop-shadow(1px 1px 3px rgb(137, 43, 137));
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+/* ---------------------- Producto ----------------------                REVISAAAAAR                     */
+
+.productos {
+    display: grid;
+    /*organiza en filas/columnas.*/
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /*numero de columnas */
+}
+
+.producto {
+    background-color: #4e4e4e;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px;
+    width: 200px;
+    height: auto;
+    text-align: center;
+}
+
+.imagenes_producto {
+    width: 150px;
+    height: 150px;
+    display: flex;
+}
+
+.imagen_producto {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* contiene la imagen sin deformar */
+}
+
+.costo_producto {
+    color: #2b123d;
+}
+
+.suma_producto {
+    text-align: right;
+}
+
+
+
+/* ---------------------- Boton Eliminar ----------------------*/
+
+.btn_eliminar {
+    border: none;
+    color: white;
+    background-color: rgb(184, 21, 21);
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* ---------------------- Total Productos ----------------------*/
+
+.total_productos{
+
+}
+.total, .sub_total{
+    background-color: rgb(101, 29, 96);
+    border-radius: 10px;
+    display: flex;
+    margin: 30px;
+    padding: 20px;
+    width: 100px;
+}
+
+
+
+.enlace_seguir_comprando{
+    margin-right: 100px;
+}
+
+/* ---------------------- Enlace(Boton) Pagar ----------------------*/
+
+.enlace_pagar {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(87, 33, 87);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.enlace:hover {
+    background-color: rgb(179, 94, 179);
+}
+
+/* ---------------------- Enlace Regresar/Avanzar ----------------------*/
+
+.regresar_avanzar{
+    justify-content: space-between;
+
+}
+
+
+
+
+/* ---------------------- Datos Bancarios ----------------------*/
+
+.datos_bancarios{
+    background-attachment: blueviolet;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------- Enlace Regresar/Avanzar ----------------------*/

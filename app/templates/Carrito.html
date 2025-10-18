@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="/app/static/css/stylee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script></script>
+
+</head>
+
+<body>
+    <nav class="barra_lateral">
+        <a class="logo_link" href="#"><img class="logo" src="/app/static/img/Icon_GS.png" alt="Logo"></a>
+
+        <ul>
+            <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-circle-user"></i> Perfil</a></li>
+            <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a></li>
+            <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-heart"></i> Favoritos</a></li>
+            <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-box"></i> Pedidos</a></li>
+            <li>
+                <h3>Categorías</h3>
+            </li>
+            <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-ghost"></i> Juegos</a></li>
+            <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-headset"></i> Accesorios</a></li>
+            <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-tv"></i> Consolas</a></li>
+            <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-gamepad"></i> Controles</a></li>
+            <li><a class="enlace_barra_lateral_fijo" href="/app/templates/Carrito.html"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+            <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-user"></i> Registrarse</a></li>
+        </ul>
+    </nav>
+    <main>
+        <header class="encabezado">
+
+            <section class="buscador">
+                <input type="text" id="buscar" placeholder="Buscar producto">
+                <button class="btn_buscar" id="mostrarBuscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </section>
+
+            <section class="iconos">
+                <button class="btn_notificaciones" id="mostrarNotificaciones"><i class="fa-solid fa-bell"></i></button>
+                <a class="icon" href="/app/templates/Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="icon" href="#"><i class="fa-solid fa-circle-user"></i></a>
+            </section>
+
+        </header>
+
+        <div class="principal">
+
+            <div class="carrito">
+
+                <h1>Productos</h1>
+
+                <section class="productos">
+
+                    <div class="producto"><!--article-->
+                        <div class="imagenes_producto">
+                            <img class="imagen_producto" src="/app/static/img/Nintendo_Switch_2.jpeg"
+                                alt="Nintendo Switch 2">
+                        </div>
+                        <p>Nintendo Switch 2</p>
+                        <p class="costo_producto">$0</p>
+                        <button class="btn_eliminar">Eliminar</button>
+                    </div>
+
+                    <div class="producto">
+                        <div class="imagenes_producto">
+                            <img class="imagen_producto" src="/app/static/img/FC26.jpeg" alt="FC26">
+                        </div>
+                        <p>FC26</p>
+                        <p class="costo_producto">$0</p>
+                        <button class="btn_eliminar">Eliminar</button>
+                    </div>
+
+                    <div class="producto">
+                        <div class="imagenes_producto">
+                            <img class="imagen_producto" src="/app/static/img/Audifonos_Gamer.jpg"
+                                alt="Audifonos Gamer">
+                        </div>
+                        <p>Audifonos Gamer</p>
+                        <p class="costo_producto">$0</p>
+                        <button class="btn_eliminar">Eliminar</button>
+                    </div>
+
+                </section>
+
+                <section class="total_productos">
+
+                    <p class="sub_total">Subtotal <span>$0</span></p>
+                    <p class="total">Total <span>$0</span></p>
+
+                </section>
+
+                <section class="regresar_avanzar">
+                    <a class="enlace_seguir_comprando" style="color: white; text-decoration: none;"
+                        href="/app/templates/BarraLateral.html"><i class="fa-solid fa-circle-left"></i>Seguir
+                        comprando</a>
+                    <a class="enlace_pagar" href="/app/templates/Pagar.html">Pagar</a>
+                </section>
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>
