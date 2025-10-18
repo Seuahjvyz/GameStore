@@ -27,7 +27,7 @@
             <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-headset"></i> Accesorios</a></li>
             <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-tv"></i> Consolas</a></li>
             <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-gamepad"></i> Controles</a></li>
-            <li><a class="enlace_barra_lateral_fijo" href="#"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+            <li><a class="enlace_barra_lateral_fijo" href="/app/templates/Carrito.html"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
             <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-user"></i> Registrarse</a></li>
         </ul>
     </nav>
@@ -92,43 +92,38 @@
 
                 </section>
 
-
-                <section class="datos_">
+                <section class="datos_bancarios">
                     <h2>Datos Bancarios</h2>
-                    <form action="#" class="datos_bancarios">
-                        <div>
-                            <label for="titular_tarjeta">Titular de la tarjeta</label>
-                            <input id="titular_tarjeta" type="text" placeholder="Nombre del titular de la tarjeta"
+                    <form action="#" class="datos_bancarios_2">
+                        <div class="formulario">
+                            <label class="label" for="titular_tarjeta">Titular de la tarjeta</label>
+                            <input class="input" id="titular_tarjeta" type="text"
+                                placeholder="Nombre del titular de la tarjeta" required>
+                        </div>
+                        <div class="formulario">
+                            <label class="label" for="no_tarjeta">Numero de tarjeta</label>
+                            <input class="input" id="no_tarjeta" type="text" placeholder="Ejemplo: 1234 5678 9012 3456"
+                                required maxlength="19">
+                        </div>
+                        <div class="formulario">
+                            <label class="label" for="fecha_vencimiento">Fecha de vencimiento</label>
+                            <input class="input" id="fecha_vencimiento" type="text" placeholder="Ejemplo: 07/28"
                                 required>
                         </div>
-                        <div>
-                            <label for="no_tarjeta">Numero de tarjeta</label>
-                            <input id="no_tarjeta" type="text" placeholder="Ejemplo: 1234 5678 9012 3456" required
-                                maxlength="19">
-                        </div>
-                        <div>
-                            <label for="fecha_vencimiento">Fecha de vencimiento</label>
-                            <input id="fecha_vencimiento" type="text" placeholder="Ejemplo: 07/28" required>
-                        </div>
-                        <div>
-                            <label for="cvv">Codigo de seguridad(CVV)</label>
-                            <input id="cvv" type="text" placeholder="Ejemplo: 123" required>
+                        <div class="formulario">
+                            <label class="label" for="cvv">Codigo de seguridad(CVV)</label>
+                            <input class="input" id="cvv" type="text" placeholder="Ejemplo: 123" required>
                         </div>
                     </form>
 
 
                 </section>
 
-
-
-
                 <section class="regresar_avanzar">
                     <nav>
+    
+                        <a style="color: white; text-decoration: none; margin-right: 600px;" href="/app/templates/Carrito.html"><i class="fa-solid fa-circle-left"></i>Volver</a>
                         <a class="enlace_pagar" href="/app/templates/CompraFinalizada.html">Finalizar Compra</a>
-                    </nav>
-                    <nav>
-                        <a href="/app/templates/Carrito.html"><i class="fa-solid fa-circle-left"></i>Volver</a>
-
                     </nav>
                 </section>
 

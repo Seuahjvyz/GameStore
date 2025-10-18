@@ -57,19 +57,18 @@ nav i {
 /* ---------------------- Principal ----------------------*/
 
 main {
-    background-color: #2d2d2d;
-    margin-left: 230px;
+    background-color: #2d2d2d; 
+    margin-left: 240px;
     /*espacio de la barra lateral*/
+
 }
 
 /* ---------------------- Barra Superior ----------------------*/
 
 header {
-    background: linear-gradient(#3a3a3a, #2d2d2d);
-    /*background-color: #3a3a3a;*/
+      background: linear-gradient(#3a3a3a, #2d2d2d);
     /* Separa buscador e iconos */
     justify-content: space-between;
-    width: 900px;
     /*Responsivo */
     display: flex;
     padding: 20px;
@@ -152,7 +151,7 @@ i {
 
 .productos {
     display: grid;
-    /*organiza en filas/columnas.*/
+    /*organiza en filas/columnas*/
     grid-template-columns: 1fr 1fr 1fr 1fr;
     /*numero de columnas */
 }
@@ -218,7 +217,7 @@ i {
 
 
 .enlace_seguir_comprando{
-    margin-right: 100px;
+    margin-right: 600px;
 }
 
 /* ---------------------- Enlace(Boton) Pagar ----------------------*/
@@ -248,7 +247,23 @@ i {
 /* ---------------------- Datos Bancarios ----------------------*/
 
 .datos_bancarios{
-    background-attachment: blueviolet;
+    background-color: #333333;
+    padding: 20px;
+    margin: 20px;
+}
+.datos_bancarios_2{
+    padding: 10px;
+    margin: 15px;
+}
+.formulario{
+    padding: 20px;
+}
+.input{
+    padding: 5px;
+    width: 300px;
+}
+.label{
+    padding-right: 20px;
 }
 
 
@@ -261,4 +276,15 @@ i {
 
 
 
-/* ---------------------- Enlace Regresar/Avanzar ----------------------*/
+/* ---------------------- Compra exitosa----------------------*/
+
+.compra_exitosa{
+    margin: 20px;
+padding: 20px;
+}
+/* ---------------------- Reporte Venta----------------------*/
+.reporte_venta{
+    background-color: #0F0D12;
+    padding: 20px;
+    margin: 90px;
+}
