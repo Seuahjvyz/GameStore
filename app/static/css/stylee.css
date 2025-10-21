@@ -3,10 +3,10 @@
 body {
     margin: 0;
     padding: 0;
-    display: flex;
     font-family: sans-serif;
     color: white;
 }
+
 
 /* ---------------------- Sidebar(Barra Lateral) ----------------------*/
 
@@ -14,7 +14,6 @@ body {
     background: linear-gradient(#58009A, #0F0D12);
     padding: 5px;
     width: 230px;
-    height: 100vh;
     position: fixed;
     /*mantener fija la barra*/
 }
@@ -34,7 +33,7 @@ nav i {
     border-radius: 30px;
     display: inline-flex;
     align-items: center;
-    padding: 0 10px;
+    padding: 1px 10px;
     transition: 0.3s;
 }
 
@@ -58,6 +57,7 @@ nav i {
 
 main {
     background-color: #2d2d2d;
+    min-height: 100vh; 
     margin-left: 240px;
     /*espacio de la barra lateral*/
 
@@ -288,6 +288,7 @@ i {
     text-align: center;
     border-radius: 20px;
     background-color: #3e2c58ff;
+    margin: 100px 200px;
 
 }
 
@@ -295,15 +296,21 @@ i {
 .reporte_venta {
     background-color: rgb(55, 55, 55);
     padding: 20px;
-    margin: 90px;
-    border-radius: 20px;
+    margin: 30px;
+    border-radius: 10px;
 
 }
 
-.info_reporte {
-    border: 5px solid #3e2c58ff;
+.no_reporte{
+    background-color: #A100ED;
     border-radius: 10px;
-    margin: 20px;
+    padding: 10px;
+    width: 120px;
+}
+
+.info_reporte {
+    border: 5px solid #A100ED;
+    border-radius: 10px;
     padding: 20px;
 }
 
