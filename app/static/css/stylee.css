@@ -57,7 +57,7 @@ nav i {
 /* ---------------------- Principal ----------------------*/
 
 main {
-    background-color: #2d2d2d; 
+    background-color: #2d2d2d;
     margin-left: 240px;
     /*espacio de la barra lateral*/
 
@@ -66,7 +66,7 @@ main {
 /* ---------------------- Barra Superior ----------------------*/
 
 header {
-      background: linear-gradient(#3a3a3a, #2d2d2d);
+    background: linear-gradient(#3a3a3a, #2d2d2d);
     /* Separa buscador e iconos */
     justify-content: space-between;
     /*Responsivo */
@@ -202,10 +202,10 @@ i {
 
 /* ---------------------- Total Productos ----------------------*/
 
-.total_productos{
+.total_productos {}
 
-}
-.total, .sub_total{
+.total,
+.sub_total {
     background-color: rgb(101, 29, 96);
     border-radius: 10px;
     display: flex;
@@ -216,7 +216,7 @@ i {
 
 
 
-.enlace_seguir_comprando{
+.enlace_seguir_comprando {
     margin-right: 600px;
 }
 
@@ -236,7 +236,7 @@ i {
 
 /* ---------------------- Enlace Regresar/Avanzar ----------------------*/
 
-.regresar_avanzar{
+.regresar_avanzar {
     justify-content: space-between;
 
 }
@@ -246,23 +246,27 @@ i {
 
 /* ---------------------- Datos Bancarios ----------------------*/
 
-.datos_bancarios{
+.datos_bancarios {
     background-color: #333333;
     padding: 20px;
     margin: 20px;
 }
-.datos_bancarios_2{
+
+.datos_bancarios_2 {
     padding: 10px;
     margin: 15px;
 }
-.formulario{
+
+.formulario {
     padding: 20px;
 }
-.input{
+
+.input {
     padding: 5px;
     width: 300px;
 }
-.label{
+
+.label {
     padding-right: 20px;
 }
 
@@ -278,13 +282,33 @@ i {
 
 /* ---------------------- Compra exitosa----------------------*/
 
-.compra_exitosa{
+.compra_exitosa {
     margin: 20px;
-padding: 20px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #3e2c58ff;
+
 }
+
 /* ---------------------- Reporte Venta----------------------*/
-.reporte_venta{
-    background-color: #0F0D12;
+.reporte_venta {
+    background-color: rgb(55, 55, 55);
     padding: 20px;
     margin: 90px;
+    border-radius: 20px;
+
+}
+
+.info_reporte {
+    border: 5px solid #3e2c58ff;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.detalles_reporte{
+    border-radius: 5px;
+    border: none;
+
 }
