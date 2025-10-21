@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(#58009A, #0F0D12);
+    color: white;
+    line-height: 1.6;
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* Barra Lateral */
+.sidebar {
+    width: 280px;
+    background: linear-gradient(#0F0D12, #58009A);
+    padding: 30px 20px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 2px solid rgb(137, 43, 137);
+    padding-bottom: 15px;
+}
+
+.sidebar h3 {
+    font-size: 18px;
+    margin: 25px 0 15px;
+    color: white;
+    font-weight: 600;
+    border-bottom: 1px solid rgb(137, 43, 137);
+    padding-bottom: 8px;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin-bottom: 25px;
+}
+
+.nav-list li {
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background: rgba(137, 43, 137, 0.3);
+    border-radius: 8px;
+    border-left: 4px solid rgb(137, 43, 137);
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-list li:hover {
+    background: rgba(137, 43, 137, 0.5);
+    transform: translateX(5px);
+    filter: drop-shadow(1px 1px 3px rgb(137, 43, 137));
+}
+
+.nav-list li::before {
+    content: "•";
+    color: rgb(137, 43, 137);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Botón Registrarse dentro de la barra lateral */
+.sidebar-register-section {
+    margin-top: auto; /* Empuja el botón hacia abajo */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.sidebar-register-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background: rgb(87, 33, 87);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    filter: drop-shadow(1px 1px 3px rgb(137, 43, 137));
+}
+
+.sidebar-register-btn:hover {
+    background: rgb(179, 94, 179);
+    transform: translateY(-2px);
+    filter: drop-shadow(1px 1px 5px rgb(179, 94, 179));
+}
+/* Contenido Principal */
+.main-content {
+    flex: 1;
+    margin-left: 280px;
+    padding: 40px;
+    background: linear-gradient(#58009A, #0F0D12);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: linear-gradient(#3a3a3a, #2d2d2d);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+    font-size: 32px;
+    color: white;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: linear-gradient(#3a3a3a, #2d2d2d);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border: 1px solid #6e6d6d;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+    border-color: rgb(137, 43, 137);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background: #4e4e4e;
+    padding: 10px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 600;
+}
+
+.product-description {
+    color: #cccccc;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(137, 43, 137);
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cart-btn {
+    width: 100%;
+    padding: 12px;
+    background: rgb(87, 33, 87);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    filter: drop-shadow(1px 1px 3px rgb(137, 43, 137));
+}
+
+.cart-btn:hover {
+    background: rgb(179, 94, 179);
+    transform: translateY(-2px);
+    filter: drop-shadow(1px 1px 5px rgb(179, 94, 179));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .main-content {
+        margin-left: 200px;
+        padding: 20px;
+    }
+    
+    .products {
+        grid-template-columns: 1fr;
+    }
+    
+    .header h1 {
+        font-size: 24px;
+    }
+}

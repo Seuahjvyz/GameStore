@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore - Método de Pago</title>
+    <link rel="stylesheet" href="../Static/css/stylepay.css">
+</head>
+<body>
+    <!-- Barra Lateral -->
+<div class="sidebar">
+    <h2>Inicio</h2>
+    
+    <div class="nav-section">
+        <h3>Perfil</h3>
+        <ul class="nav-list">
+            <li>Buscar</li>
+            <li>Favoritos</li>
+            <li>Pedidos</li>
+        </ul>
+    </div>
+
+    <div class="nav-section">
+        <h3>Categorías</h3>
+        <ul class="nav-list">
+            <li>Juegos</li>
+            <li>Accesorios</li>
+            <li>Consolas</li>
+            <li>Controles</li>
+            <li>Carrito</li>
+        </ul>
+    </div>
+
+    <!-- Botón Registrarse dentro de la barra lateral -->
+    <div class="sidebar-register-section">
+        <button class="sidebar-register-btn">Registrarse</button>
+    </div>
+</div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <header class="header">
+            <h1>Productos en Carrito</h1>
+        </header>
+
+        <main class="payment-container">
+            <!-- Productos en el carrito -->
+            <div class="cart-section">
+                <div class="cart-item">
+                    <img src="../Static/img/Imagenes/Nintendo_Switch_2.jpeg" alt="Nintendo Switch OLED" class="cart-image">
+                    <div class="cart-item-info">
+                        <h3>Nintendo Switch OLED</h3>
+                        <p class="item-price">$8,620.88</p>
+                    </div>
+                    <button class="delete-btn">ELIMINAR</button>
+                </div>
+
+                <div class="cart-item">
+                    <img src="../Static/img/Imagenes/Audifonos_Gamer.jpg" alt="Audífonos Gamer" class="cart-image">
+                    <div class="cart-item-info">
+                        <h3>Audífonos Gamer</h3>
+                        <p class="item-price">$821.00</p>
+                    </div>
+                    <button class="delete-btn">ELIMINAR</button>
+                </div>
+
+                <div class="cart-item">
+                    <img src="../Static/img/Imagenes/FC26.jpeg" alt="FC 26 Xbox" class="cart-image">
+                    <div class="cart-item-info">
+                        <h3>FC 26 Xbox Series X|S</h3>
+                        <p class="item-price">$1,923.69</p>
+                    </div>
+                    <button class="delete-btn">ELIMINAR</button>
+                </div>
+            </div>
+
+            <!-- Total -->
+            <div class="total-section">
+                <h2>Total</h2>
+                <p class="total-amount">$ 10,961.00</p>
+            </div>
+
+            <!-- Métodos de Pago -->
+            <div class="payment-methods">
+                <h2>Método de Pago</h2>
+                
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                        <label for="credit-card" class="payment-label">
+                            <span class="payment-icon">💳</span>
+                            Tarjeta de Crédito/Débito
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Datos Bancarios -->
+            <div class="payment-section credit-card-section">
+                <h2>Datos de Tarjeta</h2>
+                
+                <div class="form-group">
+                    <label>Nombre del Titular de la tarjeta</label>
+                    <input type="text" class="input-field" placeholder="Ingresa el nombre completo">
+                </div>
+
+                <div class="form-group">
+                    <label>Número de tarjeta</label>
+                    <input type="text" class="input-field" placeholder="1234 5678 9012 3456" maxlength="19">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Fecha de vencimiento</label>
+                        <input type="text" class="input-field" placeholder="MM/AA" maxlength="5">
+                    </div>
+
+                    <div class="form-group">
+                        <label>CVV</label>
+                        <input type="text" class="input-field" placeholder="123" maxlength="3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="action-buttons">
+                <button class="back-btn">Volver</button>
+                <button class="confirm-btn">Finalizar Compra</button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
