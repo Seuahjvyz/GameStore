@@ -1,8 +1,3 @@
-/* ============================================
-   GAME STORE WEB - ESTILOS COMPLETOS
-   Diseño basado en capturas de Figma
-   ============================================ */
-
 /* Reset y Base */
 * {
   margin: 0;
@@ -854,9 +849,9 @@ tr:hover {
   background: #8b5cf6;
 }
 
-/* ============================================
-   ANIMACIONES
-   ============================================ */
+
+
+  
 @keyframes fadeIn {
   from {
     opacity: 0;
