@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Game Store Web</title>
+    <link rel="stylesheet" href="../static/css/game-store.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🎮</span>
+                    <span class="logo-text">Game Store</span>
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="window.location.href='admin.html'">Inicio</button>
+
+            <nav class="nav-menu">
+                <a href="perfil.html" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Perfil</span>
+                </a>
+                <a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🔍</span>
+                    <span class="nav-text">Buscar</span>
+                </a>
+                <a href="pedidos.html" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span class="nav-text">Gestión de pedidos</span>
+                </a>
+                <a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🛒</span>
+                    <span class="nav-text">Inventario</span>
+                </a>
+                <a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span class="nav-text">Juegos</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🎧</span>
+                    <span class="nav-text">Accesorios</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🖥️</span>
+                    <span class="nav-text">Consolas</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span class="nav-text">Controles</span>
+                </a>
+            </nav>
+
+            <div class="nav-section">
+                <a href="reportes.html" class="nav-item active">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Reportes</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <a href="usuarios.html" class="nav-item">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Usuarios</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <button class="btn-back" onclick="window.location.href='reportes.html'">← Volver</button>
+                <h1 class="page-title">Detalle de Reporte</h1>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">Mis Pedidos</h2>
+                <div class="detail-info">
+                    <p><strong>Detalle de Compra a Proveedor</strong></p>
+                    <p>Proveedor: Distribuidora Games S.A. de C.V.</p>
+                    <p>RFC: XAXX010101000</p>
+                    <p>Dirección: Av. Insurgentes Sur 1234, Col. Del Valle, CDMX</p>
+                    <p>Teléfono: 55-1234-5678</p>
+                    <p>Email: ventas@distribuidoragames.com.mx</p>
+                    <p>Condiciones de pago: 30 días crédito</p>
+                    <p>Forma de pago: Transferencia bancaria</p>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">Productos Comprados</h2>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Cantidad</th>
+                                <th>Plataforma</th>
+                                <th>Precio Unitario</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10</td>
+                                <td>Call of Duty Black Ops 6</td>
+                                <td>$550.00</td>
+                                <td>$5,500.00</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>EA FC 24</td>
+                                <td>$450.00</td>
+                                <td>$6,750.00</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Ghost of Tsushima</td>
+                                <td>$399.00</td>
+                                <td>$3,192.00</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>NBA 2K24</td>
+                                <td>$499.00</td>
+                                <td>$5,988.00</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>Control DualSense Switch</td>
+                                <td>$1,200.00</td>
+                                <td>$24,000.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="totals-section">
+                    <p><strong>Subtotal:</strong> $45,430.00</p>
+                    <p><strong>IVA (16%):</strong> $7,268.80</p>
+                    <p><strong>Total a pagar:</strong> $52,698.80</p>
+                    <p><strong>Anticipo (30%):</strong> $15,809.64</p>
+                    <p><strong>Saldo por pagar:</strong> $36,889.16</p>
+                </div>
+
+                <div class="notes-section">
+                    <p><strong>Notas:</strong></p>
+                    <ul>
+                        <li>Entrega estimada: 14 de mayo de 2025</li>
+                        <li>Horario de entrega: 8:30 a 20:00 hrs</li>
+                        <li>El proveedor enviará por paquetería especializada</li>
+                        <li>Incluye seguro de mercancía</li>
+                        <li>Garantía de 30 días en todos los productos</li>
+                        <li>Nota: Productos sujetos a disponibilidad, en caso de no contar con existencia, se notificará en un lapso no mayor a 48 horas</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>

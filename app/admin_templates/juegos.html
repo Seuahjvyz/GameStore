@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios - Game Store Web</title>
+    <link rel="stylesheet" href="../static/css/game-store.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🎮</span>
+                    <span class="logo-text">Game Store</span>
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="window.location.href='admin.html'">Inicio</button>
+
+            <nav class="nav-menu">
+                <a href="perfil.html" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span>Perfil</span>
+                </a>
+                <a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🔍</span>
+                    <span>Buscar</span>
+                </a>
+                <a href="pedidos.html" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Gestión de pedidos</span>
+                </a>
+                <a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🛒</span>
+                    <span>Inventario</span>
+                </a>
+                <a href="juegos.html" class="nav-item active">
+                    <span class="nav-icon">🎮</span>
+                    <span>Juegos</span>
+                </a>
+                <a href="accesorios.html" class="nav-item">
+                    <span class="nav-icon">🎧</span>
+                    <span>Accesorios</span>
+                </a>
+                <a href="consolas.html" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span>Consolas</span>
+                </a>
+                <a href="controles.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Controles</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="reportes.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Reportes</span>
+                </a>
+                <a href="usuarios.html" class="nav-item">
+                    <span class="nav-icon">👥</span>
+                    <span>Usuarios</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1 style="font-size: 36px; font-weight: 700; margin-bottom: 16px; color: #fff;">Juegos</h1>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Buscar juegos...">
+                    <button class="search-button">🔍</button>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Catálogo de Juegos</h2>
+                <span class="badge">456 juegos</span>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="The Last of Us Part II" class="product-image">
+                    <h3 class="product-title">The Last of Us Part II</h3>
+                    <p class="product-price">$59.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="God of War Ragnarök" class="product-image">
+                    <h3 class="product-title">God of War Ragnarök</h3>
+                    <p class="product-price">$69.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Zelda: Tears of the Kingdom" class="product-image">
+                    <h3 class="product-title">Zelda: Tears of the Kingdom</h3>
+                    <p class="product-price">$59.99</p>
+                    <span class="product-stock out-of-stock">Agotado</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Elden Ring" class="product-image">
+                    <h3 class="product-title">Elden Ring</h3>
+                    <p class="product-price">$59.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Hogwarts Legacy" class="product-image">
+                    <h3 class="product-title">Hogwarts Legacy</h3>
+                    <p class="product-price">$69.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Spider-Man 2" class="product-image">
+                    <h3 class="product-title">Marvel's Spider-Man 2</h3>
+                    <p class="product-price">$69.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Starfield" class="product-image">
+                    <h3 class="product-title">Starfield</h3>
+                    <p class="product-price">$69.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Baldur's Gate 3" class="product-image">
+                    <h3 class="product-title">Baldur's Gate 3</h3>
+                    <p class="product-price">$59.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Resident Evil 4 Remake" class="product-image">
+                    <h3 class="product-title">Resident Evil 4 Remake</h3>
+                    <p class="product-price">$59.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Final Fantasy XVI" class="product-image">
+                    <h3 class="product-title">Final Fantasy XVI</h3>
+                    <p class="product-price">$69.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Street Fighter 6" class="product-image">
+                    <h3 class="product-title">Street Fighter 6</h3>
+                    <p class="product-price">$59.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Mortal Kombat 1" class="product-image">
+                    <h3 class="product-title">Mortal Kombat 1</h3>
+                    <p class="product-price">$69.99</p>
+                    <span class="product-stock out-of-stock">Agotado</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="static/js/script.js"></script>
+</body>
+</html>

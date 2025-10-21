@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios - Game Store Web</title>
+    <link rel="stylesheet" href="../static/css/game-store.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🎮</span>
+                    <span class="logo-text">Game Store</span>
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="window.location.href='admin.html'">Inicio</button>
+
+            <nav class="nav-menu">
+                <a href="perfil.html" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span>Perfil</span>
+                </a>
+                <a href="inventario.html" class="nav-item active">
+                    <span class="nav-icon">🔍</span>
+                    <span>Buscar</span>
+                </a>
+                <a href="pedidos.html" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Gestión de pedidos</span>
+                </a>
+                <a href="inventario.html" class="nav-item active">
+                    <span class="nav-icon">🛒</span>
+                    <span>Inventario</span>
+                </a>
+                <a href="juegos.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Juegos</span>
+                </a>
+                <a href="accesorios.html" class="nav-item">
+                    <span class="nav-icon">🎧</span>
+                    <span>Accesorios</span>
+                </a>
+                <a href="consolas.html" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span>Consolas</span>
+                </a>
+                <a href="controles.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Controles</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="reportes.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Reportes</span>
+                </a>
+                <a href="usuarios.html" class="nav-item">
+                    <span class="nav-icon">👥</span>
+                    <span>Usuarios</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1 style="font-size: 36px; font-weight: 700; margin-bottom: 16px; color: #fff;">Inventario</h1>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Buscar productos...">
+                    <button class="search-button">🔍</button>
+                </div>
+            </div>
+
+            <!-- Added button to add new products -->
+            <div class="section-header">
+                <div>
+                    <h2>Todos los Productos</h2>
+                    <span class="badge">1,234 productos</span>
+                </div>
+                <button class="btn-primary" onclick="openAddProductModal()">+ Agregar Producto</button>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="PlayStation 5" class="product-image">
+                    <h3 class="product-title">PlayStation 5</h3>
+                    <p class="product-price">$499.99</p>
+                    <span class="product-stock">En stock</span>
+                    <!-- Added action buttons for edit and delete -->
+                    <div class="product-actions">
+                        <button class="btn-edit" onclick="editProduct(1)">✏️ Editar</button>
+                        <button class="btn-delete" onclick="deleteProduct(1)">🗑️ Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="../static/img/XboxSX.png" alt="Xbox Series X" class="product-image">
+                    <h3 class="product-title">Xbox Series X</h3>
+                    <p class="product-price">$449.99</p>
+                    <span class="product-stock">En stock</span>
+                    <div class="product-actions">
+                        <button class="btn-edit" onclick="editProduct(2)">✏️ Editar</button>
+                        <button class="btn-delete" onclick="deleteProduct(2)">🗑️ Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="../static/img/Switch2.png" alt="Nintendo Switch" class="product-image">
+                    <h3 class="product-title">Nintendo Switch OLED</h3>
+                    <p class="product-price">$349.99</p>
+                    <span class="product-stock">En stock</span>
+                    <div class="product-actions">
+                        <button class="btn-edit" onclick="editProduct(3)">✏️ Editar</button>
+                        <button class="btn-delete" onclick="deleteProduct(3)">🗑️ Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="The Last of Us Part II" class="product-image">
+                    <h3 class="product-title">The Last of Us Part II</h3>
+                    <p class="product-price">$59.99</p>
+                    <span class="product-stock">En stock</span>
+                    <div class="product-actions">
+                        <button class="btn-edit" onclick="editProduct(4)">✏️ Editar</button>
+                        <button class="btn-delete" onclick="deleteProduct(4)">🗑️ Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="God of War Ragnarök" class="product-image">
+                    <h3 class="product-title">God of War Ragnarök</h3>
+                    <p class="product-price">$69.99</p>
+                    <span class="product-stock">En stock</span>
+                    <div class="product-actions">
+                        <button class="btn-edit" onclick="editProduct(5)">✏️ Editar</button>
+                        <button class="btn-delete" onclick="deleteProduct(5)">🗑️ Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Zelda: Tears of the Kingdom" class="product-image">
+                    <h3 class="product-title">Zelda: Tears of the Kingdom</h3>
+                    <p class="product-price">$59.99</p>
+                    <span class="product-stock out-of-stock">Agotado</span>
+                    <div class="product-actions">
+                        <button class="btn-edit" onclick="editProduct(6)">✏️ Editar</button>
+                        <button class="btn-delete" onclick="deleteProduct(6)">🗑️ Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="DualSense Controller" class="product-image">
+                    <h3 class="product-title">DualSense Controller</h3>
+                    <p class="product-price">$69.99</p>
+                    <span class="product-stock">En stock</span>
+                    <div class="product-actions">
+                        <button class="btn-edit" onclick="editProduct(7)">✏️ Editar</button>
+                        <button class="btn-delete" onclick="deleteProduct(7)">🗑️ Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Xbox Controller" class="product-image">
+                    <h3 class="product-title">Xbox Wireless Controller</h3>
+                    <p class="product-price">$59.99</p>
+                    <span class="product-stock">En stock</span>
+                    <div class="product-actions">
+                        <button class="btn-edit" onclick="editProduct(8)">✏️ Editar</button>
+                        <button class="btn-delete" onclick="deleteProduct(8)">🗑️ Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Gaming Headset" class="product-image">
+                    <h3 class="product-title">Gaming Headset Pro</h3>
+                    <p class="product-price">$89.99</p>
+                    <span class="product-stock">En stock</span>
+                    <div class="product-actions">
+                        <button class="btn-edit" onclick="editProduct(9)">✏️ Editar</button>
+                        <button class="btn-delete" onclick="deleteProduct(9)">🗑️ Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Gaming Keyboard" class="product-image">
+                    <h3 class="product-title">Gaming Keyboard RGB</h3>
+                    <p class="product-price">$129.99</p>
+                    <span class="product-stock">En stock</span>
+                    <div class="product-actions">
+                        <button class="btn-edit" onclick="editProduct(10)">✏️ Editar</button>
+                        <button class="btn-delete" onclick="deleteProduct(10)">🗑️ Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Gaming Mouse" class="product-image">
+                    <h3 class="product-title">Gaming Mouse Pro</h3>
+                    <p class="product-price">$79.99</p>
+                    <span class="product-stock">En stock</span>
+                    <div class="product-actions">
+                        <button class="btn-edit" onclick="editProduct(11)">✏️ Editar</button>
+                        <button class="btn-delete" onclick="deleteProduct(11)">🗑️ Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Gaming Chair" class="product-image">
+                    <h3 class="product-title">Gaming Chair Elite</h3>
+                    <p class="product-price">$299.99</p>
+                    <span class="product-stock out-of-stock">Agotado</span>
+                    <div class="product-actions">
+                        <button class="btn-edit" onclick="editProduct(12)">✏️ Editar</button>
+                        <button class="btn-delete" onclick="deleteProduct(12)">🗑️ Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Added modal for adding/editing products -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Agregar Producto</h2>
+                <button class="modal-close" onclick="closeProductModal()">&times;</button>
+            </div>
+            <form id="productForm" onsubmit="saveProduct(event)">
+                <div class="form-group">
+                    <label for="productName">Nombre del Producto</label>
+                    <input type="text" id="productName" name="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Precio</label>
+                    <input type="number" id="productPrice" name="productPrice" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="productStock">Estado de Stock</label>
+                    <select id="productStock" name="productStock" required>
+                        <option value="En stock">En stock</option>
+                        <option value="Agotado">Agotado</option>
+                        <option value="Próximamente">Próximamente</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">Categoría</label>
+                    <select id="productCategory" name="productCategory" required>
+                        <option value="Consolas">Consolas</option>
+                        <option value="Juegos">Juegos</option>
+                        <option value="Controles">Controles</option>
+                        <option value="Accesorios">Accesorios</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productImage">URL de Imagen</label>
+                    <input type="text" id="productImage" name="productImage" placeholder="/placeholder.svg?height=200&width=200">
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Descripción</label>
+                    <textarea id="productDescription" name="productDescription" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeProductModal()">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>

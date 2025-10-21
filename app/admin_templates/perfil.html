@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios - Game Store Web</title>
+    <link rel="stylesheet" href="../static/css/game-store.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🎮</span>
+                    <span class="logo-text">Game Store</span>
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="window.location.href='admin.html'">Inicio</button>
+
+            <nav class="nav-menu">
+                <a href="perfil.html" class="nav-item active">
+                    <span class="nav-icon">👤</span>
+                    <span>Perfil</span>
+                </a>
+                <a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🔍</span>
+                    <span>Buscar</span>
+                </a>
+                <a href="pedidos.html" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Gestión de pedidos</span>
+                </a>
+                <a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🛒</span>
+                    <span>Inventario</span>
+                </a>
+                <a href="juegos.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Juegos</span>
+                </a>
+                <a href="accesorios.html" class="nav-item">
+                    <span class="nav-icon">🎧</span>
+                    <span>Accesorios</span>
+                </a>
+                <a href="consolas.html" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span>Consolas</span>
+                </a>
+                <a href="controles.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Controles</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="reportes.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Reportes</span>
+                </a>
+                <a href="usuarios.html" class="nav-item">
+                    <span class="nav-icon">👥</span>
+                    <span>Usuarios</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <!-- Rediseñado para coincidir con Figma: avatar centrado, badge de rol, y botones de acción -->
+            <div class="profile-container-centered">
+                <div class="profile-card">
+                    <div class="profile-avatar-large">
+                        <img src="../static/img/perfil.jpg" alt="Avatar">
+                    </div>
+                    <h1 class="profile-name">Isaac Méndez</h1>
+                    <span class="profile-badge">ADMINISTRADOR</span>
+                    <p class="profile-email-centered">isaacmdz@gamestore.com</p>
+                </div>
+
+                <div class="profile-actions">
+                    <button class="profile-action-btn" onclick="window.location.href='inventario.html'">
+                        <span class="action-icon">📦</span>
+                        <span>Inventario</span>
+                    </button>
+                    <button class="profile-action-btn" onclick="window.location.href='reportes.html'">
+                        <span class="action-icon">📊</span>
+                        <span>Reportes</span>
+                    </button>
+                    <button class="profile-action-btn" onclick="window.location.href='usuarios.html'">
+                        <span class="action-icon">👥</span>
+                        <span>Usuarios</span>
+                    </button>
+                    <button class="profile-action-btn" onclick="window.location.href='pedidos.html'">
+                        <span class="action-icon">📋</span>
+                        <span>Pedidos</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="static/js/script.js"></script>
+</body>
+</html>

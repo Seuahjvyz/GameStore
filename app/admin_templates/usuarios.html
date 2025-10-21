@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios - Game Store Web</title>
+    <link rel="stylesheet" href="../static/css/game-store.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🎮</span>
+                    <span class="logo-text">Game Store</span>
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="window.location.href='admin.html'">Inicio</button>
+
+            <nav class="nav-menu">
+                <a href="perfil.html" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span>Perfil</span>
+                </a>
+                <a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🔍</span>
+                    <span>Buscar</span>
+                </a>
+                <a href="pedidos.html" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Gestión de pedidos</span>
+                </a>
+                <a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🛒</span>
+                    <span>Inventario</span>
+                </a>
+                <a href="juegos.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Juegos</span>
+                </a>
+                <a href="accesorios.html" class="nav-item">
+                    <span class="nav-icon">🎧</span>
+                    <span>Accesorios</span>
+                </a>
+                <a href="consolas.html" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span>Consolas</span>
+                </a>
+                <a href="controles.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Controles</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="reportes.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Reportes</span>
+                </a>
+                <a href="usuarios.html" class="nav-item active">
+                    <span class="nav-icon">👥</span>
+                    <span>Usuarios</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1 style="font-size: 36px; font-weight: 700; margin-bottom: 16px; color: #fff;">Gestión de Usuarios</h1>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Buscar usuarios...">
+                    <button class="search-button">🔍</button>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Lista de Usuarios</h2>
+                <span class="badge">892 usuarios</span>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                            <th>Estado</th>
+                            <th>Fecha Registro</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#USR-001</td>
+                            <td>Juan Pérez</td>
+                            <td>juan.perez@email.com</td>
+                            <td><span class="status-badge processing">Admin</span></td>
+                            <td><span class="status-badge completed">Activo</span></td>
+                            <td>2024-01-10</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#USR-002</td>
+                            <td>María García</td>
+                            <td>maria.garcia@email.com</td>
+                            <td><span class="status-badge pending">Cliente</span></td>
+                            <td><span class="status-badge completed">Activo</span></td>
+                            <td>2024-01-12</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#USR-003</td>
+                            <td>Carlos López</td>
+                            <td>carlos.lopez@email.com</td>
+                            <td><span class="status-badge pending">Cliente</span></td>
+                            <td><span class="status-badge completed">Activo</span></td>
+                            <td>2024-01-13</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#USR-004</td>
+                            <td>Ana Martínez</td>
+                            <td>ana.martinez@email.com</td>
+                            <td><span class="status-badge processing">Moderador</span></td>
+                            <td><span class="status-badge completed">Activo</span></td>
+                            <td>2024-01-14</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#USR-005</td>
+                            <td>Luis Rodríguez</td>
+                            <td>luis.rodriguez@email.com</td>
+                            <td><span class="status-badge pending">Cliente</span></td>
+                            <td><span class="status-badge cancelled">Inactivo</span></td>
+                            <td>2024-01-08</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#USR-006</td>
+                            <td>Sofia Hernández</td>
+                            <td>sofia.hernandez@email.com</td>
+                            <td><span class="status-badge pending">Cliente</span></td>
+                            <td><span class="status-badge completed">Activo</span></td>
+                            <td>2024-01-15</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="static/js/script.js"></script>
+</body>
+</html>

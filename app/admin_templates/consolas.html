@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios - Game Store Web</title>
+    <link rel="stylesheet" href="../static/css/game-store.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🎮</span>
+                    <span class="logo-text">Game Store</span>
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="window.location.href='admin.html'">Inicio</button>
+
+            <nav class="nav-menu">
+                <a href="perfil.html" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span>Perfil</span>
+                </a>
+                <a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🔍</span>
+                    <span>Buscar</span>
+                </a>
+                <a href="pedidos.html" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Gestión de pedidos</span>
+                </a>
+                <a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🛒</span>
+                    <span>Inventario</span>
+                </a>
+                <a href="juegos.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Juegos</span>
+                </a>
+                <a href="accesorios.html" class="nav-item">
+                    <span class="nav-icon">🎧</span>
+                    <span>Accesorios</span>
+                </a>
+                <a href="consolas.html" class="nav-item active">
+                    <span class="nav-icon">🎯</span>
+                    <span>Consolas</span>
+                </a>
+                <a href="controles.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Controles</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="reportes.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Reportes</span>
+                </a>
+                <a href="usuarios.html" class="nav-item">
+                    <span class="nav-icon">👥</span>
+                    <span>Usuarios</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1 style="font-size: 36px; font-weight: 700; margin-bottom: 16px; color: #fff;">Consolas</h1>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Buscar consolas...">
+                    <button class="search-button">🔍</button>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Catálogo de Consolas</h2>
+                <span class="badge">45 consolas</span>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="PlayStation 5" class="product-image">
+                    <h3 class="product-title">PlayStation 5</h3>
+                    <p class="product-price">$499.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="PlayStation 5 Digital" class="product-image">
+                    <h3 class="product-title">PlayStation 5 Digital</h3>
+                    <p class="product-price">$399.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Xbox Series X" class="product-image">
+                    <h3 class="product-title">Xbox Series X</h3>
+                    <p class="product-price">$499.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Xbox Series S" class="product-image">
+                    <h3 class="product-title">Xbox Series S</h3>
+                    <p class="product-price">$299.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Nintendo Switch OLED" class="product-image">
+                    <h3 class="product-title">Nintendo Switch OLED</h3>
+                    <p class="product-price">$349.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Nintendo Switch" class="product-image">
+                    <h3 class="product-title">Nintendo Switch</h3>
+                    <p class="product-price">$299.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Nintendo Switch Lite" class="product-image">
+                    <h3 class="product-title">Nintendo Switch Lite</h3>
+                    <p class="product-price">$199.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Steam Deck" class="product-image">
+                    <h3 class="product-title">Steam Deck 512GB</h3>
+                    <p class="product-price">$649.99</p>
+                    <span class="product-stock out-of-stock">Agotado</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="PlayStation 4 Pro" class="product-image">
+                    <h3 class="product-title">PlayStation 4 Pro</h3>
+                    <p class="product-price">$399.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Xbox One X" class="product-image">
+                    <h3 class="product-title">Xbox One X</h3>
+                    <p class="product-price">$349.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Retro Console" class="product-image">
+                    <h3 class="product-title">Retro Gaming Console</h3>
+                    <p class="product-price">$79.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Handheld Console" class="product-image">
+                    <h3 class="product-title">Handheld Gaming Console</h3>
+                    <p class="product-price">$149.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="static/js/script.js"></script>
+</body>
+</html>

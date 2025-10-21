@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios - Game Store Web</title>
+    <link rel="stylesheet" href="../static/css/game-store.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🎮</span>
+                    <span class="logo-text">Game Store</span>
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="window.location.href='admin.html'">Inicio</button>
+
+            <nav class="nav-menu">
+                <a href="perfil.html" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span>Perfil</span>
+                </a>
+                <a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🔍</span>
+                    <span>Buscar</span>
+                </a>
+                <a href="pedidos.html" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Gestión de pedidos</span>
+                </a>
+                <a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🛒</span>
+                    <span>Inventario</span>
+                </a>
+                <a href="juegos.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Juegos</span>
+                </a>
+                <a href="accesorios.html" class="nav-item">
+                    <span class="nav-icon">🎧</span>
+                    <span>Accesorios</span>
+                </a>
+                <a href="consolas.html" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span>Consolas</span>
+                </a>
+                <a href="controles.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Controles</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="reportes.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Reportes</span>
+                </a>
+                <a href="usuarios.html" class="nav-item">
+                    <span class="nav-icon">👥</span>
+                    <span>Usuarios</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1 style="font-size: 36px; font-weight: 700; margin-bottom: 8px; color: #fff;">Dashboard</h1>
+                <p style="color: #a0a0a0; font-size: 16px;">Bienvenido al panel de administración de Game Store</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Ventas Totales</div>
+                    <div class="stat-value">$45,231</div>
+                    <div class="stat-change positive">↑ 12% desde el mes pasado</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Pedidos</div>
+                    <div class="stat-value">356</div>
+                    <div class="stat-change positive">↑ 8% desde el mes pasado</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Productos</div>
+                    <div class="stat-value">1,234</div>
+                    <div class="stat-change negative">↓ 3% desde el mes pasado</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Usuarios</div>
+                    <div class="stat-value">892</div>
+                    <div class="stat-change positive">↑ 15% desde el mes pasado</div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Pedidos Recientes</h2>
+                <span class="badge">24 nuevos</span>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Pedido</th>
+                            <th>Cliente</th>
+                            <th>Producto</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                            <th>Fecha</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD-001</td>
+                            <td>Juan Pérez</td>
+                            <td>PlayStation 5</td>
+                            <td>$499.99</td>
+                            <td><span class="status-badge completed">Completado</span></td>
+                            <td>2024-01-15</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-002</td>
+                            <td>María García</td>
+                            <td>Xbox Series X</td>
+                            <td>$449.99</td>
+                            <td><span class="status-badge processing">Procesando</span></td>
+                            <td>2024-01-15</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-003</td>
+                            <td>Carlos López</td>
+                            <td>Nintendo Switch</td>
+                            <td>$299.99</td>
+                            <td><span class="status-badge pending">Pendiente</span></td>
+                            <td>2024-01-14</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-004</td>
+                            <td>Ana Martínez</td>
+                            <td>The Last of Us Part II</td>
+                            <td>$59.99</td>
+                            <td><span class="status-badge completed">Completado</span></td>
+                            <td>2024-01-14</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-005</td>
+                            <td>Luis Rodríguez</td>
+                            <td>DualSense Controller</td>
+                            <td>$69.99</td>
+                            <td><span class="status-badge cancelled">Cancelado</span></td>
+                            <td>2024-01-13</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="static/js/script.js"></script>
+</body>
+</html>

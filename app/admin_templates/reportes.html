@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios - Game Store Web</title>
+    <link rel="stylesheet" href="../static/css/game-store.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🎮</span>
+                    <span class="logo-text">Game Store</span>
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="window.location.href='admin.html'">Inicio</button>
+
+            <nav class="nav-menu">
+                <a href="perfil.html" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span>Perfil</span>
+                </a>
+                <a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🔍</span>
+                    <span>Buscar</span>
+                </a>
+                <a href="pedidos.html" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Gestión de pedidos</span>
+                </a>
+                <a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🛒</span>
+                    <span>Inventario</span>
+                </a>
+                <a href="juegos.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Juegos</span>
+                </a>
+                <a href="accesorios.html" class="nav-item">
+                    <span class="nav-icon">🎧</span>
+                    <span>Accesorios</span>
+                </a>
+                <a href="consolas.html" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span>Consolas</span>
+                </a>
+                <a href="controles.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Controles</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="reportes.html" class="nav-item active">
+                    <span class="nav-icon">📊</span>
+                    <span>Reportes</span>
+                </a>
+                <a href="usuarios.html" class="nav-item">
+                    <span class="nav-icon">👥</span>
+                    <span>Usuarios</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1 style="font-size: 36px; font-weight: 700; margin-bottom: 8px; color: #fff;">Reportes</h1>
+                <p style="color: #a0a0a0; font-size: 16px;">Análisis y estadísticas de ventas</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Ventas del Mes</div>
+                    <div class="stat-value">$45,231</div>
+                    <div class="stat-change positive">↑ 12% vs mes anterior</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Pedidos Completados</div>
+                    <div class="stat-value">356</div>
+                    <div class="stat-change positive">↑ 8% vs mes anterior</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Ticket Promedio</div>
+                    <div class="stat-value">$127.08</div>
+                    <div class="stat-change positive">↑ 4% vs mes anterior</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Tasa de Conversión</div>
+                    <div class="stat-value">3.2%</div>
+                    <div class="stat-change negative">↓ 0.5% vs mes anterior</div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Reportes Recientes</h2>
+                <span class="badge">15 reportes</span>
+            </div>
+
+            <div class="reports-grid">
+                <div class="report-card">
+                    <div class="report-header">
+                        <div class="report-number">#RPT-001</div>
+                        <div class="report-date">15 Ene 2024</div>
+                    </div>
+                    <div class="report-customer">Reporte de Ventas Mensual</div>
+                    <div class="report-total">$45,231.00</div>
+                    <div class="report-footer">
+                        <span class="status-badge completed">Completado</span>
+                        <button class="btn-view" onclick="window.location.href='reporte-detalle.html'">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-header">
+                        <div class="report-number">#RPT-002</div>
+                        <div class="report-date">14 Ene 2024</div>
+                    </div>
+                    <div class="report-customer">Inventario por Categoría</div>
+                    <div class="report-total">1,234 items</div>
+                    <div class="report-footer">
+                        <span class="status-badge completed">Completado</span>
+                        <button class="btn-view">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-header">
+                        <div class="report-number">#RPT-003</div>
+                        <div class="report-date">13 Ene 2024</div>
+                    </div>
+                    <div class="report-customer">Productos Más Vendidos</div>
+                    <div class="report-total">Top 50</div>
+                    <div class="report-footer">
+                        <span class="status-badge completed">Completado</span>
+                        <button class="btn-view">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-header">
+                        <div class="report-number">#RPT-004</div>
+                        <div class="report-date">12 Ene 2024</div>
+                    </div>
+                    <div class="report-customer">Análisis de Clientes</div>
+                    <div class="report-total">892 usuarios</div>
+                    <div class="report-footer">
+                        <span class="status-badge processing">Procesando</span>
+                        <button class="btn-view">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-header">
+                        <div class="report-number">#RPT-005</div>
+                        <div class="report-date">11 Ene 2024</div>
+                    </div>
+                    <div class="report-customer">Reporte de Devoluciones</div>
+                    <div class="report-total">$2,450.00</div>
+                    <div class="report-footer">
+                        <span class="status-badge completed">Completado</span>
+                        <button class="btn-view">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-header">
+                        <div class="report-number">#RPT-006</div>
+                        <div class="report-date">10 Ene 2024</div>
+                    </div>
+                    <div class="report-customer">Análisis de Rentabilidad</div>
+                    <div class="report-total">$18,920.00</div>
+                    <div class="report-footer">
+                        <span class="status-badge completed">Completado</span>
+                        <button class="btn-view">Ver Detalles</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="static/js/script.js"></script>
+</body>
+</html>
