@@ -5,6 +5,7 @@ body {
     padding: 0;
     font-family: sans-serif;
     color: white;
+    background-color: #2d2d2d;
 }
 
 
@@ -13,6 +14,7 @@ body {
 .barra_lateral {
     background: linear-gradient(#58009A, #0F0D12);
     padding: 5px;
+    min-height: 100vh;
     width: 230px;
     position: fixed;
     /*mantener fija la barra*/
@@ -57,10 +59,9 @@ nav i {
 
 main {
     background-color: #2d2d2d;
-    min-height: 100vh; 
+    min-height: 100vh;
     margin-left: 240px;
     /*espacio de la barra lateral*/
-
 }
 
 /* ---------------------- Barra Superior ----------------------*/
@@ -134,7 +135,7 @@ i {
     padding: 10px 30px;
 }
 
-/* ---------------------- Carrito ----------------------*/
+/* ---------------------- Enlace fijo en barra lateral ----------------------*/
 
 .enlace_barra_lateral_fijo {
     background-color: rgb(137, 43, 137);
@@ -147,29 +148,39 @@ i {
     padding: 0 10px;
 }
 
-/* ---------------------- Producto ----------------------                REVISAAAAAR                     */
+/* ---------------------- Producto ----------------------   */
 
 .productos {
     display: grid;
     /*organiza en filas/columnas*/
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    /*numero de columnas */
+    gap: 20px;
+    /* espacio entre productos */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /*ancho de cada producto */
 }
 
 .producto {
     background-color: #4e4e4e;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 20px;
-    width: 200px;
     height: auto;
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.producto:hover {
+    filter: drop-shadow(2px 2px 5px #4e4e4e);
+    transform: scale(1.05);
 }
 
 .imagenes_producto {
     width: 150px;
     height: 150px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .imagen_producto {
@@ -200,6 +211,10 @@ i {
     cursor: pointer;
 }
 
+.btn_eliminar:hover {
+    filter: drop-shadow(2px 2px 5px #5c0b0b);
+}
+
 /* ---------------------- Total Productos ----------------------*/
 
 .total_productos {}
@@ -218,6 +233,8 @@ i {
 
 .enlace_seguir_comprando {
     margin-right: 600px;
+    display: inline-flex;
+    align-items: center;
 }
 
 /* ---------------------- Enlace(Boton) Pagar ----------------------*/
@@ -234,14 +251,20 @@ i {
     background-color: rgb(179, 94, 179);
 }
 
+.btn_volver {
+    color: white;
+    text-decoration: none;
+    margin-right: 600px;
+    display: inline-flex;
+    align-items: center;
+}
+
 /* ---------------------- Enlace Regresar/Avanzar ----------------------*/
 
 .regresar_avanzar {
     justify-content: space-between;
-
+    margin: 20px 0;
 }
-
-
 
 
 /* ---------------------- Datos Bancarios ----------------------*/
@@ -249,7 +272,7 @@ i {
 .datos_bancarios {
     background-color: #333333;
     padding: 20px;
-    margin: 20px;
+    margin: 30px;
 }
 
 .datos_bancarios_2 {
@@ -271,15 +294,6 @@ i {
 }
 
 
-
-
-
-
-
-
-
-
-
 /* ---------------------- Compra exitosa----------------------*/
 
 .compra_exitosa {
@@ -287,10 +301,22 @@ i {
     padding: 20px;
     text-align: center;
     border-radius: 20px;
-    background-color: #3e2c58ff;
-    margin: 100px 200px;
+    background-color: #A100ED;
+    margin: 40px auto;
+    border: 7px solid #6d009f;
 
 }
+
+
+/* ------------------------------------- R ------------------------------------- */
+/* ------------------------------------- E  ------------------------------------- */
+/* ------------------------------------- P ------------------------------------- */
+/* ------------------------------------- O ------------------------------------- */
+/* ------------------------------------- R ------------------------------------- */
+/* ------------------------------------- T ------------------------------------- */
+/* ------------------------------------- E ------------------------------------- */
+/* ------------------------------------- S ------------------------------------- */
+
 
 /* ---------------------- Reporte Venta----------------------*/
 .reporte_venta {
@@ -301,7 +327,7 @@ i {
 
 }
 
-.no_reporte{
+.no_reporte {
     background-color: #A100ED;
     border-radius: 10px;
     padding: 10px;
@@ -314,8 +340,17 @@ i {
     padding: 20px;
 }
 
-.detalles_reporte{
+.detalles_reporte {
     border-radius: 5px;
     border: none;
-
+    padding: 10px;
+    cursor: pointer;
+    background-color: #c886e6;
 }
+
+
+
+
+
+
+
