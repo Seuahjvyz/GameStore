@@ -27,7 +27,8 @@
             <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-headset"></i> Accesorios</a></li>
             <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-tv"></i> Consolas</a></li>
             <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-gamepad"></i> Controles</a></li>
-            <li><a class="enlace_barra_lateral_fijo" href="/app/templates/Carrito.html"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+            <li><a class="enlace_barra_lateral_fijo" href="/app/templates/Carrito.html"><i
+                        class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
             <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-user"></i> Registrarse</a></li>
         </ul>
     </nav>
@@ -61,7 +62,7 @@
                                 alt="Nintendo Switch 2">
                         </div>
                         <p>Nintendo Switch 2</p>
-                        <p class="costo_producto">$0</p>
+                        <p class="costo_producto">$8,799.00</p>
                         <button class="btn_eliminar">Eliminar</button>
                     </div>
 
@@ -70,7 +71,7 @@
                             <img class="imagen_producto" src="/app/static/img/FC26.jpeg" alt="FC26">
                         </div>
                         <p>FC26</p>
-                        <p class="costo_producto">$0</p>
+                        <p class="costo_producto">$1,399.00</p>
                         <button class="btn_eliminar">Eliminar</button>
                     </div>
 
@@ -80,7 +81,17 @@
                                 alt="Audifonos Gamer">
                         </div>
                         <p>Audifonos Gamer</p>
-                        <p class="costo_producto">$0</p>
+                        <p class="costo_producto">$498.99</p>
+                        <button class="btn_eliminar">Eliminar</button>
+                    </div>
+
+                    <div class="producto">
+                        <div class="imagenes_producto">
+                            <img class="imagen_producto" src="/app/static/img/PlayStation_5_pro.png"
+                                alt="PlayStation 5 pro">
+                        </div>
+                        <p>PlayStation 5 pro</p>
+                        <p class="costo_producto">$17,755.99</p>
                         <button class="btn_eliminar">Eliminar</button>
                     </div>
 
@@ -88,7 +99,8 @@
 
                 <section class="total_productos">
 
-                    <p class="total">Total <span>$0</span></p>
+                    <p class="total">Total <span class="total_" id="total">$0</span></p>
+
 
                 </section>
 
@@ -121,8 +133,9 @@
 
                 <section class="regresar_avanzar">
                     <nav>
-    
-                        <a style="color: white; text-decoration: none; margin-right: 600px;" href="/app/templates/Carrito.html"><i class="fa-solid fa-circle-left"></i>Volver</a>
+
+                        <a class="btn_volver" href="/app/templates/Carrito.html"><i
+                                class="fa-solid fa-circle-left"></i>Volver</a>
                         <a class="enlace_pagar" href="/app/templates/CompraFinalizada.html">Finalizar Compra</a>
                     </nav>
                 </section>
