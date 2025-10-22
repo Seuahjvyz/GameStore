@@ -3,99 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameStore - Consolas</title>
+    <title>GameStore - Controles</title>
     <link rel="stylesheet" href="../Static/css/stylecat.css">
 </head>
 <body>
- <!-- Barra Lateral -->
-<div class="sidebar">
-    <h2>Inicio</h2>
-    
-    <div class="nav-section">
-        <h3>Perfil</h3>
-        <ul class="nav-list">
-            <li>Buscar</li>
-            <li>Favoritos</li>
-            <li>Pedidos</li>
-        </ul>
-    </div>
+      <!-- Barra Lateral Moderna -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-container">
+                    <img src="../Static/img/Icon_GS.png" alt="GameStore Logo" class="logo-image" onerror="this.style.display='none'; document.getElementById('logo-emoji').style.display='block';">
+                    <span id="logo-emoji" class="logo-emoji" style="display: none;">🎮</span>
+                </div>
+            </div>
+        </div>
 
-    <div class="nav-section">
-        <h3>Categorías</h3>
-        <ul class="nav-list">
-            <li>Juegos</li>
-            <li>Accesorios</li>
-            <li>Consolas</li>
-            <li>Controles</li>
-            <li>Carrito</li>
-        </ul>
-    </div>
+        <nav class="nav-menu">
+            <div class="nav-section">
+                <h3>Perfil</h3>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🔍</span>
+                    <span>Buscar</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">❤️</span>
+                    <span>Favoritos</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Pedidos</span>
+                </a>
+            </div>
 
-    <!-- Botón Registrarse dentro de la barra lateral -->
-    <div class="sidebar-register-section">
-        <button class="sidebar-register-btn">Registrarse</button>
-    </div>
-</div>
+            <div class="nav-section">
+                <h3>Categorías</h3>
+                <a href="juegos.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Juegos</span>
+                </a>
+                <a href="accesorios.html" class="nav-item">
+                    <span class="nav-icon">🎧</span>
+                    <span>Accesorios</span>
+                </a>
+                <a href="consolas.html" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span>Consolas</span>
+                </a>
+                <a href="controles.html" class="nav-item active">
+                    <span class="nav-icon">🎮</span>
+                    <span>Controles</span>
+                </a>
+                <a href="carrito.html" class="nav-item">
+                    <span class="nav-icon">🛒</span>
+                    <span>Carrito</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Botón Registrarse dentro de la barra lateral -->
+        <div class="sidebar-register-section">
+            <button class="sidebar-register-btn">Registrarse</button>
+        </div>
+    </aside>
+
     <!-- Contenido Principal -->
     <div class="main-content">
         <header class="header">
             <h1>Controles</h1>
+            <p class="header-subtitle">Los mejores controles para tu experiencia gaming</p>
         </header>
 
-        <main class="products">
-            
+        <main class="products-grid">
             <!-- Producto 1 -->
             <div class="product-card">
-                <img src="../Static/img/Imagenes/controlxboxblack.png" alt="Xbox Series S" class="product-image">
-                <h3>CONTROL XBOX INALAMBRICO CARBON BLACK PARA XBOX ONE SERIES X Y S</h3>
-                <p class="product-description">Controles</p>
-                <p class="product-price">$1,096.99</p>
-                <button class="cart-btn">Añadir al Carrito</button>
+                <div class="product-image-container">
+                    <img src="../Static/img/Imagenes/controlxboxblack.png" alt="Control Xbox Carbon Black" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">CONTROL XBOX INALÁMBRICO CARBON BLACK PARA XBOX ONE SERIES X Y S</h3>
+                    <p class="product-category">Controles</p>
+                    <div class="product-price-section">
+                        <span class="product-price">$1,096.99</span>
+                    </div>
+                    <button class="cart-btn">
+                        <span class="btn-icon">🛒</span>
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="../Static/img/Imagenes/controlplay5.png" alt="Control PlayStation 5 White" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">CONTROL PLAYSTATION 5 DUALSENSE WHITE</h3>
+                    <p class="product-category">Controles</p>
+                    <div class="product-price-section">
+                        <span class="product-price">$1,699.99</span>
+                    </div>
+                    <button class="cart-btn">
+                        <span class="btn-icon">🛒</span>
+                        Añadir al Carrito
+                    </button>
+                </div>
             </div>
 
             <!-- Producto 3 -->
             <div class="product-card">
-                <img src="../Static/img/Imagenes/controlplay5.png" alt="Nintendo Switch" class="product-image">
-                <h3>CONTROL PLAYSTATION 5 DUALSENSE WHITE</h3>
-                <p class="product-description">Controles</p>
-                <p class="product-price">$1,699.99</p>
-                <button class="cart-btn">Añadir al Carrito</button>
+                <div class="product-image-container">
+                    <img src="../Static/img/Imagenes/controlplay5black.png" alt="Control PlayStation 5 Black" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">CONTROL PLAYSTATION 5 DUALSENSE BLACK</h3>
+                    <p class="product-category">Controles</p>
+                    <div class="product-price-section">
+                        <span class="product-price">$1,876.99</span>
+                    </div>
+                    <button class="cart-btn">
+                        <span class="btn-icon">🛒</span>
+                        Añadir al Carrito
+                    </button>
+                </div>
             </div>
 
             <!-- Producto 4 -->
             <div class="product-card">
-                <img src="../Static/img/Imagenes/controlplay5black.png" alt="PlayStation 4" class="product-image">
-                <h3>CONTROL PLAYSTATION 5 DUALSENSE BLACK</h3>
-                <p class="product-description">Controles</p>
-                <p class="product-price">$1,876.99</p>
-                <button class="cart-btn">Añadir al Carrito</button>
+                <div class="product-image-container">
+                    <img src="../Static/img/Imagenes/controlxboxcian.png" alt="Control Xbox Cian" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">CONTROL XBOX INALÁMBRICO CIAN PARA XBOX SERIES X Y S</h3>
+                    <p class="product-category">Controles</p>
+                    <div class="product-price-section">
+                        <span class="product-price">$1,896.99</span>
+                    </div>
+                    <button class="cart-btn">
+                        <span class="btn-icon">🛒</span>
+                        Añadir al Carrito
+                    </button>
+                </div>
             </div>
 
             <!-- Producto 5 -->
             <div class="product-card">
-                <img src="../Static/img/Imagenes/controlxboxcian.png" alt="PlayStation 5" class="product-image">
-                <h3>CONTROL XBOX INALAMBRICO CIAN PARA XBOX SERIES X Y S</h3>
-                <p class="product-description">Controles</p>
-                <p class="product-price">$1,896.99</p>
-                <button class="cart-btn">Añadir al Carrito</button>
+                <div class="product-image-container">
+                    <img src="../Static/img/Imagenes/controlxboxred.png" alt="Control Xbox Red" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">CONTROL XBOX INALÁMBRICO RED PARA XBOX SERIES X Y S</h3>
+                    <p class="product-category">Controles</p>
+                    <div class="product-price-section">
+                        <span class="product-price">$1,996.99</span>
+                    </div>
+                    <button class="cart-btn">
+                        <span class="btn-icon">🛒</span>
+                        Añadir al Carrito
+                    </button>
+                </div>
             </div>
 
             <!-- Producto 6 -->
             <div class="product-card">
-                <img src="../Static/img/Imagenes/controlxboxred.png" alt="PlayStation 5" class="product-image">
-                <h3>CONTROL XBOX INALAMBRICO RED PARA XBOX SERIES X Y S</h3>
-                <p class="product-description">Controles</p>
-                <p class="product-price">$1,996.99</p>
-                <button class="cart-btn">Añadir al Carrito</button>
-            </div>
-
-            <!-- Producto 6 -->
-            <div class="product-card">
-                <img src="../Static/img/Imagenes/controlxboxwhite.png" alt="PlayStation 5" class="product-image">
-                <h3>CONTROL XBOX INALAMBRICO WHITE PARA XBOX SERIES X Y S</h3>
-                <p class="product-description">Controles</p>
-                <p class="product-price">$1,496.99</p>
-                <button class="cart-btn">Añadir al Carrito</button>
+                <div class="product-image-container">
+                    <img src="../Static/img/Imagenes/controlxboxwhite.png" alt="Control Xbox White" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">CONTROL XBOX INALÁMBRICO WHITE PARA XBOX SERIES X Y S</h3>
+                    <p class="product-category">Controles</p>
+                    <div class="product-price-section">
+                        <span class="product-price">$1,496.99</span>
+                    </div>
+                    <button class="cart-btn">
+                        <span class="btn-icon">🛒</span>
+                        Añadir al Carrito
+                    </button>
+                </div>
             </div>
         </main>
     </div>

@@ -7,24 +7,66 @@
     <link rel="stylesheet" href="../Static/css/styles.css">
 </head>
 <body>
-    <div class="sidebar">
-        <h2>Inicio</h2>
-        <ul class="nav-list">
-            <li>Perfil</li>
-            <li>Buscar</li>
-            <li>Favoritos</li>
-            <li>Pedidos</li>
-        </ul>
-        
-        <h3>Categorías</h3>
-        <ul class="categories">
-            <li>Juegos</li>
-            <li>Accesorios</li>
-            <li>Consolas</li>
-            <li>Controles</li>
-        </ul>
-    </div>
+  <!-- Barra Lateral Moderna -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-container">
+                    <img src="../Static/img/Icon_GS.png" alt="GameStore Logo" class="logo-image" onerror="this.style.display='none'; document.getElementById('logo-emoji').style.display='block';">
+                    <span id="logo-emoji" class="logo-emoji" style="display: none;">🎮</span>
+                </div>
+            </div>
+        </div>
 
+        <nav class="nav-menu">
+            <div class="nav-section">
+                <h3>Perfil</h3>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🔍</span>
+                    <span>Buscar</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">❤️</span>
+                    <span>Favoritos</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Pedidos</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <h3>Categorías</h3>
+                <a href="juegos.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Juegos</span>
+                </a>
+                <a href="accesorios.html" class="nav-item">
+                    <span class="nav-icon">🎧</span>
+                    <span>Accesorios</span>
+                </a>
+                <a href="consolas.html" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span>Consolas</span>
+                </a>
+                <a href="controles.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Controles</span>
+                </a>
+                <a href="carrito.html" class="nav-item">
+                    <span class="nav-icon">🛒</span>
+                    <span>Carrito</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Botón Iniciar Sesión dentro de la barra lateral -->
+        <div class="sidebar-register-section">
+            <button class="sidebar-register-btn">Iniciar Sesión</button>
+        </div>
+    </aside>
+
+    <!-- Contenido Principal -->
     <div class="main-content">
         <div class="container">
             <h1>Crear una Cuenta</h1>
@@ -34,22 +76,27 @@
             <div class="form-section">
                 <div class="form-line">
                     <span class="label">Nombre De Usuario:</span>
-                    <input type="text" class="input-field" placeholder="">
+                    <input type="text" class="input-field" placeholder="Ingresa tu nombre de usuario">
                 </div>
                 
                 <div class="form-line">
                     <span class="label">Contraseña:</span>
-                    <input type="password" class="input-field" placeholder="">
+                    <input type="password" class="input-field" placeholder="Crea una contraseña segura">
                 </div>
                 
                 <div class="form-line">
                     <span class="label">Email:</span>
-                    <input type="email" class="input-field" placeholder="">
+                    <input type="email" class="input-field" placeholder="Ingresa tu correo electrónico">
+                </div>
+
+                <div class="form-line">
+                    <span class="label">Confirmar Contraseña:</span>
+                    <input type="password" class="input-field" placeholder="Repite tu contraseña">
                 </div>
             </div>
             
             <div class="register-section">
-                <button class="register-btn">Registrarse</button>
+                <button class="register-btn">Crear Cuenta</button>
             </div>
         </div>
     </div>
