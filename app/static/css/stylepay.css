@@ -13,9 +13,7 @@ body {
     min-height: 100vh;
 }
 
-/* ============================================
-   SIDEBAR MODERNA
-   ============================================ */
+
 .sidebar {
     width: 280px;
     background: linear-gradient(180deg, #8b5cf6 0%, #6d28d9 50%, #4c1d95 100%);
@@ -34,9 +32,7 @@ body {
 }
 
 
-/* ============================================
-   LOGO SOLO CON IMAGEN 
-   ============================================ */
+
 .logo {
     display: flex;
     align-items: center;
@@ -46,7 +42,7 @@ body {
 
 .logo-container {
     position: relative;
-    width: 60px; /* Tamaño más grande para que sea el logo principal */
+    width: 60px; 
     height: 60px;
     display: flex;
     align-items: center;
@@ -68,7 +64,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* Eliminar el texto del logo */
+
 .logo-text {
     display: none;
 }
@@ -134,7 +130,7 @@ body {
     text-align: center;
 }
 
-/* Botón Registrarse dentro de la barra lateral */
+
 .sidebar-register-section {
     margin-top: auto;
     padding-top: 24px;
@@ -163,9 +159,7 @@ body {
     box-shadow: 0 6px 16px rgba(236, 72, 153, 0.5);
 }
 
-/* ============================================
-   CONTENIDO PRINCIPAL
-   ============================================ */
+
 .main-content {
     flex: 1;
     margin-left: 280px;
@@ -198,15 +192,13 @@ body {
     font-weight: 500;
 }
 
-/* ============================================
-   CONTENEDOR DE PAGO
-   ============================================ */
+
 .payment-container {
     max-width: 600px;
     margin: 0 auto;
 }
 
-/* Productos en carrito */
+
 .cart-section {
     background: #2a2a2a;
     padding: 32px;
@@ -293,7 +285,7 @@ body {
     font-size: 14px;
 }
 
-/* Total */
+
 .total-section {
     background: #2a2a2a;
     padding: 32px;
@@ -318,7 +310,6 @@ body {
     text-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
 }
 
-/* Métodos de Pago */
 .payment-methods {
     background: #2a2a2a;
     padding: 32px;
@@ -383,7 +374,7 @@ body {
     text-align: center;
 }
 
-/* Datos bancarios */
+
 .payment-section {
     background: #2a2a2a;
     padding: 32px;
@@ -442,7 +433,7 @@ body {
     gap: 20px;
 }
 
-/* Botones de acción */
+
 .action-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -497,9 +488,7 @@ body {
     box-shadow: 0 6px 16px rgba(236, 72, 153, 0.5);
 }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
+
 @media (max-width: 1200px) {
     .main-content {
         padding: 40px 48px;
@@ -597,9 +586,6 @@ body {
     }
 }
 
-/* ============================================
-   SCROLLBAR PERSONALIZADO
-   ============================================ */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -617,9 +603,7 @@ body {
     background: #7c3aed;
 }
 
-/* ============================================
-   ANIMACIONES
-   ============================================ */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
