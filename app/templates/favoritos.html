@@ -1,246 +1,213 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameStore - Mis Favoritos</title>
-    <link rel="stylesheet" href="../Static/css/stylefavs.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Game Store</title>
+    <link rel="stylesheet" href="/app/static/css/stylee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script></script>
 </head>
+
 <body>
-    <!-- Barra Lateral -->
-    <div class="barra_lateral">
-        <a href="index.html" class="logo_link">
-            <img src="../Static/img/Icon_GS.png" alt="GameStore Logo" class="logo">
-        </a>
-        
+    <nav class="barra_lateral">
+        <a class="logo_link" href="#"><img class="logo" src="/app/static/img/Icon_GS.png" alt="Logo"></a>
+
         <ul>
+            <li><a class="enlace_barra_lateral" href="/index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-circle-user"></i> Perfil</a></li>
+            <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a></li>
+            <li><a class="enlace_barra_lateral_fijo" href="/app/templates/favoritos.html"><i class="fa-solid fa-heart"></i> Favoritos</a></li>
+            <li><a class="enlace_barra_lateral" href="#"><i class="fa-solid fa-box"></i> Pedidos</a></li>
             <li>
-                <a href="index.html" class="enlace_barra_lateral">
-                    <i class="fa-solid fa-house"></i>
-                    Inicio
-                </a>
+                <h3>Categorías</h3>
             </li>
-            <li>
-                <a href="perfil.html" class="enlace_barra_lateral">
-                    <i class="fa-solid fa-user"></i>
-                    Perfil
-                </a>
-            </li>
-            <li>
-                <a href="#" class="enlace_barra_lateral">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    Buscar
-                </a>
-            </li>
-            <li>
-                <a href="favoritos.html" class="enlace_barra_lateral active">
-                    <i class="fa-solid fa-heart"></i>
-                    Favoritos
-                </a>
-            </li>
-            <li>
-                <a href="pedidos.html" class="enlace_barra_lateral">
-                    <i class="fa-solid fa-box"></i>
-                    Pedidos
-                </a>
-            </li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/juegos.html"><i class="fa-solid fa-ghost"></i>
+                    Juegos</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/accesorios.html"><i
+                        class="fa-solid fa-headset"></i> Accesorios</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/consolas.html"><i class="fa-solid fa-tv"></i>
+                    Consolas</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/controles.html"><i class="fa-solid fa-gamepad"></i>
+                    Controles</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/Carrito.html"><i
+                        class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/registro.html"><i class="fa-solid fa-user"></i>
+                    Registrarse</a></li>
         </ul>
+    </nav>
 
-        <h3 class="categorias-titulo">Categorías</h3>
-        <ul>
-            <li>
-                <a href="juegos.html" class="enlace_barra_lateral">
-                    <i class="fa-solid fa-gamepad"></i>
-                    Juegos
-                </a>
-            </li>
-            <li>
-                <a href="accesorios.html" class="enlace_barra_lateral">
-                    <i class="fa-solid fa-headphones"></i>
-                    Accesorios
-                </a>
-            </li>
-            <li>
-                <a href="consolas.html" class="enlace_barra_lateral">
-                    <i class="fa-solid fa-tv"></i>
-                    Consolas
-                </a>
-            </li>
-            <li>
-                <a href="controles.html" class="enlace_barra_lateral">
-                    <i class="fa-solid fa-gamepad"></i>
-                    Controles
-                </a>
-            </li>
-        </ul>
-
-        <div class="carrito-container">
-            <a href="Carrito.html" class="enlace_barra_lateral">
-                <i class="fa-solid fa-cart-shopping"></i>
-                Carrito
-            </a>
-        </div>
-
-        <div class="registro-container">
-            <a href="registro.html" class="enlace_barra_lateral">
-                <i class="fa-solid fa-user-plus"></i>
-                Registrarse
-            </a>
-        </div>
-    </div>
-
-    <!-- Contenido Principal -->
     <main>
-        <!-- Barra Superior -->
         <header class="encabezado">
-            <div class="buscador">
-                <input type="text" placeholder="Buscar en favoritos...">
-                <button class="btn_buscar">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </div>
-            <div class="iconos">
-                <button class="btn_notificaciones">
-                    <i class="fa-solid fa-bell"></i>
-                </button>
-                <i class="fa-solid fa-cart-shopping icon"></i>
-                <i class="fa-solid fa-user icon"></i>
-            </div>
+            <section class="buscador">
+                <input type="text" id="buscar" placeholder="Buscar producto">
+                <button class="btn_buscar" id="mostrarBuscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </section>
+
+            <section class="iconos">
+                <button class="btn_notificaciones" id="mostrarNotificaciones"><i class="fa-solid fa-bell"></i></button>
+                <a class="icon" href="/app/templates/Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="icon" href="#"><i class="fa-solid fa-circle-user"></i></a>
+            </section>
         </header>
 
         <!-- Contenido de Favoritos -->
-        <div class="contenido">
+        <div class="principal">
             <!-- Header de Favoritos -->
-            <div class="favoritos-header">
+            <div class="favoritos">
                 <h1>Mis Favoritos</h1>
                 <p>Tus productos guardados para más tarde</p>
             </div>
 
             <!-- Grid de Favoritos -->
-            <div class="productos-grid">
+            <div class="productos">
                 <!-- Producto Favorito 1 -->
-                <div class="producto-card">
-                    <div class="producto-imagen">
-                        <img src="../Static/img/Imagenes/play5.png" alt="PlayStation 5">
-                        <button class="favorito-btn active">
-                            <i class="fa-solid fa-heart"></i>
-                        </button>
+                <div class="producto">
+                    <div class="imagenes_producto">
+                        <img class="imagen_producto" src="../Static/img/Imagenes/play5.png" alt="PlayStation 5">
                     </div>
-                    <div class="producto-info">
-                        <h4>PLAY STATION 5 1TB</h4>
-                        <p class="producto-categoria">Consolas</p>
-                        <div class="producto-precio">
-                            <span class="precio-actual">$11,996.99</span>
-                            <button class="btn-agregar">
-                                <i class="fa-solid fa-cart-plus"></i>
-                            </button>
-                        </div>
+                    <h3 class="product-title">PLAY STATION 5 1TB</h3>
+                    <p class="product-category">Hardware</p>
+                    <div class="product-price-section">
+                        <span class="product-price">$11,996.99</span>
                     </div>
+                    <button class="favorito-btn active">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
                 </div>
 
                 <!-- Producto Favorito 2 -->
-                <div class="producto-card">
-                    <div class="producto-imagen">
-                        <img src="../Static/img/Imagenes/gta6.png" alt="GTA 6">
-                        <button class="favorito-btn active">
-                            <i class="fa-solid fa-heart"></i>
-                        </button>
+                <div class="producto">
+                    <div class="imagenes_producto">
+                        <img class="imagen_producto" src="../Static/img/Imagenes/gta6.png" alt="GTA 6">
                     </div>
-                    <div class="producto-info">
-                        <h4>GRAND THEFT AUTO VI</h4>
-                        <p class="producto-categoria">Juegos PS5</p>
-                        <div class="producto-precio">
-                            <span class="precio-actual">$1,996.99</span>
-                            <button class="btn-agregar">
-                                <i class="fa-solid fa-cart-plus"></i>
-                            </button>
-                        </div>
+                    <h3 class="product-title">GRAND THEFT AUTO VI</h3>
+                    <p class="product-category">Juegos PS5</p>
+                    <div class="product-price-section">
+                        <span class="product-price">$1,996.99</span>
                     </div>
+                    <button class="favorito-btn active">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
                 </div>
 
                 <!-- Producto Favorito 3 -->
-                <div class="producto-card">
-                    <div class="producto-imagen">
-                        <img src="../Static/img/Imagenes/Audifonos_Gamer.jpg" alt="Audífonos Gamer">
-                        <button class="favorito-btn active">
-                            <i class="fa-solid fa-heart"></i>
-                        </button>
+                <div class="producto">
+                    <div class="imagenes_producto">
+                        <img class="imagen_producto" src="../Static/img/Imagenes/Audifonos_Gamer.jpg" alt="Audífonos Gamer">
                     </div>
-                    <div class="producto-info">
-                        <h4>AUDÍFONOS GAMER PRO</h4>
-                        <p class="producto-categoria">Accesorios</p>
-                        <div class="producto-precio">
-                            <span class="precio-actual">$760.00</span>
-                            <button class="btn-agregar">
-                                <i class="fa-solid fa-cart-plus"></i>
-                            </button>
-                        </div>
+                    <h3 class="product-title">AUDÍFONOS GAMER PRO</h3>
+                    <p class="product-category">Accesorios</p>
+                    <div class="product-price-section">
+                        <span class="product-price">$760.00</span>
                     </div>
+                    <button class="favorito-btn active">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
                 </div>
 
                 <!-- Producto Favorito 4 -->
-                <div class="producto-card">
-                    <div class="producto-imagen">
-                        <img src="../Static/img/Imagenes/controlxboxcian.png" alt="Control Xbox Cian">
-                        <button class="favorito-btn active">
-                            <i class="fa-solid fa-heart"></i>
-                        </button>
+                <div class="producto">
+                    <div class="imagenes_producto">
+                        <img class="imagen_producto" src="../Static/img/Imagenes/controlxboxcian.png" alt="Control Xbox Cian">
                     </div>
-                    <div class="producto-info">
-                        <h4>CONTROL XBOX INALÁMBRICO CIAN</h4>
-                        <p class="producto-categoria">Controles</p>
-                        <div class="producto-precio">
-                            <span class="precio-actual">$1,896.99</span>
-                            <button class="btn-agregar">
-                                <i class="fa-solid fa-cart-plus"></i>
-                            </button>
-                        </div>
+                    <h3 class="product-title">CONTROL XBOX INALÁMBRICO CIAN</h3>
+                    <p class="product-category">Controles</p>
+                    <div class="product-price-section">
+                        <span class="product-price">$1,896.99</span>
                     </div>
+                    <button class="favorito-btn active">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
                 </div>
 
                 <!-- Producto Favorito 5 -->
-                <div class="producto-card">
-                    <div class="producto-imagen">
-                        <img src="../Static/img/Imagenes/spider_man2.png" alt="Spider Man 2">
-                        <button class="favorito-btn active">
-                            <i class="fa-solid fa-heart"></i>
-                        </button>
+                <div class="producto">
+                    <div class="imagenes_producto">
+                        <img class="imagen_producto" src="../Static/img/Imagenes/spider_man2.png" alt="Spider Man 2">
                     </div>
-                    <div class="producto-info">
-                        <h4>SPIDER MAN 2</h4>
-                        <p class="producto-categoria">Juegos PS5</p>
-                        <div class="producto-precio">
-                            <span class="precio-actual">$1,896.99</span>
-                            <button class="btn-agregar">
-                                <i class="fa-solid fa-cart-plus"></i>
-                            </button>
-                        </div>
+                    <h3 class="product-title">SPIDER MAN 2</h3>
+                    <p class="product-category">Juegos PS5</p>
+                    <div class="product-price-section">
+                        <span class="product-price">$1,896.99</span>
                     </div>
+                    <button class="favorito-btn active">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
                 </div>
 
                 <!-- Producto Favorito 6 -->
-                <div class="producto-card">
-                    <div class="producto-imagen">
-                        <img src="../Static/img/Imagenes/Nintendo_Switch_2.jpeg" alt="Nintendo Switch">
-                        <button class="favorito-btn active">
-                            <i class="fa-solid fa-heart"></i>
-                        </button>
+                <div class="producto">
+                    <div class="imagenes_producto">
+                        <img class="imagen_producto" src="../Static/img/Imagenes/Nintendo_Switch_2.jpeg" alt="Nintendo Switch">
                     </div>
-                    <div class="producto-info">
-                        <h4>NINTENDO SWITCH OLED</h4>
-                        <p class="producto-categoria">Consolas</p>
-                        <div class="producto-precio">
-                            <span class="precio-actual">$7,799.99</span>
-                            <button class="btn-agregar">
-                                <i class="fa-solid fa-cart-plus"></i>
-                            </button>
-                        </div>
+                    <h3 class="product-title">NINTENDO SWITCH OLED</h3>
+                    <p class="product-category">Consolas</p>
+                    <div class="product-price-section">
+                        <span class="product-price">$7,799.99</span>
                     </div>
+                    <button class="favorito-btn active">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
                 </div>
-            </div>
 
+                <!-- Producto Favorito 7 -->
+                <div class="producto">
+                    <div class="imagenes_producto">
+                        <img class="imagen_producto" src="../Static/img/Imagenes/elden_ring.png" alt="Elden Ring">
+                    </div>
+                    <h3 class="product-title">ELDEN RING</h3>
+                    <p class="product-category">Juegos PS5</p>
+                    <div class="product-price-section">
+                        <span class="product-price">$896.99</span>
+                    </div>
+                    <button class="favorito-btn active">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
+                </div>
+
+                <!-- Producto Favorito 8 -->
+                <div class="producto">
+                    <div class="imagenes_producto">
+                        <img class="imagen_producto" src="../Static/img/Imagenes/fifa_23.png" alt="FIFA 23">
+                    </div>
+                    <h3 class="product-title">FIFA 23</h3>
+                    <p class="product-category">Juegos PS5</p>
+                    <div class="product-price-section">
+                        <span class="product-price">$1,250.00</span>
+                    </div>
+                    <button class="favorito-btn active">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
+                </div>
+
+                <!-- Producto Favorito 9 -->
+                <div class="producto">
+                    <div class="imagenes_producto">
+                        <img class="imagen_producto" src="../Static/img/Imagenes/gran_turismo7.png" alt="Gran Turismo 7">
+                    </div>
+                    <h3 class="product-title">GRAN TURISMO 7</h3>
+                    <p class="product-category">Juegos PS5</p>
+                    <div class="product-price-section">
+                        <span class="product-price">$870.00</span>
+                    </div>
+                    <button class="favorito-btn active">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
+                </div>
+
+            </div>
         </div>
     </main>
 </body>
+
 </html>
