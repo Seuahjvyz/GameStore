@@ -156,6 +156,80 @@ body {
     min-height: 100vh;
 }
 
+/* ============================================
+   ENCABEZADO SUPERIOR (Del primer CSS)
+   ============================================ */
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    margin-bottom: 48px;
+}
+
+.buscador {
+    display: flex;
+    align-items: center;
+    background-color: #2a2a2a;
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem;
+    width: 400px;
+    border: 2px solid #3a3a3a;
+}
+
+.buscador input {
+    background: none;
+    border: none;
+    color: #ffffff;
+    outline: none;
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+.buscador input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.btn_buscar {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.btn_buscar:hover {
+    color: #8b5cf6;
+}
+
+.iconos {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.btn_notificaciones,
+.icon {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.btn_notificaciones:hover,
+.icon:hover {
+    color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.1);
+}
+
+/* ============================================
+   HEADER (Del segundo CSS)
+   ============================================ */
 .header {
     text-align: center;
     margin-bottom: 48px;
@@ -181,7 +255,261 @@ body {
 }
 
 /* ============================================
-   CONTENEDOR DE PEDIDOS
+   CARRUSEL HERO (Del primer CSS)
+   ============================================ */
+.carousel-container {
+    position: relative;
+    margin-bottom: 3rem;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 2px solid #3a3a3a;
+}
+
+.carousel-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 3rem;
+    position: relative;
+}
+
+.carousel-slide.active {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.slide-purple {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+}
+
+.slide-red {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.slide-blue {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.slide-content {
+    flex: 1;
+    z-index: 2;
+}
+
+.slide-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.slide-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 400px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-comprar {
+    background: #ffffff;
+    color: #8b5cf6;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-comprar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.slide-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-image img {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.5));
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 3;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #ffffff;
+    width: 24px;
+    border-radius: 4px;
+}
+
+/* ============================================
+   SECCIÓN DE PRODUCTOS (Del primer CSS)
+   ============================================ */
+.productos-section {
+    margin-bottom: 3rem;
+}
+
+.productos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.productos-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.filtros {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.filtro-btn {
+    background: #2a2a2a;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #ffffff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.filtro-btn.active {
+    background: #8b5cf6;
+    border-color: #8b5cf6;
+}
+
+.filtro-btn:hover {
+    border-color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.1);
+}
+
+/* Grid de Productos */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.producto-card {
+    background: #2a2a2a;
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #3a3a3a;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+    border-color: #8b5cf6;
+}
+
+.producto-imagen {
+    width: 100%;
+    height: 200px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.producto-imagen img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.producto-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.producto-categoria {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.producto-precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.precio {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #8b5cf6;
+}
+
+.btn-agregar {
+    background: rgba(139, 92, 246, 0.2);
+    border: 1px solid #8b5cf6;
+    color: #8b5cf6;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.btn-agregar:hover {
+    background: #8b5cf6;
+    color: #ffffff;
+}
+
+/* ============================================
+   CONTENEDOR DE PEDIDOS (Del segundo CSS)
    ============================================ */
 .pedidos-container {
     max-width: 800px;
@@ -370,6 +698,10 @@ body {
     .header h1 {
         font-size: 32px;
     }
+    
+    .buscador {
+        width: 300px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -394,6 +726,32 @@ body {
 
     .header h1 {
         font-size: 28px;
+    }
+
+    .encabezado {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .buscador {
+        width: 100%;
+    }
+
+    .iconos {
+        justify-content: center;
+    }
+
+    .carousel-container {
+        height: 300px;
+    }
+
+    .slide-content h2 {
+        font-size: 2rem;
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 
     .pedido-item {
@@ -424,6 +782,18 @@ body {
 
     .header h1 {
         font-size: 24px;
+    }
+
+    .carousel-container {
+        height: 250px;
+    }
+
+    .slide-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -475,6 +845,6 @@ body {
     }
 }
 
-.pedido-item {
+.pedido-item, .producto-card {
     animation: fadeIn 0.5s ease;
 }

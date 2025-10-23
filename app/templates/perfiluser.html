@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta - GameStore</title>
+    <link rel="stylesheet" href="../Static/css/styleUser.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Barra Lateral -->
+    <div class="barra_lateral">
+        <a href="index.html" class="logo_link">
+            <img src="../Static/img/Icon_GS.png" alt="GameStore Logo" class="logo">
+        </a>
+        
+        <ul>
+            <li>
+                <a href="index.html" class="enlace_barra_lateral">
+                    <i class="fa-solid fa-house"></i>
+                    Inicio
+                </a>
+            </li>
+            <li>
+                <a href="perfil.html" class="enlace_barra_lateral active">
+                    <i class="fa-solid fa-user"></i>
+                    Mi Cuenta
+                </a>
+            </li>
+            <li>
+                <a href="#" class="enlace_barra_lateral">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Buscar
+                </a>
+            </li>
+            <li>
+                <a href="favoritos.html" class="enlace_barra_lateral">
+                    <i class="fa-solid fa-heart"></i>
+                    Favoritos
+                </a>
+            </li>
+            <li>
+                <a href="pedidos.html" class="enlace_barra_lateral">
+                    <i class="fa-solid fa-box"></i>
+                    Pedidos
+                </a>
+            </li>
+        </ul>
+
+        <h3 class="categorias-titulo">Categorías</h3>
+        <ul>
+            <li>
+                <a href="juegos.html" class="enlace_barra_lateral">
+                    <i class="fa-solid fa-gamepad"></i>
+                    Juegos
+                </a>
+            </li>
+            <li>
+                <a href="accesorios.html" class="enlace_barra_lateral">
+                    <i class="fa-solid fa-headphones"></i>
+                    Accesorios
+                </a>
+            </li>
+            <li>
+                <a href="consolas.html" class="enlace_barra_lateral">
+                    <i class="fa-solid fa-tv"></i>
+                    Consolas
+                </a>
+            </li>
+            <li>
+                <a href="controles.html" class="enlace_barra_lateral">
+                    <i class="fa-solid fa-gamepad"></i>
+                    Controles
+                </a>
+            </li>
+        </ul>
+
+        <div class="carrito-container">
+            <a href="Carrito.html" class="enlace_barra_lateral">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Carrito
+            </a>
+        </div>
+
+        <div class="registro-container">
+            <a href="registro.html" class="enlace_barra_lateral">
+                <i class="fa-solid fa-user-plus"></i>
+                Registrarse
+            </a>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main>
+        <!-- Barra Superior -->
+        <header class="encabezado">
+            <div class="buscador">
+                <input type="text" placeholder="Buscar en GameStore...">
+                <button class="btn_buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="iconos">
+                <button class="btn_notificaciones">
+                    <i class="fa-solid fa-bell"></i>
+                </button>
+                <a href="carrito.html" class="icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+                <a href="perfil.html" class="icon">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </div>
+        </header>
+
+        <!-- Contenido del Perfil Centrado -->
+        <div class="contenido-centrado">
+            <div class="perfil-contenedor-centrado">
+                <h1 class="titulo-centrado">Mi Cuenta</h1>
+                
+                <div class="perfil-card-centrado">
+                    <h2 class="nombre-usuario">Aidee Martinez</h2>
+                    <p class="numero-cliente">No. Cliente #2176328</p>
+                    
+                    <div class="separador"></div>
+                    
+                    <div class="datos-usuario">
+                        <div class="dato-fila">
+                            <span class="dato-label">Miembro desde:</span>
+                            <span class="dato-valor">Enero 2023</span>
+                        </div>
+                        <div class="dato-fila">
+                            <span class="dato-label">Último acceso:</span>
+                            <span class="dato-valor">Hoy</span>
+                        </div>
+                        <div class="dato-fila">
+                            <span class="dato-label">Pedidos realizados:</span>
+                            <span class="dato-valor">15</span>
+                        </div>
+                    </div>
+                    
+                    <div class="separador"></div>
+                    
+                    <div class="acciones-grid">
+                        <div class="accion-par">
+                            <div class="accion-item-simple" onclick="window.location.href='mis-datos.html'">
+                                <span class="accion-texto">Mis Datos</span>
+                            </div>
+                            <div class="accion-item-simple" onclick="window.location.href='historial.html'">
+                                <span class="accion-texto">Historial de Compras</span>
+                            </div>
+                        </div>
+                        <div class="accion-par">
+                            <div class="accion-item-simple" onclick="window.location.href='favoritos.html'">
+                                <span class="accion-texto">Mis Favoritos</span>
+                            </div>
+                            <div class="accion-item-simple" onclick="window.location.href='direccion.html'">
+                                <span class="accion-texto">Dirección de Envío</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
