@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameStore - Iniciar Sesión</title>
-    <link rel="stylesheet" href="../static/css/stylelog.css">
+    <title>GameStore - Crear Cuenta</title>
+    <link rel="stylesheet" href="../Static/css/styles.css">
 </head>
 <body>
-    <!-- Barra Lateral Moderna -->
+    <div class="sidebar">
+        <h2>Inicio</h2>
+        <ul class="nav-list">
+            <li>Perfil</li>
+            <li>Buscar</li>
+            <li>Favoritos</li>
+            <li>Pedidos</li>
+        </ul>
+        
+        <h3>Categorías</h3>
+        <ul class="categories">
+            <li>Juegos</li>
+            <li>Accesorios</li>
+            <li>Consolas</li>
+            <li>Controles</li>
+        </ul>
+    </div>
+
+
+  <!-- Barra Lateral Moderna -->
     <aside class="sidebar">
         <div class="sidebar-header">
             <div class="logo">
@@ -60,33 +79,60 @@
             </div>
         </nav>
 
-        <!-- Botón Registrarse dentro de la barra lateral -->
+        <!-- Botón Iniciar Sesión dentro de la barra lateral -->
         <div class="sidebar-register-section">
-            <button class="sidebar-register-btn">Registrarse</button>
+            <button class="sidebar-register-btn">Iniciar Sesión</button>
         </div>
     </aside>
 
     <!-- Contenido Principal -->
+
     <div class="main-content">
         <div class="container">
-            <h1>Iniciar Sesión</h1>
+            <h1>Crear una Cuenta</h1>
             
-            <p class="description">Ingresa el nombre o correo electrónico registrado.</p>
+            <p class="description">¡Vamos a crear tu cuenta!</p>
             
             <div class="form-section">
                 <div class="form-line">
-                    <span class="label">Nombre o Correo de Usuario</span>
-                    <input type="text" class="input-field" placeholder="Ingresa tu usuario o correo">
+                    <span class="label">Nombre De Usuario:</span>
+
+                    <input type="text" class="input-field" placeholder="">
+
+                    <input type="text" class="input-field" placeholder="Ingresa tu nombre de usuario">
+
                 </div>
                 
                 <div class="form-line">
-                    <span class="label">Contraseña</span>
-                    <input type="password" class="input-field" placeholder="Ingresa tu contraseña">
+                    <span class="label">Contraseña:</span>
+
+                    <input type="password" class="input-field" placeholder="">
+
+                    <input type="password" class="input-field" placeholder="Crea una contraseña segura">
+
+                </div>
+                
+                <div class="form-line">
+                    <span class="label">Email:</span>
+
+                    <input type="email" class="input-field" placeholder="">
+
+                    <input type="email" class="input-field" placeholder="Ingresa tu correo electrónico">
+                </div>
+
+                <div class="form-line">
+                    <span class="label">Confirmar Contraseña:</span>
+                    <input type="password" class="input-field" placeholder="Repite tu contraseña">
+
                 </div>
             </div>
             
             <div class="register-section">
-                <button class="register-btn">Iniciar Sesión</button>
+
+                <button class="register-btn">Registrarse</button>
+
+                <button class="register-btn">Crear Cuenta</button>
+
             </div>
         </div>
     </div>

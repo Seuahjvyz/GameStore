@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuarios - Game Store Web</title>
+    <title>Dashboard - Game Store Web</title>
     <link rel="stylesheet" href="../static/css/game-store.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
         <aside class="sidebar">
             <div class="sidebar-header">
                 <div class="logo">
-                    <span class="logo-icon">🎮</span>
-                    <span class="logo-text">Game Store</span>
+                     <a class="logo_link" href="#"><img class="logo" src="../static/img/Icon_GS.png" alt="Logo"></a>
+                    <span class="logo-text"></span>
                 </div>
             </div>
 
@@ -23,10 +24,6 @@
                     <span class="nav-icon">👤</span>
                     <span>Perfil</span>
                 </a>
-                <a href="inventario.html" class="nav-item">
-                    <span class="nav-icon">🔍</span>
-                    <span>Buscar</span>
-                </a>
                 <a href="pedidos.html" class="nav-item">
                     <span class="nav-icon">📦</span>
                     <span>Gestión de pedidos</span>
@@ -36,19 +33,19 @@
                     <span>Inventario</span>
                 </a>
                 <a href="juegos.html" class="nav-item">
-                    <span class="nav-icon">🎮</span>
+                    <span class="nav-icon"></span>
                     <span>Juegos</span>
                 </a>
                 <a href="accesorios.html" class="nav-item">
-                    <span class="nav-icon">🎧</span>
+                    <span class="nav-icon"></span>
                     <span>Accesorios</span>
                 </a>
                 <a href="consolas.html" class="nav-item">
-                    <span class="nav-icon">🎯</span>
+                    <span class="nav-icon"></span>
                     <span>Consolas</span>
                 </a>
                 <a href="controles.html" class="nav-item">
-                    <span class="nav-icon">🎮</span>
+                    <span class="nav-icon"></span>
                     <span>Controles</span>
                 </a>
             </nav>
@@ -66,37 +63,107 @@
         </aside>
 
         <main class="main-content">
+            <!-- Dashboard mejorado con analíticas -->
             <div class="content-header">
                 <h1 style="font-size: 36px; font-weight: 700; margin-bottom: 8px; color: #fff;">Dashboard</h1>
-                <p style="color: #a0a0a0; font-size: 16px;">Bienvenido al panel de administración de Game Store</p>
+                <p style="color: #a0a0a0; font-size: 16px;">Panel de control y analíticas en tiempo real</p>
             </div>
 
+            <!-- KPIs Principales -->
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-label">Ventas Totales</div>
-                    <div class="stat-value">$45,231</div>
-                    <div class="stat-change positive">↑ 12% desde el mes pasado</div>
+                    <div class="stat-icon">💵</div>
+                    <div class="stat-label">Ventas del Día</div>
+                    <div class="stat-value" data-stat="daily-sales">$2,450</div>
+                    <div class="stat-change positive">↑ 12% vs ayer</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-label">Pedidos</div>
-                    <div class="stat-value">356</div>
-                    <div class="stat-change positive">↑ 8% desde el mes pasado</div>
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-label">Pedidos Pendientes</div>
+                    <div class="stat-value" data-stat="pending-orders">24</div>
+                    <div class="stat-change negative">↑ 3 nuevos</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-label">Productos</div>
-                    <div class="stat-value">1,234</div>
-                    <div class="stat-change negative">↓ 3% desde el mes pasado</div>
+                    <div class="stat-icon">⚠️</div>
+                    <div class="stat-label">Stock Bajo</div>
+                    <div class="stat-value" data-stat="low-stock">8</div>
+                    <div class="stat-change negative">Requiere atención</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-label">Usuarios</div>
-                    <div class="stat-value">892</div>
-                    <div class="stat-change positive">↑ 15% desde el mes pasado</div>
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-label">Clientes Activos</div>
+                    <div class="stat-value" data-stat="active-customers">892</div>
+                    <div class="stat-change positive">↑ 15% este mes</div>
                 </div>
             </div>
 
+            <!-- Gráficos de Ventas -->
+            <div class="dashboard-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Ventas Mensuales</h3>
+                        <select id="salesPeriod" class="chart-select">
+                            <option value="week">Última Semana</option>
+                            <option value="month" selected>Último Mes</option>
+                            <option value="year">Último Año</option>
+                        </select>
+                    </div>
+                    <canvas id="salesChart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Productos Más Vendidos</h3>
+                    </div>
+                    <canvas id="topProductsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Actividad Reciente -->
+            <div class="section-header">
+                <h2>Actividad Reciente</h2>
+                <span class="badge">En tiempo real</span>
+            </div>
+
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <div class="activity-icon success">✓</div>
+                    <div class="activity-content">
+                        <div class="activity-title">Nueva venta completada</div>
+                        <div class="activity-description">PlayStation 5 - $499.99</div>
+                        <div class="activity-time">Hace 2 minutos</div>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon warning">⚠</div>
+                    <div class="activity-content">
+                        <div class="activity-title">Stock bajo</div>
+                        <div class="activity-description">DualSense Controller - 3 unidades</div>
+                        <div class="activity-time">Hace 15 minutos</div>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon info">👤</div>
+                    <div class="activity-content">
+                        <div class="activity-title">Nuevo cliente registrado</div>
+                        <div class="activity-description">María González</div>
+                        <div class="activity-time">Hace 1 hora</div>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon success">📦</div>
+                    <div class="activity-content">
+                        <div class="activity-title">Pedido enviado</div>
+                        <div class="activity-description">Orden #ORD-156</div>
+                        <div class="activity-time">Hace 2 horas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pedidos Recientes -->
             <div class="section-header">
                 <h2>Pedidos Recientes</h2>
-                <span class="badge">24 nuevos</span>
+                <button class="btn-secondary" onclick="window.location.href='pedidos.html'">Ver todos</button>
             </div>
 
             <div class="table-container">
@@ -124,7 +191,6 @@
                                 <div class="action-buttons">
                                     <button class="btn-icon" title="Ver">👁️</button>
                                     <button class="btn-icon" title="Editar">✏️</button>
-                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
                                 </div>
                             </td>
                         </tr>
@@ -139,7 +205,6 @@
                                 <div class="action-buttons">
                                     <button class="btn-icon" title="Ver">👁️</button>
                                     <button class="btn-icon" title="Editar">✏️</button>
-                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
                                 </div>
                             </td>
                         </tr>
@@ -154,37 +219,6 @@
                                 <div class="action-buttons">
                                     <button class="btn-icon" title="Ver">👁️</button>
                                     <button class="btn-icon" title="Editar">✏️</button>
-                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>#ORD-004</td>
-                            <td>Ana Martínez</td>
-                            <td>The Last of Us Part II</td>
-                            <td>$59.99</td>
-                            <td><span class="status-badge completed">Completado</span></td>
-                            <td>2024-01-14</td>
-                            <td>
-                                <div class="action-buttons">
-                                    <button class="btn-icon" title="Ver">👁️</button>
-                                    <button class="btn-icon" title="Editar">✏️</button>
-                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>#ORD-005</td>
-                            <td>Luis Rodríguez</td>
-                            <td>DualSense Controller</td>
-                            <td>$69.99</td>
-                            <td><span class="status-badge cancelled">Cancelado</span></td>
-                            <td>2024-01-13</td>
-                            <td>
-                                <div class="action-buttons">
-                                    <button class="btn-icon" title="Ver">👁️</button>
-                                    <button class="btn-icon" title="Editar">✏️</button>
-                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
                                 </div>
                             </td>
                         </tr>
@@ -193,6 +227,8 @@
             </div>
         </main>
     </div>
-      <script src="../static/js/script.js"></script>
+    
+    <script src="../static/js/script.js"></script>
+    <script src="../static/js/dashboard.js"></script>
 </body>
 </html>

@@ -7,70 +7,115 @@
     <link rel="stylesheet" href="../Static/css/stylepay.css">
 </head>
 <body>
-    <!-- Barra Lateral -->
-<div class="sidebar">
-    <h2>Inicio</h2>
-    
-    <div class="nav-section">
-        <h3>Perfil</h3>
-        <ul class="nav-list">
-            <li>Buscar</li>
-            <li>Favoritos</li>
-            <li>Pedidos</li>
-        </ul>
-    </div>
+      <!-- Barra Lateral Moderna -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-container">
+                    <img src="../Static/img/Icon_GS.png" alt="GameStore Logo" class="logo-image" onerror="this.style.display='none'; document.getElementById('logo-emoji').style.display='block';">
+                    <span id="logo-emoji" class="logo-emoji" style="display: none;">🎮</span>
+                </div>
+            </div>
+        </div>
 
-    <div class="nav-section">
-        <h3>Categorías</h3>
-        <ul class="nav-list">
-            <li>Juegos</li>
-            <li>Accesorios</li>
-            <li>Consolas</li>
-            <li>Controles</li>
-            <li>Carrito</li>
-        </ul>
-    </div>
+        <nav class="nav-menu">
+            <div class="nav-section">
+                <h3>Perfil</h3>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🔍</span>
+                    <span>Buscar</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">❤️</span>
+                    <span>Favoritos</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Pedidos</span>
+                </a>
+            </div>
 
-    <!-- Botón Registrarse dentro de la barra lateral -->
-    <div class="sidebar-register-section">
-        <button class="sidebar-register-btn">Registrarse</button>
-    </div>
-</div>
+            <div class="nav-section">
+                <h3>Categorías</h3>
+                <a href="juegos.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Juegos</span>
+                </a>
+                <a href="accesorios.html" class="nav-item">
+                    <span class="nav-icon">🎧</span>
+                    <span>Accesorios</span>
+                </a>
+                <a href="consolas.html" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span>Consolas</span>
+                </a>
+                <a href="controles.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Controles</span>
+                </a>
+                <a href="carrito.html" class="nav-item active">
+                    <span class="nav-icon">🛒</span>
+                    <span>Carrito</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Botón Registrarse dentro de la barra lateral -->
+        <div class="sidebar-register-section">
+            <button class="sidebar-register-btn">Registrarse</button>
+        </div>
+    </aside>
 
     <!-- Contenido Principal -->
     <div class="main-content">
         <header class="header">
             <h1>Productos en Carrito</h1>
+            <p class="header-subtitle">Revisa y confirma tu compra</p>
         </header>
 
         <main class="payment-container">
             <!-- Productos en el carrito -->
             <div class="cart-section">
                 <div class="cart-item">
-                    <img src="../Static/img/Imagenes/Nintendo_Switch_2.jpeg" alt="Nintendo Switch OLED" class="cart-image">
+                    <div class="cart-image-container">
+                        <img src="../Static/img/Imagenes/Nintendo_Switch_2.jpeg" alt="Nintendo Switch OLED" class="cart-image">
+                    </div>
                     <div class="cart-item-info">
-                        <h3>Nintendo Switch OLED</h3>
+                        <h3 class="product-title">Nintendo Switch OLED</h3>
                         <p class="item-price">$8,620.88</p>
                     </div>
-                    <button class="delete-btn">ELIMINAR</button>
+                    <button class="delete-btn">
+                        <span class="btn-icon">🗑️</span>
+                        ELIMINAR
+                    </button>
                 </div>
 
                 <div class="cart-item">
-                    <img src="../Static/img/Imagenes/Audifonos_Gamer.jpg" alt="Audífonos Gamer" class="cart-image">
+                    <div class="cart-image-container">
+                        <img src="../Static/img/Imagenes/Audifonos_Gamer.jpg" alt="Audífonos Gamer" class="cart-image">
+                    </div>
                     <div class="cart-item-info">
-                        <h3>Audífonos Gamer</h3>
+                        <h3 class="product-title">Audífonos Gamer</h3>
                         <p class="item-price">$821.00</p>
                     </div>
-                    <button class="delete-btn">ELIMINAR</button>
+                    <button class="delete-btn">
+                        <span class="btn-icon">🗑️</span>
+                        ELIMINAR
+                    </button>
                 </div>
 
                 <div class="cart-item">
-                    <img src="../Static/img/Imagenes/FC26.jpeg" alt="FC 26 Xbox" class="cart-image">
+                    <div class="cart-image-container">
+                        <img src="../Static/img/Imagenes/FC26.jpeg" alt="FC 26 Xbox" class="cart-image">
+                    </div>
                     <div class="cart-item-info">
-                        <h3>FC 26 Xbox Series X|S</h3>
+                        <h3 class="product-title">FC 26 Xbox Series X|S</h3>
                         <p class="item-price">$1,923.69</p>
                     </div>
-                    <button class="delete-btn">ELIMINAR</button>
+                    <button class="delete-btn">
+                        <span class="btn-icon">🗑️</span>
+                        ELIMINAR
+                    </button>
                 </div>
             </div>
 
@@ -100,23 +145,23 @@
                 <h2>Datos de Tarjeta</h2>
                 
                 <div class="form-group">
-                    <label>Nombre del Titular de la tarjeta</label>
+                    <label class="form-label">Nombre del Titular de la tarjeta</label>
                     <input type="text" class="input-field" placeholder="Ingresa el nombre completo">
                 </div>
 
                 <div class="form-group">
-                    <label>Número de tarjeta</label>
+                    <label class="form-label">Número de tarjeta</label>
                     <input type="text" class="input-field" placeholder="1234 5678 9012 3456" maxlength="19">
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Fecha de vencimiento</label>
+                        <label class="form-label">Fecha de vencimiento</label>
                         <input type="text" class="input-field" placeholder="MM/AA" maxlength="5">
                     </div>
 
                     <div class="form-group">
-                        <label>CVV</label>
+                        <label class="form-label">CVV</label>
                         <input type="text" class="input-field" placeholder="123" maxlength="3">
                     </div>
                 </div>
@@ -124,8 +169,14 @@
 
             <!-- Botones de acción -->
             <div class="action-buttons">
-                <button class="back-btn">Volver</button>
-                <button class="confirm-btn">Finalizar Compra</button>
+                <button class="back-btn">
+                    <span class="btn-icon">←</span>
+                    Volver
+                </button>
+                <button class="confirm-btn">
+                    <span class="btn-icon">✓</span>
+                    Finalizar Compra
+                </button>
             </div>
         </main>
     </div>
