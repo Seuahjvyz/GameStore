@@ -49,7 +49,7 @@ body {
 
 .barra_lateral {
     background: linear-gradient(#58009A, #0F0D12);
-    padding: 5px;
+    padding: 8px;
     min-height: 100vh;
     width: 230px;
     position: fixed;
@@ -83,12 +83,12 @@ nav i {
 /* ---------------------- Logo ----------------------*/
 
 .logo {
-    width: 100px;
+    width: 200px;
     height: auto;
     filter: saturate(180%);
     justify-content: center;
     display: block;
-    margin: 10px 50px;
+    margin: 45px 12px;
 }
 
 /* ---------------------- Principal ----------------------*/

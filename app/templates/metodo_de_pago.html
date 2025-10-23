@@ -18,53 +18,57 @@
             </div>
         </div>
 
-        <nav class="nav-menu">
-            <div class="nav-section">
-                <h3>Perfil</h3>
-                <a href="#" class="nav-item">
-                    <span class="nav-icon">🔍</span>
-                    <span>Buscar</span>
-                </a>
-                <a href="#" class="nav-item">
-                    <span class="nav-icon">❤️</span>
-                    <span>Favoritos</span>
-                </a>
-                <a href="#" class="nav-item">
-                    <span class="nav-icon">📦</span>
-                    <span>Pedidos</span>
-                </a>
-            </div>
+       <nav class="barra_lateral">
+        <a class="logo_link" href="index.html"><img class="logo" src="app/static/img/Icon_GS.png" alt="Logo"></a>
 
-            <div class="nav-section">
+        <ul>
+            <li><a class="enlace_barra_lateral_fijo" href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+
+            <li><a class="enlace_barra_lateral" href="app/templates/perfiluser.html"><i
+                    class="fa-solid fa-circle-user"></i> Perfil</a></li>
+
+            <li><a class="enlace_barra_lateral" href="index.html"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
+            </li>
+            <li><a class="enlace_barra_lateral" href="app/templates/favoritos.html"><i class="fa-solid fa-heart"></i>
+                    Favoritos</a></li>
+
+            <li><a class="enlace_barra_lateral" href="app/templates/pedidos.html"><i class="fa-solid fa-box"></i>
+                    Pedidos</a></li>
+            <li>
                 <h3>Categorías</h3>
-                <a href="juegos.html" class="nav-item">
-                    <span class="nav-icon">🎮</span>
-                    <span>Juegos</span>
-                </a>
-                <a href="accesorios.html" class="nav-item">
-                    <span class="nav-icon">🎧</span>
-                    <span>Accesorios</span>
-                </a>
-                <a href="consolas.html" class="nav-item">
-                    <span class="nav-icon">🎯</span>
-                    <span>Consolas</span>
-                </a>
-                <a href="controles.html" class="nav-item">
-                    <span class="nav-icon">🎮</span>
-                    <span>Controles</span>
-                </a>
-                <a href="carrito.html" class="nav-item active">
-                    <span class="nav-icon">🛒</span>
-                    <span>Carrito</span>
-                </a>
-            </div>
-        </nav>
+            </li>
+            <li><a class="enlace_barra_lateral" href="app/templates/juegos.html"><i class="fa-solid fa-ghost"></i>
+                    Juegos</a></li>
+            <li><a class="enlace_barra_lateral" href="app/templates/accesorios.html"><i
+                        class="fa-solid fa-headset"></i> Accesorios</a></li>
+            <li><a class="enlace_barra_lateral" href="app/templates/consolas.html"><i class="fa-solid fa-tv"></i>
+                    Consolas</a></li>
+            <li><a class="enlace_barra_lateral" href="app/templates/controles.html"><i class="fa-solid fa-gamepad"></i>
+                    Controles</a></li>
+            <li><a class="enlace_barra_lateral" href="app/templates/Carrito.html"><i
+                        class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+            <li><a class="enlace_barra_lateral" href="app/templates/registro.html"><i class="fa-solid fa-users"></i>
+                    Registrarse</a></li>
+            <li><a class="enlace_barra_lateral" href="app/admin_templates/admin.html"><i class="fa-solid fa-user"></i>
+                    Admin</a></li>
+        </ul>
+    </nav>
 
-        <!-- Botón Registrarse dentro de la barra lateral -->
-        <div class="sidebar-register-section">
-            <button class="sidebar-register-btn">Registrarse</button>
-        </div>
-    </aside>
+    <main>
+        <header class="encabezado">
+            <section class="buscador">
+                <input type="text" id="buscar" placeholder="Buscar producto">
+                <button class="btn_buscar" id="buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </section>
+
+            <section class="iconos">
+                <button class="btn_notificaciones" id="mostrarNotificaciones"><i class="fa-solid fa-bell"></i></button>
+                <a class="icon" href="app/templates/Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="icon" href="app/templates/perfiluser.html"><i class="fa-solid fa-circle-user"></i></a>
+            </section>
+        </header>
+
+
 
     <!-- Contenido Principal -->
     <div class="main-content">

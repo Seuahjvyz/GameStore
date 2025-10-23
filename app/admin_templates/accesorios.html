@@ -3,71 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuarios - Game Store Web</title>
-    <link rel="stylesheet" href="../static/css/game-store.css">
+    <title>Accesorios - Game Store Web</title>
+    <link rel="stylesheet" href="../static/css/style-provisional.css">
+    <!-- Added Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <aside class="sidebar">
             <div class="sidebar-header">
-               <div class="logo">
-                     <a class="logo_link" href="#"><img class="logo" src="../static/img/Icon_GS.png" alt="Logo"></a>
-                    <span class="logo-text"></span>
+                <div class="logo">
+                    <a class="logo_link" href="admin.html">
+                        <img src="../static/img/Icon_GS.png" alt="Game Store Logo">
+                    </a>
                 </div>
             </div>
 
-            <button class="btn-primary" onclick="window.location.href='admin.html'">Inicio</button>
-
+            <!-- Replaced button and nav-menu with new ul-based structure with Font Awesome icons -->
             <nav class="nav-menu">
-                <a href="perfil.html" class="nav-item">
-                    <span class="nav-icon">👤</span>
-                    <span>Perfil</span>
-                </a>
-                <a href="inventario.html" class="nav-item">
-                    <span class="nav-icon">🔍</span>
-                    <span>Buscar</span>
-                </a>
-                <a href="pedidos.html" class="nav-item">
-                    <span class="nav-icon">📦</span>
-                    <span>Gestión de pedidos</span>
-                </a>
-                <a href="inventario.html" class="nav-item">
-                    <span class="nav-icon">🛒</span>
-                    <span>Inventario</span>
-                </a>
-                <a href="juegos.html" class="nav-item">
-                    <span class="nav-icon"></span>
-                    <span>Juegos</span>
-                </a>
-                <a href="accesorios.html" class="nav-item active">
-                    <span class="nav-icon"></span>
-                    <span>Accesorios</span>
-                </a>
-                <a href="consolas.html" class="nav-item">
-                    <span class="nav-icon"></span>
-                    <span>Consolas</span>
-                </a>
-                <a href="controles.html" class="nav-item">
-                    <span class="nav-icon"></span>
-                    <span>Controles</span>
-                </a>
+                <ul>
+                    <li><a class="enlace_barra_lateral" href="admin.html"><i class="fa-solid fa-house"></i> <span>Inicio</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="perfil.html"><i class="fa-solid fa-circle-user"></i> <span>Perfil</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="inventario.html"><i class="fa-solid fa-magnifying-glass"></i> <span>Buscar</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="pedidos.html"><i class="fa-solid fa-truck"></i> <span>Gestión de pedidos</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="inventario.html"><i class="fa-solid fa-boxes-packing"></i> <span>Inventario</span></a></li>
+                    
+                    <li>
+                        <h3>Categorías</h3>
+                    </li>
+                    
+                    <li><a class="enlace_barra_lateral" href="juegos.html"><i class="fa-solid fa-ghost"></i> <span>Juegos</span></a></li>
+                    <li><a class="enlace_barra_lateral active" href="accesorios.html"><i class="fa-solid fa-headset"></i> <span>Accesorios</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="consolas.html"><i class="fa-solid fa-tv"></i> <span>Consolas</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="controles.html"><i class="fa-solid fa-gamepad"></i> <span>Controles</span></a></li>
+                </ul>
+                
+                <ul style="margin-top: auto; padding-top: 1rem;">
+                    <li><a class="enlace_barra_lateral_fijo" href="reportes.html"><i class="fa-solid fa-chart-column"></i> <span>Reportes</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="usuarios.html"><i class="fa-solid fa-users"></i> <span>Usuarios</span></a></li>
+                </ul>
             </nav>
-
-            <div class="sidebar-footer">
-                <a href="reportes.html" class="nav-item">
-                    <span class="nav-icon">📊</span>
-                    <span>Reportes</span>
-                </a>
-                <a href="usuarios.html" class="nav-item">
-                    <span class="nav-icon">👥</span>
-                    <span>Usuarios</span>
-                </a>
-            </div>
         </aside>
 
         <main class="main-content">
             <div class="content-header">
-                <h1 style="font-size: 36px; font-weight: 700; margin-bottom: 16px; color: #fff;">Accesorios</h1>
+                <h1>Accesorios</h1>
                 <div class="search-container">
                     <input type="text" class="search-input" placeholder="Buscar accesorios...">
                     <button class="search-button">🔍</button>
@@ -82,7 +62,7 @@
             <div class="products-grid">
                 <div class="product-card">
                     <img src="../Static/img/Imagenes/LOGITECH G Pro X Gaming Headset – PC Express.png" alt="Gaming Headset" class="product-image">
-                    <h3 class="product-title">LOGITECH G Pro X Gaming Headset – PC Express</h3>
+                    <h3 class="product-title">LOGITECH G Pro X Gaming Headset</h3>
                     <p class="product-price">$89.99</p>
                     <span class="product-stock">En stock</span>
                 </div>
@@ -116,7 +96,7 @@
                 </div>
 
                 <div class="product-card">
-                    <img src="../Static/img/Imagenes/web_cam.png" alt="Webcam" class="product-image">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Webcam" class="product-image">
                     <h3 class="product-title">Webcam HD Pro</h3>
                     <p class="product-price">$99.99</p>
                     <span class="product-stock">En stock</span>
