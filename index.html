@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Store Web (Community)</title>
-    <link rel="stylesheet" href="app/static/css/style-provisional.css">
+    <link rel="stylesheet" href="/app/static/css/stylee.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
-<body>
-   
-    <nav class="barra_lateral">
-        <a class="logo_link" href="app/static/img/Icon_GS.png">
-            <i class="fa-solid fa-gamepad" style="font-size: 2rem; color: white;"></i>
-        </a>
 
-       <ul>
-            <!-- Updated all navigation links to point to their respective HTML files -->
-            <li><a class="enlace_barra_lateral active" href="index.html"><i class="fa-solid fa-house"></i> <span>Inicio</span></a></li>
-            <li><a class="enlace_barra_lateral" href="login.html"><i class="fa-solid fa-circle-user"></i> <span>Perfil</span></a></li>
-            <li><a class="enlace_barra_lateral" href="index.html"><i class="fa-solid fa-magnifying-glass"></i> <span>Buscar</span></a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/"><i class="fa-solid fa-heart"></i> <span>Favoritos</span></a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/"><i class="fa-solid fa-box"></i> <span>Pedidos</span></a></li>
+<body>
+
+    <nav class="barra_lateral">
+        <a class="logo_link" href="/index.html"><img class="logo" src="/app/static/img/Icon_GS.png" alt="Logo"></a>
+
+        <ul>
+            <li><a class="enlace_barra_lateral_fijo" href="/index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/perfiluser.html"><i
+                        class="fa-solid fa-circle-user"></i> Perfil</a></li>
+            <li><a class="enlace_barra_lateral" href="#buscar"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
+            </li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/favoritos.html"><i class="fa-solid fa-heart"></i>
+                    Favoritos</a></li>
+
+            <li><a class="enlace_barra_lateral" href="/app/templates/pedidos.html"><i class="fa-solid fa-box"></i>
+                    Pedidos</a></li>
             <li>
                 <h3>Categorías</h3>
             </li>
-            <li><a class="enlace_barra_lateral" href="app/templates/juegos.html"><i class="fa-solid fa-ghost"></i> <span>Juegos</span></a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/accesorios.html"><i class="fa-solid fa-headset"></i> <span>Accesorios</span></a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/consolas.html"><i class="fa-solid fa-tv"></i> <span>Consolas</span></a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/controles.html"><i class="fa-solid fa-gamepad"></i> <span>Controles</span></a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/Carrito.html"><i class="fa-solid fa-cart-shopping"></i> <span>Carrito</span></a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/registro.html"><i class="fa-solid fa-user"></i> <span>Registrarse</span></a></li>
-            <li><a class="enlace_barra_lateral" href="app/admin_templates/admin.html"><i class="fa-solid fa-user-shield"></i> <span>Admin</span></a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/juegos.html"><i class="fa-solid fa-ghost"></i>
+                    Juegos</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/accesorios.html"><i
+                        class="fa-solid fa-headset"></i> Accesorios</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/consolas.html"><i class="fa-solid fa-tv"></i>
+                    Consolas</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/controles.html"><i class="fa-solid fa-gamepad"></i>
+                    Controles</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/Carrito.html"><i
+                        class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/registro.html"><i class="fa-solid fa-user"></i>
+                    Registrarse</a></li>
         </ul>
     </nav>
 
-
     <main>
-     
         <header class="encabezado">
             <section class="buscador">
                 <input type="text" id="buscar" placeholder="Buscar producto">
@@ -45,18 +52,22 @@
 
             <section class="iconos">
                 <button class="btn_notificaciones" id="mostrarNotificaciones"><i class="fa-solid fa-bell"></i></button>
-                <a class="icon" href="app/templates/Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="icon" href="/app/templates/Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
                 <a class="icon" href="#"><i class="fa-solid fa-circle-user"></i></a>
             </section>
         </header>
 
-        <div class="contenido">
-         
+
+
+
+        <div class="principal">
+
             <div class="carousel-container">
                 <div class="carousel-slide slide-purple active">
                     <div class="slide-content">
                         <h2>PLay Station VR2</h2>
-                        <p>Vive el futuro del gaming con la realidad virtual más avanzada. Sumérgete en mundos increíbles con la tecnología de PS VR2 y experimenta PlayStation®5.</p>
+                        <p>Vive el futuro del gaming con la realidad virtual más avanzada. Sumérgete en mundos
+                            increíbles con la tecnología de PS VR2 y experimenta PlayStation®5.</p>
                         <button class="btn-comprar">Comprar ahora</button>
                     </div>
                     <div class="slide-image">
@@ -67,7 +78,8 @@
                 <div class="carousel-slide slide-red">
                     <div class="slide-content">
                         <h2>Nintendo Switch 2</h2>
-                        <p>La nueva generación de Nintendo Switch está aquí. Disfruta de tus juegos favoritos en cualquier lugar con mejor rendimiento y gráficos mejorados.</p>
+                        <p>La nueva generación de Nintendo Switch está aquí. Disfruta de tus juegos favoritos en
+                            cualquier lugar con mejor rendimiento y gráficos mejorados.</p>
                         <button class="btn-comprar">Comprar ahora</button>
                     </div>
                     <div class="slide-image">
@@ -78,7 +90,8 @@
                 <div class="carousel-slide slide-blue">
                     <div class="slide-content">
                         <h2>Xbox Series X</h2>
-                        <p>La consola más potente del mercado. Experimenta juegos en 4K a 120fps y disfruta de Game Pass con cientos de títulos incluidos.</p>
+                        <p>La consola más potente del mercado. Experimenta juegos en 4K a 120fps y disfruta de Game Pass
+                            con cientos de títulos incluidos.</p>
                         <button class="btn-comprar">Comprar ahora</button>
                     </div>
                     <div class="slide-image">
@@ -104,131 +117,83 @@
                     </div>
                 </div>
 
-                <div class="productos-grid">
-                
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="/placeholder.svg?height=200&width=200" alt="Xbox Series X">
+                <section class="productos">
+
+                    <!-- Producto 1 -->
+                    <div class="producto">
+                        <div class="imagenes_producto">
+                            <img class="imagen_producto" src="../Static/img/Imagenes/series x especial.png"
+                                alt="Xbox Series X">
                         </div>
-                        <div class="producto-info">
-                            <h4>Xbox Series X</h4>
-                            <p class="producto-categoria">Consola</p>
-                            <div class="producto-precio">
-                                <span class="precio">$499.99</span>
-                                <button class="btn-agregar">Agregar</button>
-                            </div>
+                        <h3 class="product-title">XBOX SERIES X 2TB GALAXY BLACK LIMITED EDITION</h3>
+                        <p class="product-category">Hardware</p>
+                        <div class="product-price-section">
+                            <span class="product-price">$17,000.00</span>
                         </div>
+                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
+                    </div>
+                    <!-- Producto 2 -->
+
+                    <div class="producto">
+                        <div class="imagenes_producto">
+                            <img class="imagen_producto" src="../Static/img/Imagenes/zombies_xbox.png"
+                                alt="Zombies Xbox">
+                        </div>
+                        <h3 class="product-title">ZOMBIES GAME</h3>
+                        <p class="product-category">Juego Digital para Xbox</p>
+                        <div class="product-price-section">
+                            <span class="product-price">$450.00</span>
+                        </div>
+                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
                     </div>
 
-                
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="/placeholder.svg?height=200&width=200" alt="Nintendo Switch OLED">
+                    <div class="producto">
+                        <div class="imagenes_producto">
+                            <img class="imagen_producto" src="../Static/img/Imagenes/controlxboxwhite.png"
+                                alt="Control Xbox White">
                         </div>
-                        <div class="producto-info">
-                            <h4>Nintendo Switch OLED</h4>
-                            <p class="producto-categoria">Consola</p>
-                            <div class="producto-precio">
-                                <span class="precio">$349.99</span>
-                                <button class="btn-agregar">Agregar</button>
-                            </div>
+                        <h3 class="product-title">CONTROL XBOX INALÁMBRICO WHITE PARA XBOX SERIES X Y S</h3>
+                        <p class="product-category">Controles</p>
+                        <div class="product-price-section">
+                            <span class="product-price">$1,496.99</span>
                         </div>
+                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
                     </div>
 
-                 
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="/placeholder.svg?height=200&width=200" alt="Audífonos Gamer">
+                    <div class="producto">
+                        <div class="imagenes_producto">
+                            <img class="imagen_producto" src="../Static/img/Imagenes/Audifonos_Gamer.jpg"
+                                alt="Audífonos Gamer">
                         </div>
-                        <div class="producto-info">
-                            <h4>Audífonos Gamer</h4>
-                            <p class="producto-categoria">Accesorios</p>
-                            <div class="producto-precio">
-                                <span class="precio">$79.99</span>
-                                <button class="btn-agregar">Agregar</button>
-                            </div>
+                        <h3 class="product-title">AUDÍFONOS GAMER</h3>
+                        <p class="product-category">Accesorios de Consola</p>
+                        <div class="product-price-section">
+                            <span class="product-price">$760.00</span>
                         </div>
+                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
                     </div>
 
-                 
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="/placeholder.svg?height=200&width=200" alt="Lentes VR G88">
+                    <div class="producto">
+                        <div class="imagenes_producto">
+                            <img class="imagen_producto" src="../Static/img/Imagenes/controlxboxblack.png"
+                                alt="Control Xbox Carbon Black">
                         </div>
-                        <div class="producto-info">
-                            <h4>Lentes VR G88</h4>
-                            <p class="producto-categoria">Accesorios</p>
-                            <div class="producto-precio">
-                                <span class="precio">$299.99</span>
-                                <button class="btn-agregar">Agregar</button>
-                            </div>
+                        <h3 class="product-title">CONTROL XBOX INALÁMBRICO CARBON BLACK</h3>
+                        <p class="product-category">Controles</p>
+                        <div class="product-price-section">
+                            <span class="product-price">$1,096.99</span>
                         </div>
+                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
                     </div>
 
-                    <!-- Producto 5 -->
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="/placeholder.svg?height=200&width=200" alt="Xbox Series X">
-                        </div>
-                        <div class="producto-info">
-                            <h4>Xbox Series X</h4>
-                            <p class="producto-categoria">Consola</p>
-                            <div class="producto-precio">
-                                <span class="precio">$499.99</span>
-                                <button class="btn-agregar">Agregar</button>
-                            </div>
-                        </div>
-                    </div>
 
-                 
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="/placeholder.svg?height=200&width=200" alt="Control Play Station 5">
-                        </div>
-                        <div class="producto-info">
-                            <h4>Control Play Station 5</h4>
-                            <p class="producto-categoria">Controles</p>
-                            <div class="producto-precio">
-                                <span class="precio">$69.99</span>
-                                <button class="btn-agregar">Agregar</button>
-                            </div>
-                        </div>
-                    </div>
+                </section>
 
-                   
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="/placeholder.svg?height=200&width=200" alt="Control de Xbox Series X/S">
-                        </div>
-                        <div class="producto-info">
-                            <h4>Control de Xbox Series X/S</h4>
-                            <p class="producto-categoria">Controles</p>
-                            <div class="producto-precio">
-                                <span class="precio">$59.99</span>
-                                <button class="btn-agregar">Agregar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                   
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="/placeholder.svg?height=200&width=200" alt="Play Station 5">
-                        </div>
-                        <div class="producto-info">
-                            <h4>Play Station 5</h4>
-                            <p class="producto-categoria">Consola</p>
-                            <div class="producto-precio">
-                                <span class="precio">$499.99</span>
-                                <button class="btn-agregar">Agregar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </section>
         </div>
     </main>
-<script src="app/static/js/funciones.js"></script>
-   
+    <script src="app/static/js/funciones.js"></script>
+
 </body>
+
 </html>
