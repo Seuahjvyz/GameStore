@@ -1,3 +1,39 @@
+/* Estilos específicos para la página de pedidos */
+.pedidos-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.filtro-pedidos {
+  background: transparent;
+  border: 2px solid #a100ed;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filtro-pedidos:hover {
+  background-color: #a100ed;
+  box-shadow: 0 0 15px rgba(161, 0, 237, 0.5);
+}
+
+.filtro-pedidos i {
+  font-size: 16px;
+}
+
+.lista-pedidos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 /* ---------------------- Body ----------------------*/
 
 body {

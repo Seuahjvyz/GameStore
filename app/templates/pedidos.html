@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore - Mis Pedidos</title>
+    <link rel="stylesheet" href="../Static/css/stylepedidos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Barra Lateral Moderna -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-container">
+                    <img src="../Static/img/Icon_GS.png" alt="GameStore Logo" class="logo-image">
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <div class="nav-section">
+                <h3>Perfil</h3>
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon"><i class="fa-solid fa-house"></i></span>
+                    <span>Inicio</span>
+                </a>
+                <a href="perfil.html" class="nav-item">
+                    <span class="nav-icon"><i class="fa-solid fa-user"></i></span>
+                    <span>Perfil</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <span>Buscar</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon"><i class="fa-solid fa-heart"></i></span>
+                    <span>Favoritos</span>
+                </a>
+                <a href="pedidos.html" class="nav-item active">
+                    <span class="nav-icon"><i class="fa-solid fa-box"></i></span>
+                    <span>Pedidos</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <h3>Categorías</h3>
+                <a href="juegos.html" class="nav-item">
+                    <span class="nav-icon"><i class="fa-solid fa-gamepad"></i></span>
+                    <span>Juegos</span>
+                </a>
+                <a href="accesorios.html" class="nav-item">
+                    <span class="nav-icon"><i class="fa-solid fa-headphones"></i></span>
+                    <span>Accesorios</span>
+                </a>
+                <a href="consolas.html" class="nav-item">
+                    <span class="nav-icon"><i class="fa-solid fa-tv"></i></span>
+                    <span>Consolas</span>
+                </a>
+                <a href="controles.html" class="nav-item">
+                    <span class="nav-icon"><i class="fa-solid fa-gamepad"></i></span>
+                    <span>Controles</span>
+                </a>
+                <a href="Carrito.html" class="nav-item">
+                    <span class="nav-icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                    <span>Carrito</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Botón Registrarse dentro de la barra lateral -->
+        <div class="sidebar-register-section">
+            <button class="sidebar-register-btn">
+                <i class="fa-solid fa-user-plus"></i>
+                Registrarse
+            </button>
+        </div>
+    </aside>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <header class="header">
+            <h1>Mis Pedidos</h1>
+            <p class="header-subtitle">Revisa el estado de tus compras</p>
+        </header>
+
+        <main class="pedidos-container">
+            <div class="pedidos-header">
+                <button class="filtro-pedidos">
+                    <i class="fa-solid fa-filter"></i>
+                    Filtrar Pedidos
+                </button>
+            </div>
+
+            <div class="lista-pedidos">
+                <!-- Pedido 1 -->
+                <div class="pedido-item">
+                    <div class="pedido-image-container">
+                        <img src="../Static/img/Imagenes/grounded2.png" alt="Gears 5" class="pedido-imagen">
+                    </div>
+                    <div class="pedido-info">
+                        <h3 class="product-title">Grounded 2</h3>
+                        <p><strong>Fecha de Compra:</strong> 12/05/2025 15:13 hrs</p>
+                        <p><strong>Fecha de Entrega:</strong> 14/05/2025 8:00 a 20:00 hrs</p>
+                        <p class="estado-pedido entregado">Entregado</p>
+                    </div>
+                    <button class="pedido-detalles">
+                        <i class="fa-solid fa-eye"></i>
+                        Detalles
+                    </button>
+                </div>
+
+                <!-- Pedido 2 -->
+                <div class="pedido-item">
+                    <div class="pedido-image-container">
+                        <img src="../Static/img/Imagenes/howards.png" alt="Star Wars" class="pedido-imagen">
+                    </div>
+                    <div class="pedido-info">
+                        <h3 class="product-title">Howards Legacy</h3>
+                        <p><strong>Fecha de Compra:</strong> 12/05/2025 15:13 hrs</p>
+                        <p><strong>Fecha de Entrega:</strong> 14/05/2025 8:00 a 20:00 hrs</p>
+                        <p class="estado-pedido enviado">En camino</p>
+                    </div>
+                    <button class="pedido-detalles">
+                        <i class="fa-solid fa-eye"></i>
+                        Detalles
+                    </button>
+                </div>
+
+                <!-- Pedido 3 -->
+                <div class="pedido-item">
+                    <div class="pedido-image-container">
+                        <img src="../Static/img/Imagenes/series x especial.png" alt="Xbox Series X" class="pedido-imagen">
+                    </div>
+                    <div class="pedido-info">
+                        <h3 class="product-title">Xbox Series X 2TB Galaxy Black</h3>
+                        <p><strong>Fecha de Compra:</strong> 12/05/2025 15:13 hrs</p>
+                        <p><strong>Fecha de Entrega:</strong> 14/05/2025 8:00 a 20:00 hrs</p>
+                        <p class="estado-pedido procesando">Procesando</p>
+                    </div>
+                    <button class="pedido-detalles">
+                        <i class="fa-solid fa-eye"></i>
+                        Detalles
+                    </button>
+                </div>
+
+                <!-- Pedido 4 -->
+                <div class="pedido-item">
+                    <div class="pedido-image-container">
+                        <img src="../Static/img/Imagenes/controlxboxblack.png" alt="Control Xbox" class="pedido-imagen">
+                    </div>
+                    <div class="pedido-info">
+                        <h3 class="product-title">Control Xbox Inalámbrico</h3>
+                        <p><strong>Fecha de Compra:</strong> 12/05/2025 15:13 hrs</p>
+                        <p><strong>Fecha de Entrega:</strong> 14/05/2025 8:00 a 20:00 hrs</p>
+                        <p class="estado-pedido entregado">Entregado</p>
+                    </div>
+                    <button class="pedido-detalles">
+                        <i class="fa-solid fa-eye"></i>
+                        Detalles
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mensaje cuando no hay pedidos (comentado por defecto) -->
+            <!--
+            <div class="no-pedidos">
+                <i class="fa-solid fa-box-open"></i>
+                <h2>No tienes pedidos aún</h2>
+                <p>Cuando realices una compra, tus pedidos aparecerán aquí</p>
+            </div>
+            -->
+        </main>
+    </div>
+</body>
+</html>
