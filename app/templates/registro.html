@@ -1,140 +1,110 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameStore - Crear Cuenta</title>
-    <link rel="stylesheet" href="../Static/css/styles.css">
+    <title>Game Store</title>
+    <link rel="stylesheet" href="/app/static/css/stylee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script></script>
+
 </head>
+
 <body>
-    <div class="sidebar">
-        <h2>Inicio</h2>
-        <ul class="nav-list">
-            <li>Perfil</li>
-            <li>Buscar</li>
-            <li>Favoritos</li>
-            <li>Pedidos</li>
-        </ul>
-        
-        <h3>Categorías</h3>
-        <ul class="categories">
-            <li>Juegos</li>
-            <li>Accesorios</li>
-            <li>Consolas</li>
-            <li>Controles</li>
-        </ul>
-    </div>
+    <nav class="barra_lateral">
+        <a class="logo_link" href="/index.html"><img class="logo" src="/app/static/img/Icon_GS.png" alt="Logo"></a>
 
+        <ul>
+            <li><a class="enlace_barra_lateral" href="/index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/perfiluser.html"><i
+                        class="fa-solid fa-circle-user"></i> Perfil</a></li>
+            <li><a class="enlace_barra_lateral" href="#buscar"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
+            </li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/favoritos.html"><i class="fa-solid fa-heart"></i>
+                    Favoritos</a></li>
 
-  <!-- Barra Lateral Moderna -->
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <div class="logo">
-                <div class="logo-container">
-                    <img src="../Static/img/Icon_GS.png" alt="GameStore Logo" class="logo-image" onerror="this.style.display='none'; document.getElementById('logo-emoji').style.display='block';">
-                    <span id="logo-emoji" class="logo-emoji" style="display: none;">🎮</span>
-                </div>
-            </div>
-        </div>
-
-        <nav class="nav-menu">
-            <div class="nav-section">
-                <h3>Perfil</h3>
-                <a href="#" class="nav-item">
-                    <span class="nav-icon">🔍</span>
-                    <span>Buscar</span>
-                </a>
-                <a href="#" class="nav-item">
-                    <span class="nav-icon">❤️</span>
-                    <span>Favoritos</span>
-                </a>
-                <a href="#" class="nav-item">
-                    <span class="nav-icon">📦</span>
-                    <span>Pedidos</span>
-                </a>
-            </div>
-
-            <div class="nav-section">
+            <li><a class="enlace_barra_lateral" href="/app/templates/pedidos.html"><i class="fa-solid fa-box"></i>
+                    Pedidos</a></li>
+            <li>
                 <h3>Categorías</h3>
-                <a href="juegos.html" class="nav-item">
-                    <span class="nav-icon">🎮</span>
-                    <span>Juegos</span>
-                </a>
-                <a href="accesorios.html" class="nav-item">
-                    <span class="nav-icon">🎧</span>
-                    <span>Accesorios</span>
-                </a>
-                <a href="consolas.html" class="nav-item">
-                    <span class="nav-icon">🎯</span>
-                    <span>Consolas</span>
-                </a>
-                <a href="controles.html" class="nav-item">
-                    <span class="nav-icon">🎮</span>
-                    <span>Controles</span>
-                </a>
-                <a href="carrito.html" class="nav-item">
-                    <span class="nav-icon">🛒</span>
-                    <span>Carrito</span>
-                </a>
-            </div>
-        </nav>
+            </li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/juegos.html"><i class="fa-solid fa-ghost"></i>
+                    Juegos</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/accesorios.html"><i
+                        class="fa-solid fa-headset"></i> Accesorios</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/consolas.html"><i class="fa-solid fa-tv"></i>
+                    Consolas</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/controles.html"><i class="fa-solid fa-gamepad"></i>
+                    Controles</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/Carrito.html"><i
+                        class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+            <li><a class="enlace_barra_lateral" href="/app/templates/registro.html"><i class="fa-solid fa-user"></i>
+                    Registrarse</a></li>
+        </ul>
+    </nav>
+    <main>
+        <header class="encabezado">
+            <section class="buscador">
+                <input type="text" id="buscar" placeholder="Buscar producto">
+                <button class="btn_buscar" id="mostrarBuscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </section>
 
+            <section class="iconos">
+                <button class="btn_notificaciones" id="mostrarNotificaciones"><i class="fa-solid fa-bell"></i></button>
+                <a class="icon" href="/app/templates/Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="icon" href="#"><i class="fa-solid fa-circle-user"></i></a>
+            </section>
+        </header>
         <!-- Botón Iniciar Sesión dentro de la barra lateral -->
         <div class="sidebar-register-section">
-            <button class="sidebar-register-btn">Iniciar Sesión</button>
+            <a class="sidebar-register-btn" href="/app/templates/login.html">Iniciar Sesión</a>
         </div>
-    </aside>
 
-    <!-- Contenido Principal -->
+        <!-- Contenido Principal -->
 
-    <div class="main-content">
-        <div class="container">
-            <h1>Crear una Cuenta</h1>
-            
-            <p class="description">¡Vamos a crear tu cuenta!</p>
-            
-            <div class="form-section">
-                <div class="form-line">
-                    <span class="label">Nombre De Usuario:</span>
+        <div class="principal">
+            <div class="main-content">
 
-                    <input type="text" class="input-field" placeholder="">
 
-                    <input type="text" class="input-field" placeholder="Ingresa tu nombre de usuario">
+                <div class="container">
+                    <h1>Crear una Cuenta</h1>
 
-                </div>
-                
-                <div class="form-line">
-                    <span class="label">Contraseña:</span>
+                    <p class="description">¡Vamos a crear tu cuenta!</p>
 
-                    <input type="password" class="input-field" placeholder="">
+                    <div class="form-section">
+                        <div class="form-line">
+                            <span class="label">Nombre De Usuario:</span>
+                            <input type="text" class="input-field" placeholder="Ingresa tu nombre de usuario">
 
-                    <input type="password" class="input-field" placeholder="Crea una contraseña segura">
+                        </div>
 
-                </div>
-                
-                <div class="form-line">
-                    <span class="label">Email:</span>
+                        <div class="form-line">
+                            <span class="label">Contraseña:</span>
+                            <input type="password" class="input-field" placeholder="Crea una contraseña segura">
 
-                    <input type="email" class="input-field" placeholder="">
+                        </div>
 
-                    <input type="email" class="input-field" placeholder="Ingresa tu correo electrónico">
-                </div>
+                        <div class="form-line">
+                            <span class="label">Email:</span>
+                            <input type="email" class="input-field" placeholder="Ingresa tu correo electrónico">
+                        </div>
 
-                <div class="form-line">
-                    <span class="label">Confirmar Contraseña:</span>
-                    <input type="password" class="input-field" placeholder="Repite tu contraseña">
+                        <div class="form-line">
+                            <span class="label">Confirmar Contraseña:</span>
+                            <input type="password" class="input-field" placeholder="Repite tu contraseña">
+                        </div>
+                    </div>
 
+                    <div class="register-section">
+
+                        <button class="register-btn">Crear Cuenta</button>
+
+                    </div>
                 </div>
             </div>
-            
-            <div class="register-section">
 
-                
-
-                <button class="register-btn">Crear Cuenta</button>
-
-            </div>
         </div>
-    </div>
+    </main>
 </body>
+
 </html>
