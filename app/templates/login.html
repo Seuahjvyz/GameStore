@@ -7,30 +7,64 @@
     <link rel="stylesheet" href="../static/css/stylelog.css">
 </head>
 <body>
-    <!-- Barra Lateral -->
-    <div class="sidebar">
-        <h2>Inicio</h2>
-        
-        <div class="nav-section">
-            <h3>Perfil</h3>
-            <ul class="nav-list">
-                <li>Buscar</li>
-                <li>Favoritos</li>
-                <li>Pedidos</li>
-            </ul>
+    <!-- Barra Lateral Moderna -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-container">
+                    <img src="../Static/img/Icon_GS.png" alt="GameStore Logo" class="logo-image" onerror="this.style.display='none'; document.getElementById('logo-emoji').style.display='block';">
+                    <span id="logo-emoji" class="logo-emoji" style="display: none;">🎮</span>
+                </div>
+            </div>
         </div>
 
-        <div class="nav-section">
-            <h3>Categorías</h3>
-            <ul class="nav-list">
-                <li>Juegos</li>
-                <li>Accesorios</li>
-                <li>Consolas</li>
-                <li>Controles</li>
-                <li>Carrito</li>
-            </ul>
+        <nav class="nav-menu">
+            <div class="nav-section">
+                <h3>Perfil</h3>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🔍</span>
+                    <span>Buscar</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">❤️</span>
+                    <span>Favoritos</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Pedidos</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <h3>Categorías</h3>
+                <a href="juegos.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Juegos</span>
+                </a>
+                <a href="accesorios.html" class="nav-item">
+                    <span class="nav-icon">🎧</span>
+                    <span>Accesorios</span>
+                </a>
+                <a href="consolas.html" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span>Consolas</span>
+                </a>
+                <a href="controles.html" class="nav-item">
+                    <span class="nav-icon">🎮</span>
+                    <span>Controles</span>
+                </a>
+                <a href="carrito.html" class="nav-item">
+                    <span class="nav-icon">🛒</span>
+                    <span>Carrito</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Botón Registrarse dentro de la barra lateral -->
+        <div class="sidebar-register-section">
+            <button class="sidebar-register-btn">Registrarse</button>
         </div>
-    </div>
+    </aside>
 
     <!-- Contenido Principal -->
     <div class="main-content">
@@ -42,12 +76,12 @@
             <div class="form-section">
                 <div class="form-line">
                     <span class="label">Nombre o Correo de Usuario</span>
-                    <input type="text" class="input-field" value="">
+                    <input type="text" class="input-field" placeholder="Ingresa tu usuario o correo">
                 </div>
                 
                 <div class="form-line">
                     <span class="label">Contraseña</span>
-                    <input type="password" class="input-field" value="">
+                    <input type="password" class="input-field" placeholder="Ingresa tu contraseña">
                 </div>
             </div>
             
