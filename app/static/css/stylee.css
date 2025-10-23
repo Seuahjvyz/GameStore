@@ -350,7 +350,55 @@ i {
 
 
 
+/* ------------------------------------- C ------------------------------------- */
+/* ------------------------------------- O  ------------------------------------- */
+/* ------------------------------------- N ------------------------------------- */
+/* ------------------------------------- T ------------------------------------- */
+/* ------------------------------------- R ------------------------------------- */
+/* ------------------------------------- O ------------------------------------- */
+/* ------------------------------------- L ------------------------------------- */
+/* ------------------------------------- E ------------------------------------- */
+/* ------------------------------------- S ------------------------------------- */
 
 
 
+.product-title {
+    font-size: 13px; 
+    font-weight: 600; 
+    color: #ffffff; 
 
+}
+.product-category {
+  color: #a0a0a0;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn_carrito{
+  width: 100%;
+  padding: 10px 14px; 
+  background: linear-gradient(135deg, #ec4899 0%, #d946ef 100%);
+  color: white;
+  border: none;
+  border-radius: 8px; 
+  font-size: 11px; 
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(236, 72, 153, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px; 
+  margin-top: auto;
+}
+
+.btn_carrito:hover {
+  background: linear-gradient(135deg, #db2777 0%, #c026d3 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(236, 72, 153, 0.5);
+}
