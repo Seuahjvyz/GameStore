@@ -1,227 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <title>Game Store</title>
-    <link rel="stylesheet" href="../../app/static/css/stylee.css">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <title>Favoritos - Game Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylee.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <script></script>
+    
 </head>
 
-
+<body>
     <nav class="barra_lateral">
-        <a class="logo_link" href="../../index.html"><img class="logo" src="../../app/static/img/Icon_GS.png" alt="Logo"></a>
-
+        <a class="logo_link" href="{{ url_for('root') }}"><img class="logo" src="{{ url_for('static', filename='img/Icon_GS.png') }}" alt="Logo"></a>
         <ul>
-            <li><a class="enlace_barra_lateral" href="../../index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
-
-            <li><a class="enlace_barra_lateral" href="perfiluser.html"><i
-                    class="fa-solid fa-circle-user"></i> Perfil</a></li>
-
-            <li><a class="enlace_barra_lateral" href="../../index.html"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
-            </li>
-            <li><a class="enlace_barra_lateral_fijo" href="favoritos.html"><i class="fa-solid fa-heart"></i>
-                    Favoritos</a></li>
-
-            <li><a class="enlace_barra_lateral" href="pedidos.html"><i class="fa-solid fa-box"></i>
-                    Pedidos</a></li>
-            <li>
-                <h3>Categorías</h3>
-            </li>
-            <li><a class="enlace_barra_lateral" href="juegos.html"><i class="fa-solid fa-ghost"></i>
-                    Juegos</a></li>
-            <li><a class="enlace_barra_lateral" href="accesorios.html"><i
-                        class="fa-solid fa-headset"></i> Accesorios</a></li>
-            <li><a class="enlace_barra_lateral" href="consolas.html"><i class="fa-solid fa-tv"></i>
-                    Consolas</a></li>
-            <li><a class="enlace_barra_lateral" href="controles.html"><i class="fa-solid fa-gamepad"></i>
-                    Controles</a></li>
-            <li><a class="enlace_barra_lateral" href="Carrito.html"><i
-                        class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
-            <li><a class="enlace_barra_lateral" href="registro.html"><i class="fa-solid fa-users"></i>
-                    Registrarse</a></li>
-            <li><a class="enlace_barra_lateral" href="../admin_templates/admin.html"><i class="fa-solid fa-user"></i>
-                    Admin</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('root') }}"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('template_view', name='perfiluser.html') }}"><i class="fa-solid fa-circle-user"></i> Perfil</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('root') }}"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a></li>
+            <li><a class="enlace_barra_lateral_fijo" href="{{ url_for('favoritos_page') }}"><i class="fa-solid fa-heart"></i> Favoritos</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('pedidos_page') }}"><i class="fa-solid fa-box"></i> Pedidos</a></li>
         </ul>
     </nav>
 
     <main>
         <header class="encabezado">
             <section class="buscador">
-                <input type="text" id="buscar" placeholder="Buscar producto">
-                <button class="btn_buscar" id="buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text" id="buscar-input" placeholder="Buscar producto">
+                <button class="btn_buscar" id="buscar-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </section>
-
             <section class="iconos">
-                <button class="btn_notificaciones" id="mostrarNotificaciones"><i class="fa-solid fa-bell"></i></button>
-                <a class="icon" href="Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a class="icon" href="perfiluser.html"><i class="fa-solid fa-circle-user"></i></a>
+                <a class="icon" href="{{ url_for('view_cart') }}"><i class="fa-solid fa-cart-shopping"></i> <span id="cart-count">{{ session.get('cart')|length if session.get('cart') else 0 }}</span></a>
+                <a class="icon" href="{{ url_for('template_view', name='perfiluser.html') }}"><i class="fa-solid fa-circle-user"></i></a>
             </section>
         </header>
 
-
-        <!-- Contenido de Favoritos -->
         <div class="principal">
-            <!-- Header de Favoritos -->
             <div class="favoritos">
                 <h1>Mis Favoritos</h1>
                 <p>Tus productos guardados para más tarde</p>
             </div>
 
-            <!-- Grid de Favoritos -->
             <div class="productos">
-                <!-- Producto Favorito 1 -->
-                <div class="producto">
-                    <div class="imagenes_producto">
-                        <img class="imagen_producto" src="../../app/static/img/Imagenes/play5.png" alt="PlayStation 5">
+                {% if products and products|length > 0 %}
+                    {% for p in products %}
+                    <div class="producto">
+                        <div class="imagenes_producto">
+                            <img class="imagen_producto" src="{{ url_for('product_image', pid=p.id) }}" alt="{{ p.title }}">
+                        </div>
+                        <h3 class="product-title">{{ p.title }}</h3>
+                        <p class="product-category">{{ p.category or 'General' }}</p>
+                        <div class="product-price-section">
+                            <span class="product-price">${{ '%.2f'|format(p.price) }}</span>
+                        </div>
+                        <button class="btn_fav {% if session.get('favorites') and (p.id|string) in session.get('favorites') %}fav-active{% endif %}" data-pid="{{ p.id }}"><i class="fa-solid fa-heart"></i></button>
+                        <button class="btn_carrito" data-pid="{{ p.id }}"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
                     </div>
-                    <h3 class="product-title">PLAY STATION 5 1TB</h3>
-                    <p class="product-category">Hardware</p>
-                    <div class="product-price-section">
-                        <span class="product-price">$11,996.99</span>
-                    </div>
-                    <button class="favorito-btn active">
-                        <i class="fa-solid fa-heart"></i>
-                    </button>
-                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                </div>
-
-                <!-- Producto Favorito 2 -->
-                <div class="producto">
-                    <div class="imagenes_producto">
-                        <img class="imagen_producto" src="../../app/static/img/Imagenes/gta6.png" alt="GTA 6">
-                    </div>
-                    <h3 class="product-title">GRAND THEFT AUTO VI</h3>
-                    <p class="product-category">Juegos PS5</p>
-                    <div class="product-price-section">
-                        <span class="product-price">$1,996.99</span>
-                    </div>
-                    <button class="favorito-btn active">
-                        <i class="fa-solid fa-heart"></i>
-                    </button>
-                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                </div>
-
-                <!-- Producto Favorito 3 -->
-                <div class="producto">
-                    <div class="imagenes_producto">
-                        <img class="imagen_producto" src="../../app/static/img/Imagenes/Audifonos_Gamer.jpg"
-                            alt="Audífonos Gamer">
-                    </div>
-                    <h3 class="product-title">AUDÍFONOS GAMER PRO</h3>
-                    <p class="product-category">Accesorios</p>
-                    <div class="product-price-section">
-                        <span class="product-price">$760.00</span>
-                    </div>
-                    <button class="favorito-btn active">
-                        <i class="fa-solid fa-heart"></i>
-                    </button>
-                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                </div>
-
-                <!-- Producto Favorito 4 -->
-                <div class="producto">
-                    <div class="imagenes_producto">
-                        <img class="imagen_producto" src="../../app/static/img/Imagenes/controlxboxcian.png"
-                            alt="Control Xbox Cian">
-                    </div>
-                    <h3 class="product-title">CONTROL XBOX INALÁMBRICO CIAN</h3>
-                    <p class="product-category">Controles</p>
-                    <div class="product-price-section">
-                        <span class="product-price">$1,896.99</span>
-                    </div>
-                    <button class="favorito-btn active">
-                        <i class="fa-solid fa-heart"></i>
-                    </button>
-                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                </div>
-
-                <!-- Producto Favorito 5 -->
-                <div class="producto">
-                    <div class="imagenes_producto">
-                        <img class="imagen_producto" src="../../app/static/img/Imagenes/spider_man2.png" alt="Spider Man 2">
-                    </div>
-                    <h3 class="product-title">SPIDER MAN 2</h3>
-                    <p class="product-category">Juegos PS5</p>
-                    <div class="product-price-section">
-                        <span class="product-price">$1,896.99</span>
-                    </div>
-                    <button class="favorito-btn active">
-                        <i class="fa-solid fa-heart"></i>
-                    </button>
-                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                </div>
-
-                <!-- Producto Favorito 6 -->
-                <div class="producto">
-                    <div class="imagenes_producto">
-                        <img class="imagen_producto" src="../../app/static/img/Imagenes/Nintendo_Switch_2.jpeg"
-                            alt="Nintendo Switch">
-                    </div>
-                    <h3 class="product-title">NINTENDO SWITCH OLED</h3>
-                    <p class="product-category">Consolas</p>
-                    <div class="product-price-section">
-                        <span class="product-price">$7,799.99</span>
-                    </div>
-                    <button class="favorito-btn active">
-                        <i class="fa-solid fa-heart"></i>
-                    </button>
-                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                </div>
-
-                <!-- Producto Favorito 7 -->
-                <div class="producto">
-                    <div class="imagenes_producto">
-                        <img class="imagen_producto" src="../../app/static/img/Imagenes/elden_ring.png" alt="Elden Ring">
-                    </div>
-                    <h3 class="product-title">ELDEN RING</h3>
-                    <p class="product-category">Juegos PS5</p>
-                    <div class="product-price-section">
-                        <span class="product-price">$896.99</span>
-                    </div>
-                    <button class="favorito-btn active">
-                        <i class="fa-solid fa-heart"></i>
-                    </button>
-                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                </div>
-
-                <!-- Producto Favorito 8 -->
-                <div class="producto">
-                    <div class="imagenes_producto">
-                        <img class="imagen_producto" src="../../app/static/img/Imagenes/fifa_23.png" alt="FIFA 23">
-                    </div>
-                    <h3 class="product-title">FIFA 23</h3>
-                    <p class="product-category">Juegos PS5</p>
-                    <div class="product-price-section">
-                        <span class="product-price">$1,250.00</span>
-                    </div>
-                    <button class="favorito-btn active">
-                        <i class="fa-solid fa-heart"></i>
-                    </button>
-                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                </div>
-
-                <!-- Producto Favorito 9 -->
-                <div class="producto">
-                    <div class="imagenes_producto">
-                        <img class="imagen_producto" src="../../app/static/img/Imagenes/gran_turismo7.png"
-                            alt="Gran Turismo 7">
-                    </div>
-                    <h3 class="product-title">GRAN TURISMO 7</h3>
-                    <p class="product-category">Juegos PS5</p>
-                    <div class="product-price-section">
-                        <span class="product-price">$870.00</span>
-                    </div>
-                    <button class="favorito-btn active">
-                        <i class="fa-solid fa-heart"></i>
-                    </button>
-                    <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                </div>
-
+                    {% endfor %}
+                {% else %}
+                    <p>No tienes productos en favoritos.</p>
+                {% endif %}
             </div>
         </div>
     </main>
+
+    <script src="{{ url_for('static', filename='js/site_actions.js') }}"></script>
 </body>
 
 </html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Game Store Web</title>
+      <link rel="stylesheet" href="../static/css/style-provisional.css">
+    <!-- Added Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a class="logo_link" href="/admin/admin.html">
+                        <img src="../static/img/Icon_GS.png" alt="Game Store Logo">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Replaced button and nav-menu with new ul-based structure with Font Awesome icons -->
+            <nav class="nav-menu">
+                <ul>
+                    <li><a class="enlace_barra_lateral" href="/admin/admin.html"><i class="fa-solid fa-house"></i> <span>Inicio</span></a></li>
+                    <li><a class="enlace_barra_lateral active" href="/admin/perfil.html"><i class="fa-solid fa-circle-user"></i> <span>Perfil</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="/admin/inventario.html"><i class="fa-solid fa-magnifying-glass"></i> <span>Buscar</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="/admin/pedidos.html"><i class="fa-solid fa-truck"></i> <span>Gestión de pedidos</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="/admin/inventario.html"><i class="fa-solid fa-boxes-packing"></i> <span>Inventario</span></a></li>
+                    
+                    <li>
+                        <h3>Categorías</h3>
+                    </li>
+                    
+                    <li><a class="enlace_barra_lateral" href="/admin/juegos.html"><i class="fa-solid fa-ghost"></i> <span>Juegos</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="/admin/accesorios.html"><i class="fa-solid fa-headset"></i> <span>Accesorios</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="/admin/consolas.html"><i class="fa-solid fa-tv"></i> <span>Consolas</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="/admin/controles.html"><i class="fa-solid fa-gamepad"></i> <span>Controles</span></a></li>
+                </ul>
+                
+                <ul style="margin-top: auto; padding-top: 1rem;">
+                    <li><a class="enlace_barra_lateral_fijo" href="/admin/reportes.html"><i class="fa-solid fa-chart-column"></i> <span>Reportes</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="/admin/usuarios.html"><i class="fa-solid fa-users"></i> <span>Usuarios</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-messages" style="max-width:900px;margin:0 auto;padding:1rem;">
+                        {% for m in messages %}
+                            <div class="flash">{{ m }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <div class="profile-container-centered">
+                <div class="profile-card">
+                    <div class="profile-avatar-large">
+                        <img src="../static/img/perfil.jpg" alt="Avatar de Isaac Méndez">
+                    </div>
+                    <h1 class="profile-name">Isaac Méndez</h1>
+                    <span class="profile-badge">ADMINISTRADOR</span>
+                    <p class="profile-email-centered">isaacmdz@gamestore.com</p>
+                </div>
+
+                <div class="profile-actions">
+                    <button class="profile-action-btn" onclick="window.location.href='inventario.html'">
+                        <span class="action-icon">📦</span>
+                        <span>Inventario</span>
+                    </button>
+                    <button class="profile-action-btn" onclick="window.location.href='reportes.html'">
+                        <span class="action-icon">📊</span>
+                        <span>Reportes</span>
+                    </button>
+                    <button class="profile-action-btn" onclick="window.location.href='usuarios.html'">
+                        <span class="action-icon">👥</span>
+                        <span>Usuarios</span>
+                    </button>
+                    <button class="profile-action-btn" onclick="window.location.href='pedidos.html'">
+                        <span class="action-icon">📋</span>
+                        <span>Pedidos</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../static/js/script.js"></script>
+</body>
+</html>

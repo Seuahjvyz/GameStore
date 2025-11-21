@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario - Game Store Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style-provisional.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <!-- Added Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="barra_lateral">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a class="logo_link" href="{{ url_for('admin_dashboard') }}">
+                        <img class="logo-img" src="{{ url_for('static', filename='img/Icon_GS.png') }}" alt="Game Store Logo">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Replaced button and nav-menu with new ul-based structure -->
+            <nav class="nav-menu">
+                <ul>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_dashboard') }}"><i class="fa-solid fa-house"></i> <span>Inicio</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='perfil.html') }}"><i class="fa-solid fa-circle-user"></i> <span>Perfil</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_inventario') }}"><i class="fa-solid fa-magnifying-glass"></i> <span>Buscar</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='pedidos.html') }}"><i class="fa-solid fa-truck"></i> <span>Gestión de pedidos</span></a></li>
+                    <li><a class="enlace_barra_lateral active" href="{{ url_for('admin_inventario') }}"><i class="fa-solid fa-boxes-packing"></i> <span>Inventario</span></a></li>
+                    
+                    <li>
+                        <h3>Categorías</h3>
+                    </li>
+                    
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='juegos.html') }}"><i class="fa-solid fa-ghost"></i> <span>Juegos</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='accesorios.html') }}"><i class="fa-solid fa-headset"></i> <span>Accesorios</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='consolas.html') }}"><i class="fa-solid fa-tv"></i> <span>Consolas</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='controles.html') }}"><i class="fa-solid fa-gamepad"></i> <span>Controles</span></a></li>
+                </ul>
+                
+                <ul style="margin-top: auto; padding-top: 1rem;">
+                    <li><a class="enlace_barra_lateral_fijo" href="{{ url_for('admin_render', name='reportes.html') }}"><i class="fa-solid fa-chart-column"></i> <span>Reportes</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='usuarios.html') }}"><i class="fa-solid fa-users"></i> <span>Usuarios</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Inventario</h1>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Buscar productos...">
+                    <button class="search-button">🔍</button>
+                </div>
+            </div>
+
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                <div class="flash-messages">
+                                    {% for m in messages %}
+                                        <div class="flash">{{ m }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        {% endwith %}
+
+            <div class="section-header">
+                <div>
+                    <h2>Todos los Productos</h2>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <div>
+                    <h2>Todos los Productos</h2>
+                </div>
+                <a class="btn-primary" href="{{ url_for('admin_inventario_new') }}">+ Agregar Producto</a>
+            </div>
+
+            <div class="products-grid">
+                {% for p in products %}
+                <div class="product-card">
+                    <img src="{{ url_for('product_image', pid=p.id) }}" alt="{{ p.title }}" class="product-image">
+                    <h3 class="product-title">{{ p.title }}</h3>
+                    <p class="product-price">${{ '%.2f'|format(p.price) }}</p>
+                    <span class="product-stock">En stock</span>
+                    <div class="product-actions">
+                        <a class="btn-edit" href="{{ url_for('admin_inventario_edit', pid=p.id) }}">✏️ Editar</a>
+                        <form class="product-delete-form" data-pid="{{ p.id }}" method="post" action="{{ url_for('admin_inventario_delete', pid=p.id) }}" style="display:inline;margin:0;padding:0;">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                            <button type="button" class="btn-delete delete-trigger" data-pid="{{ p.id }}">🗑️ Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+                {% else %}
+                <p>No hay productos.</p>
+                {% endfor %}
+            </div>
+        </main>
+    </div>
+        <!-- Delete confirmation modal -->
+        <div id="deleteModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Confirmar eliminación</h2>
+                    <button class="modal-close" aria-label="Cerrar">×</button>
+                </div>
+                <div class="form-group" style="padding:24px;">
+                    <p>¿Estás segur@ de que quieres eliminar este producto? Esta acción no se puede deshacer.</p>
+                </div>
+                <div class="modal-actions" style="padding:16px;">
+                    <button id="confirmDelete" class="btn-delete">Eliminar</button>
+                    <button id="cancelDelete" class="btn-secondary">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+    <script src="{{ url_for('static', filename='js/site_actions.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controles - Game Store Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style-provisional.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <!-- Added Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a class="logo_link" href="{{ url_for('admin_dashboard') }}">
+                        <img src="{{ url_for('static', filename='img/Icon_GS.png') }}" alt="Game Store Logo">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Replaced button and nav-menu with new ul-based structure with Font Awesome icons -->
+            <nav class="nav-menu">
+                <ul>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_dashboard') }}"><i class="fa-solid fa-house"></i> <span>Inicio</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='perfil.html') }}"><i class="fa-solid fa-circle-user"></i> <span>Perfil</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_inventario') }}"><i class="fa-solid fa-magnifying-glass"></i> <span>Buscar</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='pedidos.html') }}"><i class="fa-solid fa-truck"></i> <span>Gestión de pedidos</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_inventario') }}"><i class="fa-solid fa-boxes-packing"></i> <span>Inventario</span></a></li>
+                    
+                    <li>
+                        <h3>Categorías</h3>
+                    </li>
+                    
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='juegos.html') }}"><i class="fa-solid fa-ghost"></i> <span>Juegos</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='accesorios.html') }}"><i class="fa-solid fa-headset"></i> <span>Accesorios</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='consolas.html') }}"><i class="fa-solid fa-tv"></i> <span>Consolas</span></a></li>
+                    <li><a class="enlace_barra_lateral active" href="{{ url_for('admin_render', name='controles.html') }}"><i class="fa-solid fa-gamepad"></i> <span>Controles</span></a></li>
+                </ul>
+                
+                <ul style="margin-top: auto; padding-top: 1rem;">
+                    <li><a class="enlace_barra_lateral_fijo" href="{{ url_for('admin_render', name='reportes.html') }}"><i class="fa-solid fa-chart-column"></i> <span>Reportes</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='usuarios.html') }}"><i class="fa-solid fa-users"></i> <span>Usuarios</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-messages" style="max-width:900px;margin:0 auto;padding:1rem;">
+                        {% for m in messages %}
+                            <div class="flash">{{ m }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <div class="content-header">
+                <h1>Controles</h1>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Buscar controles...">
+                    <button class="search-button">🔍</button>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Catálogo de Controles</h2>
+                <span class="badge">89 controles</span>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='img/Imagenes/contrlplay.jpg') }}" alt="DualSense Controller" class="product-image">
+                    <h3 class="product-title">DualSense Controller</h3>
+                    <p class="product-price">$69.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='img/Imagenes/controlplay5black.png') }}" alt="DualSense Edge" class="product-image">
+                    <h3 class="product-title">DualSense Edge</h3>
+                    <p class="product-price">$199.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Xbox Wireless Controller" class="product-image">
+                    <h3 class="product-title">Xbox Wireless Controller</h3>
+                    <p class="product-price">$59.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='img/Imagenes/control_elite_black.png') }}" alt="Xbox Elite Controller" class="product-image">
+                    <h3 class="product-title">Xbox Elite Controller Series 2</h3>
+                    <p class="product-price">$179.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Nintendo Switch Pro Controller" class="product-image">
+                    <h3 class="product-title">Switch Pro Controller</h3>
+                    <p class="product-price">$69.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Joy-Con Pair" class="product-image">
+                    <h3 class="product-title">Joy-Con Pair</h3>
+                    <p class="product-price">$79.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Razer Wolverine" class="product-image">
+                    <h3 class="product-title">Razer Wolverine V2</h3>
+                    <p class="product-price">$99.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="SCUF Controller" class="product-image">
+                    <h3 class="product-title">SCUF Reflex Pro</h3>
+                    <p class="product-price">$229.99</p>
+                    <span class="product-stock out-of-stock">Agotado</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="8BitDo Controller" class="product-image">
+                    <h3 class="product-title">8BitDo Pro 2</h3>
+                    <p class="product-price">$49.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="PowerA Controller" class="product-image">
+                    <h3 class="product-title">PowerA Enhanced Controller</h3>
+                    <p class="product-price">$39.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Arcade Stick" class="product-image">
+                    <h3 class="product-title">Fighting Arcade Stick</h3>
+                    <p class="product-price">$149.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Racing Wheel" class="product-image">
+                    <h3 class="product-title">Racing Wheel Pro</h3>
+                    <p class="product-price">$299.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/site_actions.js') }}"></script>
+</body>
+</html>

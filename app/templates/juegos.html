@@ -4,59 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Juegos</title>
-    <link rel="stylesheet" href="../../app/static/css/stylee.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylee.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <script src="../../app/static/js/funciones.js"></script>
+    <script src="/static/js/funciones.js"></script>
 </head>
 
 <body>
     <nav class="barra_lateral">
-        <a class="logo_link" href="../../index.html"><img class="logo" src="../../app/static/img/Icon_GS.png" alt="Logo"></a>
+        <a class="logo_link" href="/"><img class="logo" src="/static/img/Icon_GS.png" alt="Logo"></a>
 
         <ul>
-            <li><a class="enlace_barra_lateral" href="../../index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
-
-            <li><a class="enlace_barra_lateral" href="perfiluser.html"><i
-                    class="fa-solid fa-circle-user"></i> Perfil</a></li>
-
-            <li><a class="enlace_barra_lateral" href="../../index.html"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
-            </li>
-            <li><a class="enlace_barra_lateral" href="favoritos.html"><i class="fa-solid fa-heart"></i>
-                    Favoritos</a></li>
-
-            <li><a class="enlace_barra_lateral" href="pedidos.html"><i class="fa-solid fa-box"></i>
-                    Pedidos</a></li>
-            <li>
-                <h3>Categorías</h3>
-            </li>
-            <li><a class="enlace_barra_lateral_fijo" href="juegos.html"><i class="fa-solid fa-ghost"></i>
-                    Juegos</a></li>
-            <li><a class="enlace_barra_lateral" href="accesorios.html"><i
-                        class="fa-solid fa-headset"></i> Accesorios</a></li>
-            <li><a class="enlace_barra_lateral" href="consolas.html"><i class="fa-solid fa-tv"></i>
-                    Consolas</a></li>
-            <li><a class="enlace_barra_lateral" href="controles.html"><i class="fa-solid fa-gamepad"></i>
-                    Controles</a></li>
-            <li><a class="enlace_barra_lateral" href="Carrito.html"><i
-                        class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
-            <li><a class="enlace_barra_lateral" href="registro.html"><i class="fa-solid fa-users"></i>
-                    Registrarse</a></li>
-            <li><a class="enlace_barra_lateral" href="../admin_templates/admin.html"><i class="fa-solid fa-user"></i>
-                    Admin</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('root') }}"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('perfiluser') }}"><i class="fa-solid fa-circle-user"></i> Perfil</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('root') }}"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('favoritos_page') }}"><i class="fa-solid fa-heart"></i> Favoritos</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('pedidos_page') }}"><i class="fa-solid fa-box"></i> Pedidos</a></li>
+            <li><h3>Categorías</h3></li>
+            <li><a class="enlace_barra_lateral_fijo" href="{{ url_for('category_page', slug='juegos') }}"><i class="fa-solid fa-ghost"></i> Juegos</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('category_page', slug='accesorios') }}"><i class="fa-solid fa-headset"></i> Accesorios</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('category_page', slug='consolas') }}"><i class="fa-solid fa-tv"></i> Consolas</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('category_page', slug='controles') }}"><i class="fa-solid fa-gamepad"></i> Controles</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('view_cart') }}"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('registro') }}"><i class="fa-solid fa-users"></i> Registrarse</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('login') }}"><i class="fa-solid fa-user"></i> Iniciar sesión</a></li>
         </ul>
     </nav>
 
     <main>
         <header class="encabezado">
             <section class="buscador">
-                <input type="text" id="buscar" placeholder="Buscar producto">
-                <button class="btn_buscar" id="buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text" id="buscar-input" placeholder="Buscar producto">
+                <button class="btn_buscar" id="buscar-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </section>
 
             <section class="iconos">
                 <button class="btn_notificaciones" id="mostrarNotificaciones"><i class="fa-solid fa-bell"></i></button>
-                <a class="icon" href="Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a class="icon" href="perfiluser.html"><i class="fa-solid fa-circle-user"></i></a>
+                <a class="icon" href="/templates/Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="icon" href="/templates/perfiluser.html"><i class="fa-solid fa-circle-user"></i></a>
             </section>
         </header>
 
@@ -67,217 +51,29 @@
                 <h1>Juegos</h1>
                 <p class="header-subtitle">Los mejores juegos para todas las plataformas</p>
                 <section class="productos">
-
-                    <!-- Producto 1 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/CODBO6.png"
-                                alt="Call of Duty Black Ops 6">
+                    {% if products and products|length > 0 %}
+                        {% for p in products %}
+                        <div class="producto">
+                            <div class="imagenes_producto">
+                                <img class="imagen_producto" src="{{ url_for('product_image', pid=p.id) }}" alt="{{ p.title }}">
+                            </div>
+                            <h3 class="product-title">{{ p.title }}</h3>
+                            <p class="product-category">{{ p.category or 'General' }}</p>
+                            <div class="product-price-section">
+                                <span class="product-price">${{ '%.2f'|format(p.price) }}</span>
+                            </div>
+                            <button class="btn_carrito" data-pid="{{ p.id }}"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
+                            <button class="btn_fav {% if session.get('favorites') and (p.id|string) in session.get('favorites') %}fav-active{% endif %}" data-pid="{{ p.id }}">❤</button>
                         </div>
-                        <h3 class="product-title">CALL OF DUTY BLACK OPS 6</h3>
-                        <p class="product-category">Juego Digital para Xbox</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$1,200.00</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 2 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/howards.png" alt="Hogwarts Legacy">
-                        </div>
-                        <h3 class="product-title">HOGWARTS LEGACY</h3>
-                        <p class="product-category">Juego Digital para Xbox</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$1,000.34</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 3 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/mk1_xbox.png"
-                                alt="Mortal Kombat 1">
-                        </div>
-                        <h3 class="product-title">MORTAL KOMBAT 1</h3>
-                        <p class="product-category">Juego Digital para Xbox</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$651.00</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 4 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/codbocoldwar.png"
-                                alt="Call of Duty Cold War">
-                        </div>
-                        <h3 class="product-title">CALL OF DUTY COLD WAR</h3>
-                        <p class="product-category">Juego Digital para Xbox</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$789.89</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 5 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/crash_xbox.png"
-                                alt="Crash Bandicoot N Sane Trilogy">
-                        </div>
-                        <h3 class="product-title">CRASH BANDICOOT NSANE TRILOGY</h3>
-                        <p class="product-category">Juego Digital para Xbox</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$396.99</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 6 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/elden_ring.png" alt="Elden Ring">
-                        </div>
-                        <h3 class="product-title">ELDEN RING</h3>
-                        <p class="product-category">Juego Digital para Xbox</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$896.99</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 7 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/FC26.jpeg" alt="FIFA 26">
-                        </div>
-                        <h3 class="product-title">FIFA 26</h3>
-                        <p class="product-category">Juego Digital para Xbox</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$1,296.99</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 8 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/good_of_war_ps4.png"
-                                alt="God of War">
-                        </div>
-                        <h3 class="product-title">GOD OF WAR</h3>
-                        <p class="product-category">Juego para PS4</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$596.99</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 9 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/gran_turismo_7.jpg"
-                                alt="Gran Turismo 7">
-                        </div>
-                        <h3 class="product-title">GRAN TURISMO 7</h3>
-                        <p class="product-category">Juego Digital para PS5</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$870.00</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 10 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/ps5_residente_evil4.png"
-                                alt="Resident Evil 4">
-                        </div>
-                        <h3 class="product-title">RESIDENT EVIL 4</h3>
-                        <p class="product-category">Juego Digital para PS5</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$1,200.00</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 11 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/spider_man_ps5.png"
-                                alt="Spider Man PS5">
-                        </div>
-                        <h3 class="product-title">SPIDER MAN PS5</h3>
-                        <p class="product-category">Juego Digital para PS5</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$1,100.00</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 12 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/stray_ps5.png" alt="Stray PS5">
-                        </div>
-                        <h3 class="product-title">STRAY PS5</h3>
-                        <p class="product-category">Juego Digital para PS5</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$750.00</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 13 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/tomb_raider_xbox.png"
-                                alt="Tomb Raider Xbox">
-                        </div>
-                        <h3 class="product-title">TOMB RAIDER</h3>
-                        <p class="product-category">Juego Digital para Xbox</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$350.00</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 14 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/wwe2k24_xbox.png"
-                                alt="WWE 2K24 Xbox">
-                        </div>
-                        <h3 class="product-title">WWE 2K24</h3>
-                        <p class="product-category">Juego Digital para Xbox</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$890.00</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 15 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/zombies_xbox.png"
-                                alt="Zombies Xbox">
-                        </div>
-                        <h3 class="product-title">ZOMBIES GAME</h3>
-                        <p class="product-category">Juego Digital para Xbox</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$450.00</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
+                        {% endfor %}
+                    {% else %}
+                        <p>No hay productos en esta categoría.</p>
+                    {% endif %}
                 </section>
             </div>
         </div>
     </main>
+    <script src="{{ url_for('static', filename='js/site_actions.js') }}"></script>
 </body>
 
 </html>

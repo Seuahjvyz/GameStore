@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consolas - Game Store Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style-provisional.css') }}">
+     <meta name="csrf-token" content="{{ csrf_token }}">
+    <!-- Added Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a class="logo_link" href="{{ url_for('admin_dashboard') }}">
+                        <img src="{{ url_for('static', filename='img/Icon_GS.png') }}" alt="Game Store Logo">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Replaced button and nav-menu with new ul-based structure with Font Awesome icons -->
+            <nav class="nav-menu">
+                <ul>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_dashboard') }}"><i class="fa-solid fa-house"></i> <span>Inicio</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='perfil.html') }}"><i class="fa-solid fa-circle-user"></i> <span>Perfil</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_inventario') }}"><i class="fa-solid fa-magnifying-glass"></i> <span>Buscar</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='pedidos.html') }}"><i class="fa-solid fa-truck"></i> <span>Gestión de pedidos</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_inventario') }}"><i class="fa-solid fa-boxes-packing"></i> <span>Inventario</span></a></li>
+                    
+                    <li>
+                        <h3>Categorías</h3>
+                    </li>
+                    
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='juegos.html') }}"><i class="fa-solid fa-ghost"></i> <span>Juegos</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='accesorios.html') }}"><i class="fa-solid fa-headset"></i> <span>Accesorios</span></a></li>
+                    <li><a class="enlace_barra_lateral active" href="{{ url_for('admin_render', name='consolas.html') }}"><i class="fa-solid fa-tv"></i> <span>Consolas</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='controles.html') }}"><i class="fa-solid fa-gamepad"></i> <span>Controles</span></a></li>
+                </ul>
+                
+                <ul style="margin-top: auto; padding-top: 1rem;">
+                    <li><a class="enlace_barra_lateral_fijo" href="{{ url_for('admin_render', name='reportes.html') }}"><i class="fa-solid fa-chart-column"></i> <span>Reportes</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='usuarios.html') }}"><i class="fa-solid fa-users"></i> <span>Usuarios</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-messages" style="max-width:900px;margin:0 auto;padding:1rem;">
+                        {% for m in messages %}
+                            <div class="flash">{{ m }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <div class="content-header">
+                <h1>Consolas</h1>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Buscar consolas...">
+                    <button class="search-button">🔍</button>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Catálogo de Consolas</h2>
+                <span class="badge">12 consolas</span>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='img/Play5.png') }}" alt="PlayStation 5" class="product-image">
+                    <h3 class="product-title">PlayStation 5</h3>
+                    <p class="product-price">$499.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='img/PlayStation_5_pro.png') }}" alt="PlayStation 5 Digital" class="product-image">
+                    <h3 class="product-title">PlayStation 5 Digital</h3>
+                    <p class="product-price">$399.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='img/XboxSX.png') }}" alt="Xbox Series X" class="product-image">
+                    <h3 class="product-title">Xbox Series X</h3>
+                    <p class="product-price">$499.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='img/XboxSS.png') }}" alt="Xbox Series S" class="product-image">
+                    <h3 class="product-title">Xbox Series S</h3>
+                    <p class="product-price">$299.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='img/Nintendo_Switch_2.jpeg') }}" alt="Nintendo Switch 2" class="product-image">
+                    <h3 class="product-title">Nintendo Switch 2</h3>
+                    <p class="product-price">$349.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='img/Imagenes/series x especial.png') }}" alt="Xbox Series X Edicion Especial" class="product-image">
+                    <h3 class="product-title">Xbox Series X Edicion Especial</h3>
+                    <p class="product-price">$689.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='img/Imagenes/switch lite.png') }}" alt="Nintendo Switch Lite" class="product-image">
+                    <h3 class="product-title">Nintendo Switch Lite</h3>
+                    <p class="product-price">$199.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Steam Deck" class="product-image">
+                    <h3 class="product-title">Steam Deck 512GB</h3>
+                    <p class="product-price">$649.99</p>
+                    <span class="product-stock out-of-stock">Agotado</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="PlayStation 4 Pro" class="product-image">
+                    <h3 class="product-title">PlayStation 4 Pro</h3>
+                    <p class="product-price">$399.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Xbox One X" class="product-image">
+                    <h3 class="product-title">Xbox One X</h3>
+                    <p class="product-price">$349.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Retro Console" class="product-image">
+                    <h3 class="product-title">Retro Gaming Console</h3>
+                    <p class="product-price">$79.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Handheld Console" class="product-image">
+                    <h3 class="product-title">Handheld Gaming Console</h3>
+                    <p class="product-price">$149.99</p>
+                    <span class="product-stock">En stock</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/site_actions.js') }}"></script>
+</body>
+</html>

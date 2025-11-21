@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Game Store</title>
-    <link rel="stylesheet" href="../../app/static/css/stylee.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylee.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script></script>
 
@@ -13,70 +14,77 @@
 <body>
 
 <nav class="barra_lateral">
-        <a class="logo_link" href="../../index.html"><img class="logo" src="../../app/static/img/Icon_GS.png" alt="Logo"></a>
+    <a class="logo_link" href="{{ url_for('root') }}"><img class="logo" src="{{ url_for('static', filename='img/Icon_GS.png') }}" alt="Logo"></a>
 
         <ul>
-            <li><a class="enlace_barra_lateral_fijo" href="../../index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+        <li><a class="enlace_barra_lateral_fijo" href="/"><i class="fa-solid fa-house"></i> Inicio</a></li>
 
-            <li><a class="enlace_barra_lateral" href="perfiluser.html"><i
-                    class="fa-solid fa-circle-user"></i> Perfil</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('perfiluser') }}"><i
+            class="fa-solid fa-circle-user"></i> Perfil</a></li>
 
-            <li><a class="enlace_barra_lateral" href="../../index.html"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
-            </li>
-            <li><a class="enlace_barra_lateral" href="favoritos.html"><i class="fa-solid fa-heart"></i>
-                    Favoritos</a></li>
+        <li><a class="enlace_barra_lateral" href="/"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
+        </li>
+        <li><a class="enlace_barra_lateral" href="/templates/favoritos.html"><i class="fa-solid fa-heart"></i>
+            Favoritos</a></li>
 
-            <li><a class="enlace_barra_lateral" href="pedidos.html"><i class="fa-solid fa-box"></i>
-                    Pedidos</a></li>
+        <li><a class="enlace_barra_lateral" href="/templates/pedidos.html"><i class="fa-solid fa-box"></i>
+            Pedidos</a></li>
             <li>
                 <h3>Categorías</h3>
             </li>
-            <li><a class="enlace_barra_lateral" href="juegos.html"><i class="fa-solid fa-ghost"></i>
-                    Juegos</a></li>
-            <li><a class="enlace_barra_lateral" href="accesorios.html"><i
-                        class="fa-solid fa-headset"></i> Accesorios</a></li>
-            <li><a class="enlace_barra_lateral" href="consolas.html"><i class="fa-solid fa-tv"></i>
-                    Consolas</a></li>
-            <li><a class="enlace_barra_lateral" href="controles.html"><i class="fa-solid fa-gamepad"></i>
-                    Controles</a></li>
-            <li><a class="enlace_barra_lateral" href="Carrito.html"><i
-                        class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
-            <li><a class="enlace_barra_lateral" href="registro.html"><i class="fa-solid fa-users"></i>
-                    Registrarse</a></li>
-            <li><a class="enlace_barra_lateral" href="../admin_templates/admin.html"><i class="fa-solid fa-user"></i>
-                    Admin</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('category_page', slug='juegos') }}"><i class="fa-solid fa-ghost"></i>
+            Juegos</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('category_page', slug='accesorios') }}"><i
+            class="fa-solid fa-headset"></i> Accesorios</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('category_page', slug='consolas') }}"><i class="fa-solid fa-tv"></i>
+            Consolas</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('category_page', slug='controles') }}"><i class="fa-solid fa-gamepad"></i>
+            Controles</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('view_cart') }}"><i
+            class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('registro') }}"><i class="fa-solid fa-users"></i>
+            Registrarse</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('login') }}"><i class="fa-solid fa-user"></i>
+            Iniciar sesión</a></li>
         </ul>
     </nav>
 
     <main>
         <header class="encabezado">
             <section class="buscador">
-                <input type="text" id="buscar" placeholder="Buscar producto">
-                <button class="btn_buscar" id="buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text" id="buscar-input" placeholder="Buscar producto">
+                <button class="btn_buscar" id="buscar-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </section>
 
             <section class="iconos">
                 <button class="btn_notificaciones" id="mostrarNotificaciones"><i class="fa-solid fa-bell"></i></button>
-                <a class="icon" href="Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a class="icon" href="perfiluser.html"><i class="fa-solid fa-circle-user"></i></a>
+                <a class="icon" href="{{ url_for('view_cart') }}"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="icon" href="{{ url_for('perfiluser') }}"><i class="fa-solid fa-circle-user"></i></a>
             </section>
         </header>
 
 
         <div class="principal">
-            <div class="carrito">
+                <div class="carrito">
                 <div class="compra_exitosa">
                     <h1>Compra Exitosa</h1>
-                    <p>Gracias por tu compra en Game Store.
-                        <br> Tu pedido está en proceso y recibirás un correo conlos detalles.
+                    {% if order %}
+                        <p>Gracias por tu compra. Pedido <strong>#{{ order.id }}</strong> por <strong>${{ '%.2f'|format(order.total or 0) }}</strong>.
+                        <br> Tu pedido está en proceso y recibirás un correo con los detalles.
+                        <br>Revisa <a href="{{ url_for('pedidos_page') }}">Mis Pedidos</a> para dar seguimiento.
+                    {% else %}
+                        <p>Gracias por tu compra en Game Store.
+                        <br> Tu pedido está en proceso y recibirás un correo con los detalles.
                         <br>Revisa tus Pedidos para dar seguimiento.
-                    </p>
+                        </p>
+                    {% endif %}
                 </div>
             </div>
         </div>
 
     </main>
 
+    <script src="{{ url_for('static', filename='js/site_actions.js') }}"></script>
 </body>
 
 </html>

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameStore - Método de Pago</title>
-    <link rel="stylesheet" href="../Static/css/stylepay.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylepay.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token }}">
 </head>
 <body>
       <!-- Barra Lateral Moderna -->
@@ -12,59 +13,59 @@
         <div class="sidebar-header">
             <div class="logo">
                 <div class="logo-container">
-                    <img src="../Static/img/Icon_GS.png" alt="GameStore Logo" class="logo-image" onerror="this.style.display='none'; document.getElementById('logo-emoji').style.display='block';">
+                    <img src="/static/img/Icon_GS.png" alt="GameStore Logo" class="logo-image" onerror="this.style.display='none'; document.getElementById('logo-emoji').style.display='block';">
                     <span id="logo-emoji" class="logo-emoji" style="display: none;">🎮</span>
                 </div>
             </div>
         </div>
 
-       <nav class="barra_lateral">
-        <a class="logo_link" href="index.html"><img class="logo" src="app/static/img/Icon_GS.png" alt="Logo"></a>
+    <nav class="barra_lateral">
+    <a class="logo_link" href="{{ url_for('root') }}"><img class="logo" src="{{ url_for('static', filename='img/Icon_GS.png') }}" alt="Logo"></a>
 
         <ul>
-            <li><a class="enlace_barra_lateral_fijo" href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+        <li><a class="enlace_barra_lateral_fijo" href="/"><i class="fa-solid fa-house"></i> Inicio</a></li>
 
-            <li><a class="enlace_barra_lateral" href="app/templates/perfiluser.html"><i
-                    class="fa-solid fa-circle-user"></i> Perfil</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('perfiluser') }}"><i
+            class="fa-solid fa-circle-user"></i> Perfil</a></li>
 
-            <li><a class="enlace_barra_lateral" href="index.html"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
-            </li>
-            <li><a class="enlace_barra_lateral" href="app/templates/favoritos.html"><i class="fa-solid fa-heart"></i>
-                    Favoritos</a></li>
+        <li><a class="enlace_barra_lateral" href="/"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
+        </li>
+        <li><a class="enlace_barra_lateral" href="/templates/favoritos.html"><i class="fa-solid fa-heart"></i>
+            Favoritos</a></li>
 
-            <li><a class="enlace_barra_lateral" href="app/templates/pedidos.html"><i class="fa-solid fa-box"></i>
-                    Pedidos</a></li>
+        <li><a class="enlace_barra_lateral" href="/templates/pedidos.html"><i class="fa-solid fa-box"></i>
+            Pedidos</a></li>
             <li>
                 <h3>Categorías</h3>
             </li>
-            <li><a class="enlace_barra_lateral" href="app/templates/juegos.html"><i class="fa-solid fa-ghost"></i>
-                    Juegos</a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/accesorios.html"><i
-                        class="fa-solid fa-headset"></i> Accesorios</a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/consolas.html"><i class="fa-solid fa-tv"></i>
-                    Consolas</a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/controles.html"><i class="fa-solid fa-gamepad"></i>
-                    Controles</a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/Carrito.html"><i
-                        class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/registro.html"><i class="fa-solid fa-users"></i>
-                    Registrarse</a></li>
-            <li><a class="enlace_barra_lateral" href="app/admin_templates/admin.html"><i class="fa-solid fa-user"></i>
-                    Admin</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('category_page', slug='juegos') }}"><i class="fa-solid fa-ghost"></i>
+            Juegos</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('category_page', slug='accesorios') }}"><i
+            class="fa-solid fa-headset"></i> Accesorios</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('category_page', slug='consolas') }}"><i class="fa-solid fa-tv"></i>
+            Consolas</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('category_page', slug='controles') }}"><i class="fa-solid fa-gamepad"></i>
+            Controles</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('view_cart') }}"><i
+            class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('registro') }}"><i class="fa-solid fa-users"></i>
+            Registrarse</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('login') }}"><i class="fa-solid fa-user"></i>
+            Iniciar sesión</a></li>
         </ul>
     </nav>
 
     <main>
         <header class="encabezado">
             <section class="buscador">
-                <input type="text" id="buscar" placeholder="Buscar producto">
-                <button class="btn_buscar" id="buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input type="text" id="buscar-input" placeholder="Buscar producto">
+                        <button class="btn_buscar" id="buscar-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </section>
 
             <section class="iconos">
                 <button class="btn_notificaciones" id="mostrarNotificaciones"><i class="fa-solid fa-bell"></i></button>
-                <a class="icon" href="app/templates/Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a class="icon" href="app/templates/perfiluser.html"><i class="fa-solid fa-circle-user"></i></a>
+                <a class="icon" href="{{ url_for('view_cart') }}"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="icon" href="{{ url_for('perfiluser') }}"><i class="fa-solid fa-circle-user"></i></a>
             </section>
         </header>
 
@@ -80,53 +81,31 @@
         <main class="payment-container">
             <!-- Productos en el carrito -->
             <div class="cart-section">
-                <div class="cart-item">
-                    <div class="cart-image-container">
-                        <img src="../Static/img/Imagenes/Nintendo_Switch_2.jpeg" alt="Nintendo Switch OLED" class="cart-image">
+                {% if cart_items and cart_items|length > 0 %}
+                    {% for it in cart_items %}
+                    <div class="cart-item">
+                        <div class="cart-image-container">
+                            <img src="{{ url_for('product_image', pid=it.id) }}" alt="{{ it.title }}" class="cart-image">
+                        </div>
+                        <div class="cart-item-info">
+                            <h3 class="product-title">{{ it.title }}</h3>
+                            <p class="item-price">${{ '%.2f'|format(it.price) }}</p>
+                        </div>
+                        <button class="delete-btn btn_eliminar" data-pid="{{ it.id }}">
+                            <span class="btn-icon">🗑️</span>
+                            ELIMINAR
+                        </button>
                     </div>
-                    <div class="cart-item-info">
-                        <h3 class="product-title">Nintendo Switch OLED</h3>
-                        <p class="item-price">$8,620.88</p>
-                    </div>
-                    <button class="delete-btn">
-                        <span class="btn-icon">🗑️</span>
-                        ELIMINAR
-                    </button>
-                </div>
-
-                <div class="cart-item">
-                    <div class="cart-image-container">
-                        <img src="../Static/img/Imagenes/Audifonos_Gamer.jpg" alt="Audífonos Gamer" class="cart-image">
-                    </div>
-                    <div class="cart-item-info">
-                        <h3 class="product-title">Audífonos Gamer</h3>
-                        <p class="item-price">$821.00</p>
-                    </div>
-                    <button class="delete-btn">
-                        <span class="btn-icon">🗑️</span>
-                        ELIMINAR
-                    </button>
-                </div>
-
-                <div class="cart-item">
-                    <div class="cart-image-container">
-                        <img src="../Static/img/Imagenes/FC26.jpeg" alt="FC 26 Xbox" class="cart-image">
-                    </div>
-                    <div class="cart-item-info">
-                        <h3 class="product-title">FC 26 Xbox Series X|S</h3>
-                        <p class="item-price">$1,923.69</p>
-                    </div>
-                    <button class="delete-btn">
-                        <span class="btn-icon">🗑️</span>
-                        ELIMINAR
-                    </button>
-                </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No hay productos en el carrito.</p>
+                {% endif %}
             </div>
 
             <!-- Total -->
-            <div class="total-section">
+                <div class="total-section">
                 <h2>Total</h2>
-                <p class="total-amount">$ 10,961.00</p>
+                <p class="total-amount">${{ '%.2f'|format(total or subtotal or 0) }}</p>
             </div>
 
             <!-- Métodos de Pago -->
@@ -172,17 +151,18 @@
             </div>
 
             <!-- Botones de acción -->
-            <div class="action-buttons">
-                <button class="back-btn">
+                <div class="action-buttons">
+                <a class="back-btn" href="{{ url_for('view_cart') }}">
                     <span class="btn-icon">←</span>
                     Volver
-                </button>
-                <button class="confirm-btn">
+                </a>
+                <button id="checkoutBtn" class="confirm-btn">
                     <span class="btn-icon">✓</span>
                     Finalizar Compra
                 </button>
             </div>
         </main>
     </div>
+    <script src="{{ url_for('static', filename='js/site_actions.js') }}"></script>
 </body>
 </html>

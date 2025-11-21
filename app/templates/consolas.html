@@ -4,58 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Consolas</title>
-    <link rel="stylesheet" href="../../app/static/css/stylee.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylee.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
     <nav class="barra_lateral">
-        <a class="logo_link" href="../../index.html"><img class="logo" src="../../app/static/img/Icon_GS.png" alt="Logo"></a>
+    <a class="logo_link" href="/"><img class="logo" src="/static/img/Icon_GS.png" alt="Logo"></a>
 
-        <ul>
-            <li><a class="enlace_barra_lateral" href="../../index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+    <ul>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('root') }}"><i class="fa-solid fa-house"></i> Inicio</a></li>
 
-            <li><a class="enlace_barra_lateral" href="perfiluser.html"><i
-                    class="fa-solid fa-circle-user"></i> Perfil</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('perfiluser') }}"><i class="fa-solid fa-circle-user"></i> Perfil</a></li>
 
-            <li><a class="enlace_barra_lateral" href="../../index.html"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
-            </li>
-            <li><a class="enlace_barra_lateral" href="favoritos.html"><i class="fa-solid fa-heart"></i>
-                    Favoritos</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('root') }}"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
+        </li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('favoritos_page') }}"><i class="fa-solid fa-heart"></i> Favoritos</a></li>
 
-            <li><a class="enlace_barra_lateral" href="pedidos.html"><i class="fa-solid fa-box"></i>
-                    Pedidos</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('pedidos_page') }}"><i class="fa-solid fa-box"></i> Pedidos</a></li>
             <li>
                 <h3>Categorías</h3>
             </li>
-            <li><a class="enlace_barra_lateral" href="juegos.html"><i class="fa-solid fa-ghost"></i>
-                    Juegos</a></li>
-            <li><a class="enlace_barra_lateral" href="accesorios.html"><i
-                        class="fa-solid fa-headset"></i> Accesorios</a></li>
-            <li><a class="enlace_barra_lateral_fijo" href="consolas.html"><i class="fa-solid fa-tv"></i>
-                    Consolas</a></li>
-            <li><a class="enlace_barra_lateral" href="controles.html"><i class="fa-solid fa-gamepad"></i>
-                    Controles</a></li>
-            <li><a class="enlace_barra_lateral" href="Carrito.html"><i
-                        class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
-            <li><a class="enlace_barra_lateral" href="registro.html"><i class="fa-solid fa-users"></i>
-                    Registrarse</a></li>
-            <li><a class="enlace_barra_lateral" href="../admin_templates/admin.html"><i class="fa-solid fa-user"></i>
-                    Admin</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('category_page', slug='juegos') }}"><i class="fa-solid fa-ghost"></i> Juegos</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('category_page', slug='accesorios') }}"><i class="fa-solid fa-headset"></i> Accesorios</a></li>
+        <li><a class="enlace_barra_lateral_fijo" href="{{ url_for('category_page', slug='consolas') }}"><i class="fa-solid fa-tv"></i> Consolas</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('category_page', slug='controles') }}"><i class="fa-solid fa-gamepad"></i> Controles</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('view_cart') }}"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('registro') }}"><i class="fa-solid fa-users"></i> Registrarse</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('login') }}"><i class="fa-solid fa-user"></i> Iniciar sesión</a></li>
         </ul>
     </nav>
 
     <main>
         <header class="encabezado">
             <section class="buscador">
-                <input type="text" id="buscar" placeholder="Buscar producto">
-                <button class="btn_buscar" id="buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text" id="buscar-input" placeholder="Buscar producto">
+                <button class="btn_buscar" id="buscar-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </section>
 
             <section class="iconos">
                 <button class="btn_notificaciones" id="mostrarNotificaciones"><i class="fa-solid fa-bell"></i></button>
-                <a class="icon" href="Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a class="icon" href="perfiluser.html"><i class="fa-solid fa-circle-user"></i></a>
+                <a class="icon" href="/templates/Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="icon" href="/templates/perfiluser.html"><i class="fa-solid fa-circle-user"></i></a>
             </section>
         </header>
 
@@ -67,77 +57,26 @@
                 <p class="subtitulo">Las mejores consolas para tu experiencia gaming</p>
 
                 <section class="productos">
-
-                    <!-- Producto 1 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/series x especial.png"
-                                alt="Xbox Series X">
+                    {% if products and products|length > 0 %}
+                        {% for p in products %}
+                        <div class="producto">
+                            <div class="imagenes_producto">
+                                <img class="imagen_producto" src="{{ url_for('product_image', pid=p.id) }}" alt="{{ p.title }}">
+                            </div>
+                            <h3 class="product-title">{{ p.title }}</h3>
+                            <p class="product-category">{{ p.category or 'Hardware' }}</p>
+                            <div class="product-price-section">
+                                <span class="product-price">${{ '%.2f'|format(p.price) }}</span>
+                            </div>
+                            <button class="btn_carrito" data-pid="{{ p.id }}"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
+                            <button class="btn_fav {% if session.get('favorites') and (p.id|string) in session.get('favorites') %}fav-active{% endif %}" data-pid="{{ p.id }}">❤</button>
                         </div>
-                        <h3 class="product-title">XBOX SERIES X 2TB GALAXY BLACK LIMITED EDITION</h3>
-                        <p class="product-category">Hardware</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$17,000.00</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 2 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/consolaseries.png"
-                                alt="Xbox Series S">
-                        </div>
-                        <h3 class="product-title">CONSOLA XBOX SERIES X 1TB DIGITAL</h3>
-                        <p class="product-category">Hardware</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$896.99</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 3 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/Nintendo_Switch_2.jpeg"
-                                alt="Nintendo Switch">
-                        </div>
-                        <h3 class="product-title">CONSOLA NINTENDO SWITCH 32GB JOY-CON NEGRO Y ROJO NEON</h3>
-                        <p class="product-category">Hardware</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$7,799.99</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 4 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/play4500gb.png"
-                                alt="PlayStation 4">
-                        </div>
-                        <h3 class="product-title">PLAY STATION 4 500GB</h3>
-                        <p class="product-category">Hardware</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$9,876.99</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
-                    <!-- Producto 5 -->
-                    <div class="producto">
-                        <div class="imagenes_producto">
-                            <img class="imagen_producto" src="../../app/static/img/Imagenes/play5.png" alt="PlayStation 5">
-                        </div>
-                        <h3 class="product-title">PLAY STATION 5 1TB</h3>
-                        <p class="product-category">Hardware</p>
-                        <div class="product-price-section">
-                            <span class="product-price">$11,996.99</span>
-                        </div>
-                        <button class="btn_carrito"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
-                    </div>
-
+                        {% endfor %}
+                    {% else %}
+                        <p>No hay productos en esta categoría.</p>
+                    {% endif %}
                 </section>
+            <script src="{{ url_for('static', filename='js/site_actions.js') }}"></script>
             </div>
         </div>
     </main>

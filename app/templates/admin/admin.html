@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Game Store Web</title>
+          <link rel="stylesheet" href="{{ url_for('static', filename='css/style-provisional.css') }}">
+    <!-- Added Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+    <aside class="barra_lateral">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a class="logo_link" href="/admin/admin.html">
+                        <img class="logo-img" src="{{ url_for('static', filename='img/Icon_GS.png') }}" alt="Game Store Logo">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Replaced button and nav-menu with new ul-based structure -->
+            <nav class="nav-menu">
+                <ul>
+                    <li><a class="enlace_barra_lateral active" href="{{ url_for('admin_dashboard') }}"><i class="fa-solid fa-house"></i> <span>Inicio</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='perfil.html') }}"><i class="fa-solid fa-circle-user"></i> <span>Perfil</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_inventario') }}"><i class="fa-solid fa-magnifying-glass"></i> <span>Buscar</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='pedidos.html') }}"><i class="fa-solid fa-truck"></i> <span>Gestión de pedidos</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_inventario') }}"><i class="fa-solid fa-boxes-packing"></i> <span>Inventario</span></a></li>
+                    
+                    <li>
+                        <h3>Categorías</h3>
+                    </li>
+                    
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='juegos.html') }}"><i class="fa-solid fa-ghost"></i> <span>Juegos</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='accesorios.html') }}"><i class="fa-solid fa-headset"></i> <span>Accesorios</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='consolas.html') }}"><i class="fa-solid fa-tv"></i> <span>Consolas</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='controles.html') }}"><i class="fa-solid fa-gamepad"></i> <span>Controles</span></a></li>
+                </ul>
+                
+                <ul style="margin-top: auto; padding-top: 1rem;">
+                    <li><a class="enlace_barra_lateral_fijo" href="{{ url_for('admin_render', name='reportes.html') }}"><i class="fa-solid fa-chart-column"></i> <span>Reportes</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="{{ url_for('admin_render', name='usuarios.html') }}"><i class="fa-solid fa-users"></i> <span>Usuarios</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Dashboard</h1>
+                <p style="color: #a0a0a0; font-size: 16px;">Panel de control y analíticas en tiempo real</p>
+                <!-- Logout button for admins -->
+                <div style="position: absolute; right: 2rem; top: 1rem;">
+                    <a class="btn-secondary" href="{{ url_for('logout') }}">Cerrar sesión</a>
+                </div>
+            </div>
+
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                <div class="flash-messages">
+                                    {% for m in messages %}
+                                        <div class="flash">{{ m }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        {% endwith %}
+
+            <!-- KPIs Principales -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">💵</div>
+                    <div class="stat-label">Ventas del Día</div>
+                    <div class="stat-value" data-stat="daily-sales">$2,450</div>
+                    <div class="stat-change positive">↑ 12% vs ayer</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-label">Pedidos Pendientes</div>
+                    <div class="stat-value" data-stat="pending-orders">24</div>
+                    <div class="stat-change negative">↑ 3 nuevos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚠️</div>
+                    <div class="stat-label">Stock Bajo</div>
+                    <div class="stat-value" data-stat="low-stock">8</div>
+                    <div class="stat-change negative">Requiere atención</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-label">Clientes Activos</div>
+                    <div class="stat-value" data-stat="active-customers">892</div>
+                    <div class="stat-change positive">↑ 15% este mes</div>
+                </div>
+            </div>
+
+            <!-- Gráficos de Ventas -->
+            <div class="dashboard-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Ventas Mensuales</h3>
+                        <select id="salesPeriod" class="chart-select">
+                            <option value="week">Última Semana</option>
+                            <option value="month" selected>Último Mes</option>
+                            <option value="year">Último Año</option>
+                        </select>
+                    </div>
+                    <canvas id="salesChart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Productos Más Vendidos</h3>
+                    </div>
+                    <canvas id="topProductsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Actividad Reciente -->
+            <div class="section-header">
+                <h2>Actividad Reciente</h2>
+                <span class="badge">En tiempo real</span>
+            </div>
+
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <div class="activity-icon success">✓</div>
+                    <div class="activity-content">
+                        <div class="activity-title">Nueva venta completada</div>
+                        <div class="activity-description">PlayStation 5 - $499.99</div>
+                        <div class="activity-time">Hace 2 minutos</div>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon warning">⚠</div>
+                    <div class="activity-content">
+                        <div class="activity-title">Stock bajo</div>
+                        <div class="activity-description">DualSense Controller - 3 unidades</div>
+                        <div class="activity-time">Hace 15 minutos</div>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon info">👤</div>
+                    <div class="activity-content">
+                        <div class="activity-title">Nuevo cliente registrado</div>
+                        <div class="activity-description">María González</div>
+                        <div class="activity-time">Hace 1 hora</div>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon success">📦</div>
+                    <div class="activity-content">
+                        <div class="activity-title">Pedido enviado</div>
+                        <div class="activity-description">Orden #ORD-156</div>
+                        <div class="activity-time">Hace 2 horas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pedidos Recientes -->
+                <div class="section-header">
+                <h2>Pedidos Recientes</h2>
+                <a class="btn-secondary" href="{{ url_for('admin_render', name='pedidos.html') }}">Ver todos</a>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Pedido</th>
+                            <th>Cliente</th>
+                            <th>Producto</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                            <th>Fecha</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD-001</td>
+                            <td>Juan Pérez</td>
+                            <td>PlayStation 5</td>
+                            <td>$499.99</td>
+                            <td><span class="status-badge completed">Completado</span></td>
+                            <td>2024-01-15</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-002</td>
+                            <td>María García</td>
+                            <td>Xbox Series X</td>
+                            <td>$449.99</td>
+                            <td><span class="status-badge processing">Procesando</span></td>
+                            <td>2024-01-15</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-003</td>
+                            <td>Carlos López</td>
+                            <td>Nintendo Switch</td>
+                            <td>$299.99</td>
+                            <td><span class="status-badge pending">Pendiente</span></td>
+                            <td>2024-01-14</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

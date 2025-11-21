@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Game Store</title>
-    <link rel="stylesheet" href="../../app/static/css/stylee.css">
+    <link rel="stylesheet" href="/static/css/stylee.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script></script>
@@ -13,21 +13,21 @@
 
 <body>
    <nav class="barra_lateral">
-        <a class="logo_link" href="../../index.html"><img class="logo" src="../../app/static/img/Icon_GS.png" alt="Logo"></a>
+       <a class="logo_link" href="/"><img class="logo" src="/static/img/Icon_GS.png" alt="Logo"></a>
 
         <ul>
-            <li><a class="enlace_barra_lateral" href="../../index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+        <li><a class="enlace_barra_lateral" href="/"><i class="fa-solid fa-house"></i> Inicio</a></li>
 
-            <li><a class="enlace_barra_lateral" href="perfiluser.html"><i
-                    class="fa-solid fa-circle-user"></i> Perfil</a></li>
+        <li><a class="enlace_barra_lateral" href="/templates/perfiluser.html"><i
+            class="fa-solid fa-circle-user"></i> Perfil</a></li>
 
-            <li><a class="enlace_barra_lateral" href="../../index.html"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
-            </li>
-            <li><a class="enlace_barra_lateral" href="favoritos.html"><i class="fa-solid fa-heart"></i>
-                    Favoritos</a></li>
+        <li><a class="enlace_barra_lateral" href="/"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
+        </li>
+        <li><a class="enlace_barra_lateral" href="/templates/favoritos.html"><i class="fa-solid fa-heart"></i>
+            Favoritos</a></li>
 
-            <li><a class="enlace_barra_lateral_fijo" href="pedidos.html"><i class="fa-solid fa-box"></i>
-                    Pedidos</a></li>
+        <li><a class="enlace_barra_lateral_fijo" href="/templates/pedidos.html"><i class="fa-solid fa-box"></i>
+            Pedidos</a></li>
             <li>
                 <h3>Categorías</h3>
             </li>
@@ -43,123 +43,96 @@
                         class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
             <li><a class="enlace_barra_lateral" href="registro.html"><i class="fa-solid fa-users"></i>
                     Registrarse</a></li>
-            <li><a class="enlace_barra_lateral" href="../admin_templates/admin.html"><i class="fa-solid fa-user"></i>
-                    Admin</a></li>
+        <li><a class="enlace_barra_lateral" href="{{ url_for('login') }}"><i class="fa-solid fa-user"></i>
+            Iniciar sesión</a></li>
         </ul>
     </nav>
 
-    <main>
-        <header class="encabezado">
-            <section class="buscador">
-                <input type="text" id="buscar" placeholder="Buscar producto">
-                <button class="btn_buscar" id="buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </section>
+    <!DOCTYPE html>
+    <html lang="es">
 
-            <section class="iconos">
-                <button class="btn_notificaciones" id="mostrarNotificaciones"><i class="fa-solid fa-bell"></i></button>
-                <a class="icon" href="Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a class="icon" href="perfiluser.html"><i class="fa-solid fa-circle-user"></i></a>
-            </section>
-        </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="csrf-token" content="{{ csrf_token }}">
+        <title>Mis Pedidos - Game Store</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/stylee.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    </head>
 
+    <body>
+       <nav class="barra_lateral">
+           <a class="logo_link" href="{{ url_for('root') }}"><img class="logo" src="{{ url_for('static', filename='img/Icon_GS.png') }}" alt="Logo"></a>
 
+            <ul>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('root') }}"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('template_view', name='perfiluser.html') }}"><i class="fa-solid fa-circle-user"></i> Perfil</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('root') }}"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('favoritos_page') }}"><i class="fa-solid fa-heart"></i> Favoritos</a></li>
+            <li><a class="enlace_barra_lateral_fijo" href="{{ url_for('pedidos_page') }}"><i class="fa-solid fa-box"></i> Pedidos</a></li>
+            </ul>
+        </nav>
 
+        <main>
+            <header class="encabezado">
+                <section class="buscador">
+                    <input type="text" id="buscar-input" placeholder="Buscar producto">
+                    <button class="btn_buscar" id="buscar-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </section>
 
-        <!-- Contenido Principal -->
-        <div class="principal">
-            <h1>Mis Pedidos</h1>
-            <p class="header-subtitle">Revisa el estado de tus compras</p>
+                <section class="iconos">
+                    <a class="icon" href="{{ url_for('view_cart') }}"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a class="icon" href="{{ url_for('template_view', name='perfiluser.html') }}"><i class="fa-solid fa-circle-user"></i></a>
+                </section>
+            </header>
 
+            <div class="principal">
+                <h1>Mis Pedidos</h1>
+                <p class="header-subtitle">Revisa el estado de tus compras</p>
 
-            <main class="pedidos-container">
-                <div class="pedidos-header">
-                    <button class="filtro-pedidos">
-                        <i class="fa-solid fa-filter"></i>
-                        Filtrar Pedidos
-                    </button>
-                </div>
-
-                <div class="lista-pedidos">
-                    <!-- Pedido 1 -->
-                    <div class="pedido-item">
-                        <div class="pedido-image-container">
-                            <img src="../../app/static/img/Imagenes/grounded2.png" alt="Gears 5" class="pedido-imagen">
-                        </div>
-                        <div class="pedido-info">
-                            <h3 class="product-title">Grounded 2</h3>
-                            <p><strong>Fecha de Compra:</strong> 12/05/2025 15:13 hrs</p>
-                            <p><strong>Fecha de Entrega:</strong> 14/05/2025 8:00 a 20:00 hrs</p>
-                            <p class="estado-pedido entregado">Entregado</p>
-                        </div>
-                        <button class="pedido-detalles">
-                            <i class="fa-solid fa-eye"></i>
-                            Detalles
+                <main class="pedidos-container">
+                    <div class="pedidos-header">
+                        <button class="filtro-pedidos">
+                            <i class="fa-solid fa-filter"></i>
+                            Filtrar Pedidos
                         </button>
                     </div>
 
-                    <!-- Pedido 2 -->
-                    <div class="pedido-item">
-                        <div class="pedido-image-container">
-                            <img src="../../app/static/img/Imagenes/howards.png" alt="Star Wars" class="pedido-imagen">
-                        </div>
-                        <div class="pedido-info">
-                            <h3 class="product-title">Howards Legacy</h3>
-                            <p><strong>Fecha de Compra:</strong> 12/05/2025 15:13 hrs</p>
-                            <p><strong>Fecha de Entrega:</strong> 14/05/2025 8:00 a 20:00 hrs</p>
-                            <p class="estado-pedido enviado">En camino</p>
-                        </div>
-                        <button class="pedido-detalles">
-                            <i class="fa-solid fa-eye"></i>
-                            Detalles
-                        </button>
+                    <div class="lista-pedidos">
+                        {% if orders and orders|length > 0 %}
+                            {% for o in orders %}
+                            <div class="pedido-item">
+                                <div class="pedido-image-container">
+                                    <!-- show first item image if available -->
+                                    {% set first = o.order_items[0] if o.order_items|length > 0 else None %}
+                                    {% if first and first.product_id %}
+                                        {% set prod = first.product_id and (Product.query.get(first.product_id) if false else None) %}
+                                    {% endif %}
+                                    <img src="{{ url_for('static', filename='img/Imagenes/placeholder.svg') }}" alt="Pedido" class="pedido-imagen">
+                                </div>
+                                <div class="pedido-info">
+                                    <h3 class="product-title">Pedido #{{ o.id }}</h3>
+                                    <p><strong>Fecha de Compra:</strong> {{ o.created_at }}</p>
+                                    <p class="estado-pedido">{{ o.status }}</p>
+                                </div>
+                                <button class="pedido-detalles" data-order-id="{{ o.id }}">
+                                    <i class="fa-solid fa-eye"></i>
+                                    Detalles
+                                </button>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="no-pedidos">
+                                <i class="fa-solid fa-box-open"></i>
+                                <h2>No tienes pedidos aún</h2>
+                                <p>Cuando realices una compra, tus pedidos aparecerán aquí</p>
+                            </div>
+                        {% endif %}
                     </div>
-
-                    <!-- Pedido 3 -->
-                    <div class="pedido-item">
-                        <div class="pedido-image-container">
-                            <img src="../../app/static/img/Imagenes/series x especial.png" alt="Xbox Series X"
-                                class="pedido-imagen">
-                        </div>
-                        <div class="pedido-info">
-                            <h3 class="product-title">Xbox Series X 2TB Galaxy Black</h3>
-                            <p><strong>Fecha de Compra:</strong> 12/05/2025 15:13 hrs</p>
-                            <p><strong>Fecha de Entrega:</strong> 14/05/2025 8:00 a 20:00 hrs</p>
-                            <p class="estado-pedido procesando">Procesando</p>
-                        </div>
-                        <button class="pedido-detalles">
-                            <i class="fa-solid fa-eye"></i>
-                            Detalles
-                        </button>
-                    </div>
-
-                    <!-- Pedido 4 -->
-                    <div class="pedido-item">
-                        <div class="pedido-image-container">
-                            <img src="../../app/static/img/Imagenes/controlxboxblack.png" alt="Control Xbox"
-                                class="pedido-imagen">
-                        </div>
-                        <div class="pedido-info">
-                            <h3 class="product-title">Control Xbox Inalámbrico</h3>
-                            <p><strong>Fecha de Compra:</strong> 12/05/2025 15:13 hrs</p>
-                            <p><strong>Fecha de Entrega:</strong> 14/05/2025 8:00 a 20:00 hrs</p>
-                            <p class="estado-pedido entregado">Entregado</p>
-                        </div>
-                        <button class="pedido-detalles">
-                            <i class="fa-solid fa-eye"></i>
-                            Detalles
-                        </button>
-                    </div>
-                </div>
-
-                <!--
-            <div class="no-pedidos">
-                <i class="fa-solid fa-box-open"></i>
-                <h2>No tienes pedidos aún</h2>
-                <p>Cuando realices una compra, tus pedidos aparecerán aquí</p>
+                </main>
             </div>
-            -->
-            </main>
-        </div>
-</body>
+        </main>
 
-</html>
+        <script src="{{ url_for('static', filename='js/site_actions.js') }}"></script>
+    </body>
+
+    </html>

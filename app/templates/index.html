@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Store Web (Community)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylee.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='img/Icon_GS.png') }}">
+</head>
+
+<body>
+
+    <nav class="barra_lateral">
+        <a class="logo_link" href="{{ url_for('root') if False else '/' }}"><img class="logo" src="{{ url_for('static', filename='img/Icon_GS.png') }}" alt="Logo"></a>
+
+        <ul>
+            <li><a class="enlace_barra_lateral_fijo" href="{{ url_for('root') if False else '/' }}"><i class="fa-solid fa-house"></i> Inicio</a></li>
+
+            <li><a class="enlace_barra_lateral" href="{{ url_for('template_view', name='perfiluser.html') }}"><i class="fa-solid fa-circle-user"></i> Perfil</a></li>
+
+            <li><a class="enlace_barra_lateral" href="{{ url_for('root') if False else '/' }}"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
+            </li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('template_view', name='favoritos.html') }}"><i class="fa-solid fa-heart"></i>
+                    Favoritos</a></li>
+
+            <li><a class="enlace_barra_lateral" href="{{ url_for('template_view', name='pedidos.html') }}"><i class="fa-solid fa-box"></i>
+                    Pedidos</a></li>
+            <li>
+                <h3>Categorías</h3>
+            </li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('template_view', name='juegos.html') }}"><i class="fa-solid fa-ghost"></i>
+                    Juegos</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('template_view', name='accesorios.html') }}"><i class="fa-solid fa-headset"></i> Accesorios</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('template_view', name='consolas.html') }}"><i class="fa-solid fa-tv"></i> Consolas</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('template_view', name='controles.html') }}"><i class="fa-solid fa-gamepad"></i> Controles</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('template_view', name='Carrito.html') }}"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('template_view', name='registro.html') }}"><i class="fa-solid fa-users"></i> Registrarse</a></li>
+            <li><a class="enlace_barra_lateral" href="{{ url_for('login') }}"><i class="fa-solid fa-user"></i> Iniciar sesión</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <header class="encabezado">
+            <section class="buscador">
+                <input type="text" id="buscar-input" placeholder="Buscar producto">
+                <button class="btn_buscar" id="buscar-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </section>
+
+            <section class="iconos">
+                        <button class="btn_notificaciones" id="mostrarNotificaciones"><i class="fa-solid fa-bell"></i></button>
+                        <a class="icon" href="{{ url_for('view_cart') }}"><i class="fa-solid fa-cart-shopping"></i> <span id="cart-count">{{ session.get('cart')|length if session.get('cart') else 0 }}</span></a>
+                <a class="icon" href="{{ url_for('template_view', name='perfiluser.html') }}"><i class="fa-solid fa-circle-user"></i></a>
+            </section>
+        </header>
+
+        <div class="principal">
+
+            <div class="carousel-container">
+                <div class="carousel-slide slide-purple active">
+                    <div class="slide-content">
+                        <h2>PLay Station VR2</h2>
+                        <p>Vive el futuro del gaming con la realidad virtual más avanzada. Sumérgete en mundos
+                            increíbles con la tecnología de PS VR2 y experimenta PlayStation®5.</p>
+                        <button class="btn-comprar">Comprar ahora</button>
+                    </div>
+                    <div class="slide-image">
+                        <img src="{{ url_for('static', filename='img/playvr22.png') }}" alt="PlayStation VR2">
+                    </div>
+                </div>
+
+                <div class="carousel-slide slide-red">
+                    <div class="slide-content">
+                        <h2>Nintendo Switch 2</h2>
+                        <p>La nueva generación de Nintendo Switch está aquí. Disfruta de tus juegos favoritos en
+                            cualquier lugar con mejor rendimiento y gráficos mejorados.</p>
+                        <button class="btn-comprar">Comprar ahora</button>
+                    </div>
+                    <div class="slide-image">
+                        <img src="{{ url_for('static', filename='img/Switch2.png') }}" alt="Nintendo Switch 2">
+                    </div>
+                </div>
+
+                <div class="carousel-slide slide-blue">
+                    <div class="slide-content">
+                        <h2>Xbox Series X</h2>
+                        <p>La consola más potente del mercado. Experimenta juegos en 4K a 120fps y disfruta de Game Pass
+                            con cientos de títulos incluidos.</p>
+                        <button class="btn-comprar">Comprar ahora</button>
+                    </div>
+                    <div class="slide-image">
+                        <img src="{{ url_for('static', filename='img/XboxSX.png') }}" alt="Xbox Series X">
+                    </div>
+                </div>
+
+                <div class="carousel-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+            </div>
+
+            <section class="productos-section">
+                <div class="productos-header">
+                    <h3>Productos</h3>
+                    <div class="filtros">
+                        <button class="filtro-btn active">Todos</button>
+                        <button class="filtro-btn">Nuevos</button>
+                        <button class="filtro-btn">Ofertas</button>
+                    </div>
+                </div>
+
+                <section class="productos">
+
+
+
+                        {% for p in products %}
+                        <div class="producto">
+                            <div class="imagenes_producto">
+                                    <img class="imagen_producto" src="{{ p.img or url_for('static', filename='img/Imagenes/placeholder.svg') }}" alt="{{ p.title }}">
+                                </div>
+                            <h3 class="product-title">{{ p.title }}</h3>
+                            <p class="product-category">{{ p.category if p.__dict__.get('category') else 'General' }}</p>
+                            <div class="product-price-section">
+                                <span class="product-price">${{ '%.2f'|format(p.price) }}</span>
+                            </div>
+                            <button class="btn_carrito" data-pid="{{ p.id }}"><i class="fa-solid fa-cart-shopping"></i> Añadir al Carrito</button>
+                            <button class="btn_fav {% if session.get('favorites') and (p.id|string) in session.get('favorites') %}fav-active{% endif %}" data-pid="{{ p.id }}">❤</button>
+                        </div>
+                        {% else %}
+                        <p>No hay productos disponibles.</p>
+                        {% endfor %}
+
+
+                </section>
+
+            </section>
+        </div>
+    </main>
+    <!-- Backbone + deps (CDN) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.4.1/backbone-min.js"></script>
+    <!-- Nuestro ejemplo de integración Backbone -->
+    <script src="{{ url_for('static', filename='js/backbone_app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/funciones.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/site_actions.js') }}"></script>
+
+</body>
+
+</html>

@@ -256,6 +256,41 @@ i {
     filter: drop-shadow(2px 2px 5px #5c0b0b);
 }
 
+/* Small styles for the Backbone demo form and controls */
+.backbone-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 220px;
+    margin: 0 0 1rem 0;
+}
+.backbone-form input {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #3a3a3a;
+    background: #1a1a1a;
+    color: #fff;
+}
+.backbone-form #bp-add {
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, #ec4899 0%, #d946ef 100%);
+    color: white;
+    cursor: pointer;
+}
+.delete-btn {
+    border: none;
+    color: white;
+    background-color: rgb(184, 21, 21);
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+}
+.delete-btn:hover {
+    filter: drop-shadow(2px 2px 5px #5c0b0b);
+}
+
 /* ---------------------- Total Productos ----------------------*/
 
 .total,

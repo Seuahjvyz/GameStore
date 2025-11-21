@@ -5,45 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Store Web (Community)</title>
-    <link rel="stylesheet" href="app/static/css/stylee.css">
+    <link rel="stylesheet" href="/static/css/stylee.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
 
     <nav class="barra_lateral">
-        <a class="logo_link" href="index.html"><img class="logo" src="app/static/img/Icon_GS.png" alt="Logo"></a>
-
+        <a class="logo_link" href="/"><img class="logo" src="/static/img/Icon_GS.png" alt="Logo"></a>
         <ul>
-            <li><a class="enlace_barra_lateral_fijo" href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+        <li><a class="enlace_barra_lateral_fijo" href="/"><i class="fa-solid fa-house"></i> Inicio</a></li>
 
-            <li><a class="enlace_barra_lateral" href="app/templates/perfiluser.html"><i
-                    class="fa-solid fa-circle-user"></i> Perfil</a></li>
+        <li><a class="enlace_barra_lateral" href="/templates/perfiluser.html"><i class="fa-solid fa-circle-user"></i> Perfil</a></li>
 
-            <li><a class="enlace_barra_lateral" href="index.html"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
-            </li>
-            <li><a class="enlace_barra_lateral" href="app/templates/favoritos.html"><i class="fa-solid fa-heart"></i>
-                    Favoritos</a></li>
+        <li><a class="enlace_barra_lateral" href="/"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a>
+        </li>
+        <li><a class="enlace_barra_lateral" href="/templates/favoritos.html"><i class="fa-solid fa-heart"></i>
+            Favoritos</a></li>
 
-            <li><a class="enlace_barra_lateral" href="app/templates/pedidos.html"><i class="fa-solid fa-box"></i>
-                    Pedidos</a></li>
+        <li><a class="enlace_barra_lateral" href="/templates/pedidos.html"><i class="fa-solid fa-box"></i>
+            Pedidos</a></li>
             <li>
                 <h3>Categorías</h3>
             </li>
-            <li><a class="enlace_barra_lateral" href="app/templates/juegos.html"><i class="fa-solid fa-ghost"></i>
-                    Juegos</a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/accesorios.html"><i
-                        class="fa-solid fa-headset"></i> Accesorios</a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/consolas.html"><i class="fa-solid fa-tv"></i>
-                    Consolas</a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/controles.html"><i class="fa-solid fa-gamepad"></i>
-                    Controles</a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/Carrito.html"><i
-                        class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
-            <li><a class="enlace_barra_lateral" href="app/templates/registro.html"><i class="fa-solid fa-users"></i>
-                    Registrarse</a></li>
-            <li><a class="enlace_barra_lateral" href="app/admin_templates/admin.html"><i class="fa-solid fa-user"></i>
-                    Admin</a></li>
+        <li><a class="enlace_barra_lateral" href="/templates/juegos.html"><i class="fa-solid fa-ghost"></i>
+            Juegos</a></li>
+        <li><a class="enlace_barra_lateral" href="/templates/accesorios.html"><i class="fa-solid fa-headset"></i> Accesorios</a></li>
+        <li><a class="enlace_barra_lateral" href="/templates/consolas.html"><i class="fa-solid fa-tv"></i> Consolas</a></li>
+        <li><a class="enlace_barra_lateral" href="/templates/controles.html"><i class="fa-solid fa-gamepad"></i> Controles</a></li>
+        <li><a class="enlace_barra_lateral" href="/templates/Carrito.html"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+        <li><a class="enlace_barra_lateral" href="/templates/registro.html"><i class="fa-solid fa-users"></i> Registrarse</a></li>
+        <li><a class="enlace_barra_lateral" href="/admin_templates/admin.html"><i class="fa-solid fa-user"></i> Admin</a></li>
         </ul>
     </nav>
 
@@ -75,7 +67,7 @@
                         <button class="btn-comprar">Comprar ahora</button>
                     </div>
                     <div class="slide-image">
-                        <img src="app/static/img/playvr22.png" alt="PlayStation VR2">
+                        <img src="/static/img/playvr22.png" alt="PlayStation VR2">
                     </div>
                 </div>
 
@@ -87,7 +79,7 @@
                         <button class="btn-comprar">Comprar ahora</button>
                     </div>
                     <div class="slide-image">
-                        <img src="app/static/img/Switch2.png" alt="Nintendo Switch 2">
+                        <img src="/static/img/Switch2.png" alt="Nintendo Switch 2">
                     </div>
                 </div>
 
@@ -99,7 +91,7 @@
                         <button class="btn-comprar">Comprar ahora</button>
                     </div>
                     <div class="slide-image">
-                        <img src="app/static/img/XboxSX.png" alt="Xbox Series X">
+                        <img src="/static/img/XboxSX.png" alt="Xbox Series X">
                     </div>
                 </div>
 
@@ -123,10 +115,13 @@
 
                 <section class="productos">
 
+                    <!-- Contenedor gestionado por Backbone.js (ejemplo) -->
+                    <div id="backbone-products" class="productos backbone-list"></div>
+
                     <!-- Producto 1 -->
                     <div class="producto">
                         <div class="imagenes_producto">
-                            <img class="imagen_producto" src="app/static/img/Imagenes/series x especial.png"
+                            <img class="imagen_producto" src="/static/img/Imagenes/series x especial.png"
                                 alt="Xbox Series X">
                         </div>
                         <h3 class="product-title">XBOX SERIES X 2TB GALAXY BLACK LIMITED EDITION</h3>
@@ -140,7 +135,7 @@
 
                     <div class="producto">
                         <div class="imagenes_producto">
-                            <img class="imagen_producto" src="app/static/img/Imagenes/zombies_xbox.png"
+                                <img class="imagen_producto" src="/static/img/Imagenes/gta6.png"
                                 alt="Zombies Xbox">
                         </div>
                         <h3 class="product-title">ZOMBIES GAME</h3>
@@ -153,7 +148,7 @@
 
                     <div class="producto">
                         <div class="imagenes_producto">
-                            <img class="imagen_producto" src="app/static/img/Imagenes/controlxboxwhite.png"
+                            <img class="imagen_producto" src="/static/img/Imagenes/controlxboxwhite.png"
                                 alt="Control Xbox White">
                         </div>
                         <h3 class="product-title">CONTROL XBOX INALÁMBRICO WHITE PARA XBOX SERIES X Y S</h3>
@@ -166,7 +161,7 @@
 
                     <div class="producto">
                         <div class="imagenes_producto">
-                            <img class="imagen_producto" src="app/static/img/Imagenes/Audifonos_Gamer.jpg"
+                            <img class="imagen_producto" src="/static/img/Imagenes/Audifonos_Gamer.jpg"
                                 alt="Audífonos Gamer">
                         </div>
                         <h3 class="product-title">AUDÍFONOS GAMER</h3>
@@ -179,7 +174,7 @@
 
                     <div class="producto">
                         <div class="imagenes_producto">
-                            <img class="imagen_producto" src="app/static/img/Imagenes/controlxboxblack.png"
+                            <img class="imagen_producto" src="/static/img/Imagenes/controlxboxblack.png"
                                 alt="Control Xbox Carbon Black">
                         </div>
                         <h3 class="product-title">CONTROL XBOX INALÁMBRICO CARBON BLACK</h3>
@@ -196,7 +191,13 @@
             </section>
         </div>
     </main>
-    <script src="app/static/js/funciones.js"></script>
+    <!-- Backbone + deps (CDN) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.4.1/backbone-min.js"></script>
+    <!-- Nuestro ejemplo de integración Backbone -->
+    <script src="/static/js/backbone_app.js"></script>
+    <script src="/static/js/funciones.js"></script>
 
 </body>
 

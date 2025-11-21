@@ -12,7 +12,7 @@
 
 <body>
     <nav class="barra_lateral">
-    <a class="logo_link" href="/"><img class="logo" src="/static/img/Icon_GS.png" alt="Logo"></a>
+        <a class="logo_link" href="/"><img class="logo" src="/static/img/Icon_GS.png" alt="Logo"></a>
 
         <ul>
         <li><a class="enlace_barra_lateral_fijo" href="/"><i class="fa-solid fa-house"></i> Inicio</a></li>
@@ -42,56 +42,75 @@
             class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
         <li><a class="enlace_barra_lateral" href="/templates/registro.html"><i class="fa-solid fa-users"></i>
             Registrarse</a></li>
-        <li><a class="enlace_barra_lateral" href="{{ url_for('login') }}"><i class="fa-solid fa-user"></i>
-            Iniciar sesión</a></li>
+        <li><a class="enlace_barra_lateral" href="/admin_templates/admin.html"><i class="fa-solid fa-user"></i>
+            Admin</a></li>
         </ul>
     </nav>
 
     <main>
         <header class="encabezado">
             <section class="buscador">
-               
+                <input type="text" id="buscar-input" placeholder="Buscar producto">
+                <button class="btn_buscar" id="buscar-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </section>
 
             <section class="iconos">
                 <button class="btn_notificaciones" id="mostrarNotificaciones"><i class="fa-solid fa-bell"></i></button>
-                <a class="icon" href="Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a class="icon" href="perfiluser.html"><i class="fa-solid fa-circle-user"></i></a>
+                <a class="icon" href="/templates/Carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="icon" href="/templates/perfiluser.html"><i class="fa-solid fa-circle-user"></i></a>
             </section>
         </header>
 
 
+        <div class="reporte_venta">
+            <h1>Reportes</h1>
+            <div>
+                <div>
+                    <h3 class="no_reporte">Reporte 1</h3>
+                </div>
+                <div class="info_reporte">
 
+                    <p>Fecha de compra</p>
+                    <p>Fecha de entrega</p>
+                    <p>No. Pedido</p>
+                    <p>Producto</p>
 
-
-
-        <!-- Contenido Principal -->
-        <div class="main-content">
-            <div class="container">
-                <h1>Iniciar Sesión</h1>
-
-                <p class="description">Ingresa el nombre o correo electrónico registrado.</p>
-
-                <form class="form-section" method="post" action="/login">
-                    <div class="form-line">
-                        <span class="label">Nombre o Correo de Usuario</span>
-                        <input name="username" type="text" class="input-field" placeholder="Ingresa tu usuario o correo" required>
-                    </div>
-
-                    <div class="form-line">
-                        <span class="label">Contraseña</span>
-                        <input name="password" type="password" class="input-field" placeholder="Ingresa tu contraseña" required>
-                    </div>
-
-                    <div class="register-section">
-                        <button type="submit" class="register-btn">Iniciar Sesión</button>
-                    </div>
-                </form>
-                {% if error %}
-                <p style="color: #ffb4b4; text-align:center; margin-top:12px;">{{ error }}</p>
-                {% endif %}
+                    <button class="detalles_reporte">Detalles del Reporte</button>
+                </div>
             </div>
+
+            <div>
+                <div>
+                    <h3 class="no_reporte">Reporte 2</h3>
+                </div>
+                <div class="info_reporte">
+
+                    <p>Fecha de compra</p>
+                    <p>Fecha de entrega</p>
+                    <p>No. Pedido</p>
+                    <p>Producto</p>
+
+                    <button class="detalles_reporte">Detalles del Reporte</button>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <h3 class="no_reporte">Reporte 3</h3>
+                </div>
+                <div class="info_reporte">
+
+                    <p>Fecha de compra</p>
+                    <p>Fecha de entrega</p>
+                    <p>No. Pedido</p>
+                    <p>Producto</p>
+
+                    <button class="detalles_reporte">Detalles del Reporte</button>
+                </div>
+            </div>
+
         </div>
+
     </main>
 </body>
 

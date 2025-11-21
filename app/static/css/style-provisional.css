@@ -27,7 +27,7 @@ body {
 /* ============================================
    SIDEBAR
    ============================================ */
-.sidebar {
+.sidebar, .barra_lateral {
   background: linear-gradient(180deg, #58009a 0%, #0f0d12 100%);
   width: 260px;
   min-height: 100vh;
@@ -58,13 +58,21 @@ body {
   filter: saturate(180%) brightness(1.1);
 }
 
+/* alternate selector for images that carry the logo as a class */
+img.logo-img {
+  width: 140px;
+  height: auto;
+  display: block;
+  filter: saturate(180%) brightness(1.1);
+}
+
 .logo_link {
   text-decoration: none;
 }
 
 .btn-primary {
   width: 100%;
-  padding: 14px 20px;
+  padding: 14px 15px;
   background: linear-gradient(135deg, #ec4899 0%, #d946ef 100%);
   color: white;
   border: none;
@@ -887,6 +895,12 @@ tbody tr:hover {
   transition: all 0.3s ease;
 }
 
+/* Layout tweaks for inline forms inside detail-section */
+.form-inline { display: block; }
+.form-inline .form-group { margin-bottom: 12px; }
+.detail-section .section-title { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+.detail-section { margin: 0 auto 24px; max-width: 900px; }
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -906,11 +920,15 @@ tbody tr:hover {
   flex: 1;
 }
 
+/* Flash messages */
+.flash-messages { margin-bottom: 16px; }
+.flash { background: rgba(139,92,246,0.12); padding: 12px; border-radius: 10px; color: #fff; border: 1px solid rgba(139,92,246,0.18); margin-bottom: 8px; }
+
 /* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
-  .sidebar {
+  .sidebar, .barra_lateral {
     width: 220px;
   }
 
@@ -925,13 +943,13 @@ tbody tr:hover {
 }
 
 @media (max-width: 768px) {
-  .sidebar {
+  .sidebar, .barra_lateral {
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     width: 260px;
   }
 
-  .sidebar.open {
+  .sidebar.open, .barra_lateral.open {
     transform: translateX(0);
   }
 

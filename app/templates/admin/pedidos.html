@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos - Game Store Web</title>
+    <link rel="stylesheet" href="../static/css/style-provisional.css">
+    <!-- Added Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a class="logo_link" href="/admin/admin.html">
+                        <img src="../static/img/Icon_GS.png" alt="Game Store Logo">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Replaced button and nav-menu with new ul-based structure with Font Awesome icons -->
+            <nav class="nav-menu">
+                <ul>
+                    <li><a class="enlace_barra_lateral" href="/admin/admin.html"><i class="fa-solid fa-house"></i> <span>Inicio</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="/admin/perfil.html"><i class="fa-solid fa-circle-user"></i> <span>Perfil</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="/admin/inventario.html"><i class="fa-solid fa-magnifying-glass"></i> <span>Buscar</span></a></li>
+                    <li><a class="enlace_barra_lateral active" href="/admin/pedidos.html"><i class="fa-solid fa-truck"></i> <span>Gestión de pedidos</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="/admin/inventario.html"><i class="fa-solid fa-boxes-packing"></i> <span>Inventario</span></a></li>
+                    
+                    <li>
+                        <h3>Categorías</h3>
+                    </li>
+                    
+                    <li><a class="enlace_barra_lateral" href="/admin/juegos.html"><i class="fa-solid fa-ghost"></i> <span>Juegos</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="/admin/accesorios.html"><i class="fa-solid fa-headset"></i> <span>Accesorios</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="/admin/consolas.html"><i class="fa-solid fa-tv"></i> <span>Consolas</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="/admin/controles.html"><i class="fa-solid fa-gamepad"></i> <span>Controles</span></a></li>
+                </ul>
+                
+                <ul style="margin-top: auto; padding-top: 1rem;">
+                    <li><a class="enlace_barra_lateral_fijo" href="/admin/reportes.html"><i class="fa-solid fa-chart-column"></i> <span>Reportes</span></a></li>
+                    <li><a class="enlace_barra_lateral" href="/admin/usuarios.html"><i class="fa-solid fa-users"></i> <span>Usuarios</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-messages" style="max-width:900px;margin:0 auto;padding:1rem;">
+                        {% for m in messages %}
+                            <div class="flash">{{ m }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <div class="content-header">
+                <h1>Gestión de Pedidos</h1>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Buscar pedidos...">
+                    <button class="search-button">🔍</button>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Todos los Pedidos</h2>
+                <span class="badge">356 pedidos</span>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Pedido</th>
+                            <th>Cliente</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                            <th>Fecha</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD-001</td>
+                            <td>Juan Pérez</td>
+                            <td>PlayStation 5</td>
+                            <td>1</td>
+                            <td>$499.99</td>
+                            <td><span class="status-badge completed">Completado</span></td>
+                            <td>2024-01-15</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-002</td>
+                            <td>María García</td>
+                            <td>Xbox Series X</td>
+                            <td>1</td>
+                            <td>$449.99</td>
+                            <td><span class="status-badge processing">Procesando</span></td>
+                            <td>2024-01-15</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-003</td>
+                            <td>Carlos López</td>
+                            <td>Nintendo Switch</td>
+                            <td>2</td>
+                            <td>$599.98</td>
+                            <td><span class="status-badge pending">Pendiente</span></td>
+                            <td>2024-01-14</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-004</td>
+                            <td>Ana Martínez</td>
+                            <td>The Last of Us Part II</td>
+                            <td>1</td>
+                            <td>$59.99</td>
+                            <td><span class="status-badge completed">Completado</span></td>
+                            <td>2024-01-14</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-005</td>
+                            <td>Luis Rodríguez</td>
+                            <td>DualSense Controller</td>
+                            <td>2</td>
+                            <td>$139.98</td>
+                            <td><span class="status-badge cancelled">Cancelado</span></td>
+                            <td>2024-01-13</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-006</td>
+                            <td>Sofia Hernández</td>
+                            <td>Gaming Headset Pro</td>
+                            <td>1</td>
+                            <td>$89.99</td>
+                            <td><span class="status-badge completed">Completado</span></td>
+                            <td>2024-01-13</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-007</td>
+                            <td>Diego Ramírez</td>
+                            <td>God of War Ragnarök</td>
+                            <td>1</td>
+                            <td>$69.99</td>
+                            <td><span class="status-badge processing">Procesando</span></td>
+                            <td>2024-01-12</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon" title="Ver">👁️</button>
+                                    <button class="btn-icon" title="Editar">✏️</button>
+                                    <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
